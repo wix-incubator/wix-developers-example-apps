@@ -8,7 +8,7 @@ class WixOAuthFacade {
         this.appSecret = appSecret;
     }
 
-    getTokensFrom = async authCode => {
+    async getTokensFrom(authCode) {
         const {data} = await axios.post(`${this.baseUrl}/oauth/access`, {
             code: authCode,
             client_secret: this.appSecret,
@@ -19,9 +19,9 @@ class WixOAuthFacade {
             refreshToken: data.refresh_token,
             accessToken: data.access_token,
         }
-    };
+    }
 
-    getFreshAccessToken = async refresh_token => {
+    async getFreshAccessToken(refresh_token) {
         const {data} = await axios.post(`${this.baseUrl}/oauth/access`, {
             refresh_token,
             client_secret: this.appSecret,
@@ -31,7 +31,7 @@ class WixOAuthFacade {
         return {
             accessToken: data.access_token,
         }
-    };
+    }
 
 
 }

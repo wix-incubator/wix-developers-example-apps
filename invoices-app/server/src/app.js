@@ -1,10 +1,11 @@
 require('dotenv').config();
 const express = require('express');
-const {getSiteInfo, getSiteOrders} = require('./wixApi');
 const {InstanceDecoder} = require("./utils/InstanceDecoder");
 
 const {InMemoryRefreshTokenDao} = require("./dao/InMemoryRefreshTokenDao");
 const {WixOAuthFacade} = require("./tokens/WixOAuthFacade");
+const {StoresApis} = require("./apis/StoresApis");
+const {AppApis} = require("./apis/AppApis");
 
 const app = express();
 
@@ -15,9 +16,12 @@ const port = process.env.PORT || 8080;
   Their values resides in .env file and yous should NOT COMMIT THEM TO GITHUB!
 */
 const {APP_ID, APP_SECRET} = process.env;
+
 const instanceDecoder = new InstanceDecoder(APP_SECRET);
 const refreshTokenDao = new InMemoryRefreshTokenDao();
 const wixOAuthFacade = new WixOAuthFacade('https://www.wix.com', APP_ID, APP_SECRET);
+const storesApis = new StoresApis('https://www.wixapis.com/stores/v2/orders', refreshTokenDao, wixOAuthFacade)
+const appApis = new AppApis('https://www.wixapis.com/apps/v1', refreshTokenDao, wixOAuthFacade);
 
 const tokenReceivedEndpoint = 'https://www.wix.com/installer/token-received';
 const getInstallUrl = token =>
@@ -38,9 +42,9 @@ app.get(`/auth/redirect-wix`, async (req, res) => {
 
 app.get('/api/dashboard', async (req, res) => {
     const parsedInstance = instanceDecoder.decodeOrThrow(req.query.instance);
-    const wixRefreshToken = refreshTokenDao.getBy(parsedInstance.instanceId);
-    const [siteInfo, siteOrders] = await Promise.all([getSiteInfo(wixRefreshToken), getSiteOrders(wixRefreshToken)]);
-
+    const getAppInstancePromise = appApis.getAppInstance(parsedInstance.instanceId);
+    const siteOrdersPromise = storesApis.queryOrders(parsedInstance.instanceId);
+    const [siteInfo, siteOrders] = await Promise.all([getAppInstancePromise, siteOrdersPromise]);
     res.json({parsedInstance, siteInfo, siteOrders});
 });
 

@@ -20,8 +20,11 @@
     "mongoose": "^5.4.10"
   },
   "devDependencies": {
+    "concurrently": "^6.5.1",
     "jest": "^27.4.5",
+    "localtunnel": "^2.0.2",
     "nock": "^13.2.1",
-    "nodemon": "^1.18.10"
+    "nodemon": "^1.18.10",
+    "ts-mockito": "^2.6.1"
   }
 }
