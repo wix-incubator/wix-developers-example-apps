@@ -6,7 +6,8 @@
   "license": "MIT",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon ./src/app.js"
+    "start": "nodemon ./src/app.js",
+    "test": "jest"
   },
   "dependencies": {
     "axios": "^0.19.1",
@@ -19,6 +20,8 @@
     "mongoose": "^5.4.10"
   },
   "devDependencies": {
+    "jest": "^27.4.5",
+    "nock": "^13.2.1",
     "nodemon": "^1.18.10"
   }
 }
