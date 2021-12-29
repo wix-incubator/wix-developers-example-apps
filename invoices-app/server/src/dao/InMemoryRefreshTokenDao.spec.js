@@ -3,17 +3,17 @@ const {randomString} = require("../../__tests__/utils");
 
 describe('InMemoryRefreshTokenDao', () => {
 
-    it('should store refreshTokens by instanceId, and allow fetching them', () => {
+    it('should store refreshTokens by instanceId, and allow fetching them', async () => {
         const dao = new InMemoryRefreshTokenDao();
         const instanceId = randomString();
         const refreshToken = randomString();
-        dao.save(instanceId, refreshToken);
-        expect(dao.getBy(instanceId)).toEqual(refreshToken)
+        await dao.save(instanceId, refreshToken);
+        await expect(dao.getBy(instanceId)).resolves.toEqual(refreshToken)
     })
 
     it('should return null when the instanceId does not exist in the store', async () => {
         const dao = new InMemoryRefreshTokenDao();
-        expect(dao.getBy(randomString())).toBeNull();
+        await expect(dao.getBy(randomString())).resolves.toBeUndefined();
     })
 
 })
