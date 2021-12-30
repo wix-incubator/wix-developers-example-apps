@@ -13,7 +13,7 @@ class AppInstallationsService {
 
     async updatePremiumPlan(instanceId, newPlan) {
         const existing = await this.appInstallationsDao.getBy(instanceId);
-        await this.appInstallationsDao.save(instanceId, {...existing, newPlan});
+        await this.appInstallationsDao.save(instanceId, {...existing, premiumPlan: newPlan});
     }
 
     async setUninstalled(instanceId) {

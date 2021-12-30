@@ -9,6 +9,7 @@ class WixAuthController {
         this.wixOAuthFacade = wixOAuthFacade;
         this.refreshTokenDao = refreshTokenDao;
         this.baseUrl = baseUrl;
+        this.registerRoutes();
     }
 
     registerRoutes() {

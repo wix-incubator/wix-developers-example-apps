@@ -19,7 +19,7 @@ const startServer = (config) => {
       APP_ID and APP_SECRET are secrets and you shouldn't share them with anyone!
       Their values resides in .env file and yous should NOT COMMIT THEM TO GITHUB!
     */
-    const {APP_ID, APP_SECRET, appUrl, redirectUrl, wixBaseUrl, WEBHOOK_PUBLIC_KEY} = config;
+    const {APP_ID, APP_SECRET, redirectUrl, wixBaseUrl, WEBHOOK_PUBLIC_KEY} = config;
 
     app.use(text());
     app.use(json());
@@ -36,10 +36,6 @@ const startServer = (config) => {
     const wixAuthController = new WixAuthController(APP_ID, wixOAuthFacade, refreshTokenDao, redirectUrl, wixBaseUrl);
     const apiController = new ApiController(instanceDecoder, storesApis, appApis, installationsService);
     const webhooksController = new WebhooksController(installationsService, webhookDecoderVerifier)
-
-    wixAuthController.registerRoutes();
-    apiController.registerRoutes();
-    webhooksController.registerRoutes();
 
     app.use('/auth', wixAuthController.router)
     app.use('/api', apiController.router)

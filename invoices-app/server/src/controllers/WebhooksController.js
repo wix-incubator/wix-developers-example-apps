@@ -6,11 +6,13 @@ class WebhooksController {
         this._router = express.Router();
         this.installationsService = installationsService;
         this.webhooksDecoder = webhooksDecoder;
+        this.registerRoutes();
     }
 
     registerRoutes() {
         this._router.post('/app-removed', this.appRemovedWebhookHandler);
         this._router.post('/app-installed', this.appInstalledWebhookHandler);
+        this._router.post('/plan-purchased', this.planPurchasedWebhookHandler);
     }
 
     appRemovedWebhookHandler = async (req, res) => {
@@ -26,7 +28,8 @@ class WebhooksController {
     }
 
     planPurchasedWebhookHandler = async (req, res) => {
-        console.log(req.body);
+        const {instanceId, data} = this.webhooksDecoder.verifyAndDecode(req.body);
+        await this.installationsService.updatePremiumPlan(instanceId, data?.vendorProductId);
         res.send('ok');
     }
 

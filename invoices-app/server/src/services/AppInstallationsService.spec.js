@@ -22,7 +22,7 @@ describe('AppInstallationsService', () => {
         await service.create(instanceId);
         const newPlan = randomString();
         await service.updatePremiumPlan(instanceId, newPlan)
-        await expect(service.getBy(instanceId)).resolves.toEqual({createDate: date, isInstalled: true, newPlan});
+        await expect(service.getBy(instanceId)).resolves.toEqual({createDate: date, isInstalled: true, premiumPlan: newPlan});
     });
 
     it('should allow updating installed flag', async () => {

@@ -8,6 +8,7 @@ class ApiController {
         this.storesApis = storesApis;
         this.installationsService = installationsService;
         this.appApis = appApis;
+        this.registerRoutes();
     }
 
     registerRoutes() {
