@@ -2,10 +2,10 @@ const express = require("express");
 
 
 class ApiController {
-    constructor(instanceDecoder, storesApis, appApis, installationsService) {
+    constructor(instanceDecoder, cashierApis, appApis, installationsService) {
         this._router = express.Router();
         this.instanceDecoder = instanceDecoder;
-        this.storesApis = storesApis;
+        this.cashierApis = cashierApis;
         this.installationsService = installationsService;
         this.appApis = appApis;
         this.registerRoutes();
@@ -28,7 +28,7 @@ class ApiController {
     dashboardController = async (req, res) => {
         const parsedInstance = this.instanceDecoder.decodeOrThrow(req.query.instance);
         const getAppInstancePromise = this.appApis.getAppInstance(parsedInstance.instanceId);
-        const siteOrdersPromise = this.storesApis.queryOrders(parsedInstance.instanceId);
+        const siteOrdersPromise = this.cashierApis.getPastTransactions(parsedInstance.instanceId);
         const [siteInfo, siteOrders] = await Promise.all([getAppInstancePromise, siteOrdersPromise]);
         res.json({parsedInstance, siteInfo, siteOrders});
     }

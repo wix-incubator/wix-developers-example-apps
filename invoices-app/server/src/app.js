@@ -2,7 +2,7 @@ const express = require('express');
 const {InstanceDecoder} = require("./utils/InstanceDecoder");
 const {InMemoryRefreshTokenDao} = require("./dao/InMemoryRefreshTokenDao");
 const {WixOAuthFacade} = require("./tokens/WixOAuthFacade");
-const {StoresApis} = require("./apis/StoresApis");
+const {CashierApis} = require("./apis/CashierApis");
 const {AppApis} = require("./apis/AppApis");
 const {WixAuthController} = require("./controllers/WixAuthController");
 const {ApiController} = require("./controllers/ApiController");
@@ -29,12 +29,12 @@ const startServer = (config) => {
     const installationsDao = new InMemoryAppInstallationsDao();
     const installationsService = new AppInstallationsService(installationsDao);
     const wixOAuthFacade = new WixOAuthFacade(wixBaseUrl, APP_ID, APP_SECRET);
-    const storesApis = new StoresApis('https://www.wixapis.com/stores/v2/orders', refreshTokenDao, wixOAuthFacade)
+    const cashierApis = new CashierApis('https://www.wixapis.com/payments/v2', refreshTokenDao, wixOAuthFacade)
     const appApis = new AppApis('https://www.wixapis.com/apps/v1', refreshTokenDao, wixOAuthFacade);
     const webhookDecoderVerifier = new WebhookDecoderVerifier(WEBHOOK_PUBLIC_KEY);
 
     const wixAuthController = new WixAuthController(APP_ID, wixOAuthFacade, refreshTokenDao, redirectUrl, wixBaseUrl);
-    const apiController = new ApiController(instanceDecoder, storesApis, appApis, installationsService);
+    const apiController = new ApiController(instanceDecoder, cashierApis, appApis, installationsService);
     const webhooksController = new WebhooksController(installationsService, webhookDecoderVerifier)
 
     app.use('/auth', wixAuthController.router)
