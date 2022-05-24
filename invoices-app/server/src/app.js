@@ -20,6 +20,7 @@ const startServer = (config) => {
       Their values resides in .env file and yous should NOT COMMIT THEM TO GITHUB!
     */
     const {APP_ID, APP_SECRET, redirectUrl, wixBaseUrl, WEBHOOK_PUBLIC_KEY} = config;
+    console.log(WEBHOOK_PUBLIC_KEY);
 
     app.use(text());
     app.use(json());
@@ -38,7 +39,7 @@ const startServer = (config) => {
     const webhooksController = new WebhooksController(installationsService, webhookDecoderVerifier)
 
     app.use('/auth', wixAuthController.router)
-    app.use('/api', apiController.router)
+    app.use('/api', apiController.router);
     app.use('/webhooks', webhooksController.router)
 
     return app;

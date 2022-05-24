@@ -10,6 +10,8 @@ class InstanceDecoder {
 
     decodeOrThrow = instance => {
         const [signature, payload] = instance.split('.');
+        console.log('signature:',signature);
+        console.log('instance:',instance);
         const newSignature = crypto.createHmac('sha256', this.secret)
                                    .update(payload)
                                    .digest('base64');

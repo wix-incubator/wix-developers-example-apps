@@ -22,6 +22,8 @@ class WebhooksController {
     }
 
     appInstalledWebhookHandler = async (req, res) => {
+        console.log('appInstalledWebhookHandler**************');
+        console.log(JSON.stringify(req.headers));
         const {instanceId} = this.webhooksDecoder.verifyAndDecode(req.body);
         await this.installationsService.create(instanceId);
         res.send('ok');
