@@ -1,0 +1,38 @@
+{
+  "name": "wix-oauth-app-example",
+  "version": "1.0.0",
+  "description": "wix app Oauth example",
+  "author": "wix app market team",
+  "license": "MIT",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon ./start-local.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "axios": "^0.19.1",
+    "body-parser": "^1.19.1",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
+    "mongoose": "^5.4.10"
+  },
+  "devDependencies": {
+    "concurrently": "^6.5.1",
+    "jest": "^27.4.5",
+    "localtunnel": "^2.0.2",
+    "mockdate": "^3.0.5",
+    "nock": "^13.2.1",
+    "nodemon": "^1.18.10",
+    "ts-mockito": "^2.6.1",
+    "uuid": "^8.3.2"
+  },
+  "jest": {
+    "testMatch": [
+      "**/**.spec.js"
+    ]
+  }
+}
