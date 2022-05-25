@@ -1,0 +1,15 @@
+{
+  "name": "product-price-change-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently -n client,server \"npm start --prefix client\" \"npm start --prefix server\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^5.3.0"
+  }
+}
