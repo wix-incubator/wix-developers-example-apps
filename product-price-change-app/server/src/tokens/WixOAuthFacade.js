@@ -15,9 +15,6 @@ class WixOAuthFacade {
             client_id: this.appId,
             grant_type: 'authorization_code',
         });
-        console.log("got the data:", data)
-        //remove me
-
         return {
             refreshToken: data.refresh_token,
             accessToken: data.access_token,

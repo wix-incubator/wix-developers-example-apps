@@ -33,9 +33,7 @@ class WixAuthController {
         //wix instance Id of the app installation on site.
         const {refreshToken, accessToken} = await this.wixOAuthFacade.getTokensFrom(req.query.code);
         await this.refreshTokenDao.save(req.query.instanceId, refreshToken);
-        console.log("got refresh token:!!!! insatn:",req.query.instanceId, "   $$$ referesg: ",refreshToken)
         const s = await this.refreshTokenDao.getBy(req.query.instanceId);
-        console.log("fetch refresh token for: ", s)
         res.redirect(`${tokenReceivedEndpoint}?access_token=${encodeURIComponent(accessToken)}`);
     }
 }
