@@ -1,6 +1,4 @@
 const { RefreshTokenDao } = require("./RefreshTokenDao");
-
-
 const fs = require('fs');
 
 class FileBasedRefreshTokenDao extends RefreshTokenDao {

@@ -10,7 +10,7 @@ const {ApiController} = require("./controllers/ApiController");
 const {WebhooksController} = require("./controllers/WebhooksController");
 const {json, text} = require('body-parser');
 const {WebhookDecoderVerifier} = require("./utils/WebhookDecoderVerifier");
-const {InMemoryAppInstallationsDao} = require("./dao/InMemoryAppInstallationsDao");
+const {FileBasedAppInstallationsDao} = require("./dao/FileBasedAppInstallationsDao");
 const {AppInstallationsService} = require("./services/AppInstallationsService");
 
 const startServer = (config) => {
@@ -33,13 +33,12 @@ app.use((req, res, next) => {
 
     const instanceDecoder = new InstanceDecoder(APP_SECRET);
     const refreshTokenDao = new FileBasedRefreshTokenDao();
-    const installationsDao = new InMemoryAppInstallationsDao();
+    const installationsDao = new FileBasedAppInstallationsDao();
     const installationsService = new AppInstallationsService(installationsDao);
     const wixOAuthFacade = new WixOAuthFacade(wixBaseUrl, APP_ID, APP_SECRET);
     const storesApis = new StoresApis('https://www.wixapis.com/stores/v2/orders', refreshTokenDao, wixOAuthFacade)
     const appApis = new AppApis('https://www.wixapis.com/apps/v1', refreshTokenDao, wixOAuthFacade);
     const webhookDecoderVerifier = new WebhookDecoderVerifier(WEBHOOK_PUBLIC_KEY);
-
     const wixAuthController = new WixAuthController(APP_ID, wixOAuthFacade, refreshTokenDao, redirectUrl, wixBaseUrl);
     const apiController = new ApiController(instanceDecoder, storesApis, appApis, installationsService);
     const webhooksController = new WebhooksController(installationsService, webhookDecoderVerifier)
