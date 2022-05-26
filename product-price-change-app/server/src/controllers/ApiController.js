@@ -28,9 +28,8 @@ class ApiController {
     dashboardController = async (req, res) => {
         const parsedInstance = this.instanceDecoder.decodeOrThrow(req.query.instance);
         const getAppInstancePromise = this.appApis.getAppInstance(parsedInstance.instanceId);
-        const siteOrdersPromise = this.storesApis.queryOrders(parsedInstance.instanceId);
-        const [siteInfo, siteOrders] = await Promise.all([getAppInstancePromise, siteOrdersPromise]);
-        res.json({parsedInstance, siteInfo, siteOrders});
+        const [siteInfo] = await Promise.all([getAppInstancePromise]);
+        res.json({parsedInstance, siteInfo});
     }
 
 }

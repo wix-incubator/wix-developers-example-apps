@@ -25,7 +25,8 @@ class StoresApis {
                 }
             }
         }
-        const resposne = this.queryOrders(instanceId, query)
+        const response = await this.queryOrders(instanceId, query)
+        return response
     }
 }
 

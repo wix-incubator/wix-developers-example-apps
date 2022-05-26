@@ -12,6 +12,8 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
+import Switch from '@material-ui/core/Switch';
+import TextField from '@material-ui/core/TextField';
 
 const useItemStyles = makeStyles({
   root: {
@@ -107,75 +109,25 @@ const Dashboard = (props) => {
     return (<div>{JSON.stringify(error)}</div>);
 
   } else {
-    const siteData = { 'Permissions Role': data.dataJson.permissions, 'InstanceId': data.dataJson.instanceId, "Locale": data.siteInfo.site.locale };
+    // const siteData = { 'Permissions Role': data.dataJson.permissions, 'InstanceId': data.dataJson.instanceId, "Locale": data.siteInfo.site.locale };
 
     const installedWixApps = convertArrayToObject(data.siteInfo.site.installedWixApps, "App");
-
-    const billing = data.siteInfo.instance.isFree ? { "Plan": "Free" } : data.siteInfo.instance.billing
-    const siteOrders = data.siteOrders
 
     return (
 
       <div className={classes.root}>
         <Typography variant="h3" component="h2">
-          <strong>{data.siteInfo.site.siteDisplayName}</strong> Orders information
+          <strong>{data.siteInfo.site.siteDisplayName}</strong> Products Buyers Count 
         </Typography>
-        <p>
-          Total amount of orders: <strong>{siteOrders.orders.length}</strong>
-        </p>
-        <div style={{ display: "flex", flexWrap: "wrap" }}>
-          {data.siteOrders.orders.map(order => <ItemCard {...order} />)}
-        </div>
+        
+        <Switch/>
+        <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+
+        
+        
       </div>
     );
   }
 };
 
-
-function ItemCard({ buyerInfo, lineItems, numericId, totals, currency, dateCreated, paymentStatus, shippingInfo }) {
-  const classes = useItemStyles();
-  const getStreet = () => {
-    if (!shippingInfo.shipmentDetails.address.street) {
-      return <span style={{ color: 'red' }}>Missing street address!</span>
-    }
-    return shippingInfo.shipmentDetails.address.street.name + shippingInfo.shipmentDetails.address.street.number
-  }
-
-  return (
-    <Card className={classes.root}>
-      <CardContent>
-        <Typography className={classes.title} color="textSecondary" gutterBottom>
-          Ordered at: {dateCreated}
-        </Typography>
-        <Typography variant="h5" component="h2">
-          Order ID: {numericId}
-        </Typography>
-        <Typography className={classes.pos} >
-          {lineItems.length} {lineItems.length > 1 ? "items" : "item"} purchased, for a total of <strong>{totals.total} {currency}</strong>
-        </Typography>
-        <Typography variant="body2" >
-          Payment status: <strong>{paymentStatus}</strong>
-        </Typography>
-        <Typography variant="body2" >
-          Purchased by: {buyerInfo.firstName} {buyerInfo.lastName} / {buyerInfo.phone} / {buyerInfo.email}
-        </Typography>
-        <Typography variant="body2" >
-          Deliver to: <strong>{shippingInfo.shipmentDetails.address.country}, {shippingInfo.shipmentDetails.address.city}, {getStreet()}</strong>
-        </Typography>
-        <Divider style={{ marginTop: "20px", marginBottom: "10px" }} />
-        <Typography variant="body2" >
-          Items details:
-         {lineItems.map(item => {
-          return <Typography className={classes.title} color="textSecondary" gutterBottom>
-            {item.name}/{item.sku}
-          </Typography>
-        })}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small" color="primary">Mark as shipped</Button>
-      </CardActions>
-    </Card >
-  );
-}
 export default Dashboard;
