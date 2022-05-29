@@ -9,7 +9,8 @@ class WixOAuthFacade {
     }
 
     async getTokensFrom(authCode) {
-        const {data} = await axios.post(`${this.baseUrl}/oauth/access`, {
+        console.log('code', authCode);
+        const {data} = await axios.post(`https://www.wixapis.com/oauth/access`, {
             code: authCode,
             client_secret: this.appSecret,
             client_id: this.appId,
@@ -22,7 +23,7 @@ class WixOAuthFacade {
     }
 
     async getFreshAccessToken(refresh_token) {
-        const {data} = await axios.post(`${this.baseUrl}/oauth/access`, {
+        const {data} = await axios.post(`https://www.wixapis.com/oauth/access`, {
             refresh_token,
             client_secret: this.appSecret,
             client_id: this.appId,
