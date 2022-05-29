@@ -58,12 +58,8 @@ const Dashboard = (props) => {
   let params = queryString.parse(url);
   const classes = useStyles();
   const [isDisabled, setIsDisabled] = useState(true);
-  // const { data, error, isLoading } = useAPI(`http://localhost:8080/api/dashboard?instance=${params.instance}`);
-  // const  toggle = false
-  const isLoading = false
-  const error = undefined
-
-  const data = { siteInfo: { site: { siteDisplayName: "ron" } } }
+  const { data, error, isLoading } = useAPI(`http://localhost:8080/api/dashboard?instance=${params.instance}`);
+  
   if (isLoading) {
     return (
       <Lottie options={defaultOptions}
