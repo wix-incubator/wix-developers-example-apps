@@ -11,6 +11,7 @@ const {json, text} = require('body-parser');
 const {WebhookDecoderVerifier} = require("./utils/WebhookDecoderVerifier");
 const {FileBasedAppInstallationsDao} = require("./dao/FileBasedAppInstallationsDao");
 const {AppInstallationsService} = require("./services/AppInstallationsService");
+const { FileBasedBuyersCountDao } = require('./dao/FileBasedBuyersCountDao');
 
 const startServer = (config) => {
     const app = express();
@@ -33,7 +34,8 @@ app.use((req, res, next) => {
     const instanceDecoder = new InstanceDecoder(APP_SECRET);
     const refreshTokenDao = new FileBasedRefreshTokenDao();
     const installationsDao = new FileBasedAppInstallationsDao();
-    const installationsService = new AppInstallationsService(installationsDao);
+    const buyersCountDao = new FileBasedBuyersCountDao();
+    const installationsService = new AppInstallationsService(installationsDao, buyersCountDao);
     const wixOAuthFacade = new WixOAuthFacade(wixBaseUrl, APP_ID, APP_SECRET);
     const storesApis = new StoresApis('https://www.wixapis.com/stores/v2/orders', refreshTokenDao, wixOAuthFacade)
     const appApis = new AppApis('https://www.wixapis.com/apps/v1', refreshTokenDao, wixOAuthFacade);

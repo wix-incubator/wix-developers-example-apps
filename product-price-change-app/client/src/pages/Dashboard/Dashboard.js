@@ -1,6 +1,5 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/styles';
-
 import { useState, useEffect } from 'react';
 import queryString from 'query-string';
 import Lottie from 'react-lottie'
@@ -8,38 +7,17 @@ import animationData from '../../util/714-water-loader.json'
 import axios from 'axios';
 import Typography from '@material-ui/core/Typography';
 import Switch from '@material-ui/core/Switch';
+import Container from '@material-ui/core/Container';
 import TextField from '@material-ui/core/TextField';
+import Box from '@material-ui/core/Box'
+import Button from '@material-ui/core/Button'
 
-const useItemStyles = makeStyles({
-  root: {
-    minWidth: 400,
-    marginTop: "20px",
-    marginRight: "20px"
-  },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)',
-  },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-  },
-});
 
 const instance = axios.create();
 
 // Override timeout default for the library
 // Now all requests using this instance will wait 10 seconds before timing out
 instance.defaults.timeout = 10000;
-
-
-
-
-
-
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -75,21 +53,17 @@ const useAPI = (url) => {
   return { data, isLoading, error }
 }
 
-const convertArrayToObject = (array, keyName) => {
-  const initialValue = {};
-  array.map((element, index) => {
-    initialValue[`${keyName} ${index + 1}`] = element
-  })
-  return initialValue;
-};
-
-
 const Dashboard = (props) => {
   let url = props.location.search;
   let params = queryString.parse(url);
   const classes = useStyles();
-  const { data, error, isLoading } = useAPI(`http://localhost:8080/api/dashboard?instance=${params.instance}`);
+  const [isDisabled, setIsDisabled] = useState(true);
+  // const { data, error, isLoading } = useAPI(`http://localhost:8080/api/dashboard?instance=${params.instance}`);
+  // const  toggle = false
+  const isLoading = false
+  const error = undefined
 
+  const data = { siteInfo: { site: { siteDisplayName: "ron" } } }
   if (isLoading) {
     return (
       <Lottie options={defaultOptions}
@@ -101,20 +75,35 @@ const Dashboard = (props) => {
     return (<div>{JSON.stringify(error)}</div>);
 
   } else {
-  
+
 
     return (
-
-      <div className={classes.root}>
-        <Typography variant="h3" component="h2">
-          <strong>{data.siteInfo.site.siteDisplayName}</strong> Products Buyers Count 
-        </Typography>
-        
-        <Switch/>
-        
-        <TextField id="outlined-basic" label="Outlined" variant="outlined" />
-        
-      </div>
+      <Container>
+        <div className={classes.root}>
+          <div className='header'>
+            <Typography variant="h3" component="h2" style={{ marginBottom: "60px" }}>
+              <strong>{data.siteInfo.site.siteDisplayName}</strong> |  Products Buyers Count
+              <Typography variant="h5" component="h4"  >
+                <br />
+                This app will display customers count in a product page
+                <br />
+              </Typography>
+            </Typography>
+            <Box className="input-box">
+            <div className='delta-container'>
+              Fake Your buyers count
+              <br />
+              <Switch label="Enable Delta" onChange={() => setIsDisabled(!isDisabled)} />
+            </div>
+            <div className='input-container'>
+              <TextField disabled={isDisabled} id="outlined-basic" label="Delta" variant="outlined" />
+              &nbsp; &nbsp;
+              <Button disabled={isDisabled} variant="contained">Submit</Button>
+            </div>
+            </Box>
+          </div>
+        </div>
+      </Container>
     );
   }
 };

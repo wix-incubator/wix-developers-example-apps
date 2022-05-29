@@ -11,3 +11,24 @@ body{
 .nav-container {
   margin: auto;
 }
+.header {
+  text-align: center;
+  margin-bottom: 20px; 
+}
+.delta-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.input-box{
+  border: 1px #bdbdbd solid;
+  border-radius: 8px;
+}
+.input-container{
+  display: flex;
+  align-items: stretch;
+  justify-content: center; 
+  margin-bottom: 30px;
+}

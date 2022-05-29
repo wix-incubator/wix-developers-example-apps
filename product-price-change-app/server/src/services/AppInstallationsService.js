@@ -2,13 +2,14 @@
 
 
 class AppInstallationsService {
-    constructor(appInstallationsDao) {
+    constructor(appInstallationsDao, buyersCountDao) {
         this.appInstallationsDao = appInstallationsDao;
     }
 
 
     async create(instanceId) {
         await this.appInstallationsDao.save(instanceId, {createDate: new Date(), isInstalled: true});
+        await this.buyersCountDao.save(instanceId, 0);
     }
 
     async updatePremiumPlan(instanceId, newPlan) {

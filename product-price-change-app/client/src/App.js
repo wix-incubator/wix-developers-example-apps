@@ -11,25 +11,10 @@ import themeObject from './util/theme';
 
 //Compoents
 import NavBar from './components/NavBar';
-
 //Pages
-import Start from './pages/Start';
 import Dashboard from './pages/Dashboard';
-import Status from './pages/Status';
 
 const theme = createTheme(themeObject);
-
-const startContainer = () => (
-  <div className="container">
-    <Route path="/start" component={Start} />
-  </div>
-)
-
-const StatusContainer = () => (
-  <div className="container">
-    <Route path="/status" component={Status} />
-  </div>
-)
 
 
 const DefaultContainer = () => (
@@ -46,8 +31,6 @@ function App() {
       <div className="App">
         <BrowserRouter>
             <Switch>
-              <Route exact path="/start" component={startContainer}/>
-              <Route exact path="/status" component={StatusContainer}/>
               <Route component={DefaultContainer}/>
             </Switch>
         </BrowserRouter>
