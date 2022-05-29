@@ -1,6 +1,5 @@
 const express = require('express');
 const {InstanceDecoder} = require("./utils/InstanceDecoder");
-const {InMemoryRefreshTokenDao} = require("./dao/InMemoryRefreshTokenDao");
 const {FileBasedRefreshTokenDao} = require("./dao/FileBasedRefreshTokenDao")
 const {WixOAuthFacade} = require("./tokens/WixOAuthFacade");
 const {StoresApis} = require("./apis/StoresApis");

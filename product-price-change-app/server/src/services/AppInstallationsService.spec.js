@@ -1,4 +1,4 @@
-const {InMemoryAppInstallationsDao} = require("../dao/InMemoryAppInstallationsDao");
+const {FileBasedAppInstallationsDao} = require("../dao/FileBasedAppInstallationsDao");
 const {randomString} = require("../../__tests__/utils");
 const MockDate = require('mockdate');
 const {AppInstallationsService} = require('./AppInstallationsService');
@@ -8,7 +8,7 @@ describe('AppInstallationsService', () => {
     MockDate.set(date)
 
     it('should create a new object for some instanceId', async () => {
-        const dao = new InMemoryAppInstallationsDao();
+        const dao = new FileBasedAppInstallationsDao();
         const service = new AppInstallationsService(dao);
         const instanceId = randomString();
         await service.create(instanceId);
@@ -16,7 +16,7 @@ describe('AppInstallationsService', () => {
     });
 
     it('should allow updating premium plan', async () => {
-        const dao = new InMemoryAppInstallationsDao();
+        const dao = new FileBasedAppInstallationsDao();
         const service = new AppInstallationsService(dao);
         const instanceId = randomString();
         await service.create(instanceId);
@@ -26,7 +26,7 @@ describe('AppInstallationsService', () => {
     });
 
     it('should allow updating installed flag', async () => {
-        const dao = new InMemoryAppInstallationsDao();
+        const dao = new FileBasedAppInstallationsDao();
         const service = new AppInstallationsService(dao);
         const instanceId = randomString();
         await service.create(instanceId);

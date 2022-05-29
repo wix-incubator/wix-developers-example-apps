@@ -1,10 +1,10 @@
-const {InMemoryRefreshTokenDao} = require("./InMemoryRefreshTokenDao");
-const {randomString} = require("../../__tests__/utils");
+const { FileBasedRefreshTokenDao } = require("./FileBasedRefreshTokenDao");
+const { randomString } = require("../../__tests__/utils");
 
-describe('InMemoryRefreshTokenDao', () => {
+describe('FileBasedRefreshTokenDao', () => {
 
     it('should store refreshTokens by instanceId, and allow fetching them', async () => {
-        const dao = new InMemoryRefreshTokenDao();
+        const dao = new FileBasedRefreshTokenDao();
         const instanceId = randomString();
         const refreshToken = randomString();
         await dao.save(instanceId, refreshToken);
@@ -12,7 +12,7 @@ describe('InMemoryRefreshTokenDao', () => {
     })
 
     it('should return null when the instanceId does not exist in the store', async () => {
-        const dao = new InMemoryRefreshTokenDao();
+        const dao = new FileBasedRefreshTokenDao();
         await expect(dao.getBy(randomString())).resolves.toBeUndefined();
     })
 

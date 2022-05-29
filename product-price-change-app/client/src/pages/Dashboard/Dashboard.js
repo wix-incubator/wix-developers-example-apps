@@ -6,12 +6,7 @@ import queryString from 'query-string';
 import Lottie from 'react-lottie'
 import animationData from '../../util/714-water-loader.json'
 import axios from 'axios';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
 import Switch from '@material-ui/core/Switch';
 import TextField from '@material-ui/core/TextField';
 
@@ -90,13 +85,10 @@ const convertArrayToObject = (array, keyName) => {
 
 
 const Dashboard = (props) => {
-  //console.log(props);
   let url = props.location.search;
   let params = queryString.parse(url);
   const classes = useStyles();
   const { data, error, isLoading } = useAPI(`http://localhost:8080/api/dashboard?instance=${params.instance}`);
-  //console.log("data:"+JSON.stringify(data));
-
 
   if (isLoading) {
     return (
@@ -109,9 +101,7 @@ const Dashboard = (props) => {
     return (<div>{JSON.stringify(error)}</div>);
 
   } else {
-    // const siteData = { 'Permissions Role': data.dataJson.permissions, 'InstanceId': data.dataJson.instanceId, "Locale": data.siteInfo.site.locale };
-
-    const installedWixApps = convertArrayToObject(data.siteInfo.site.installedWixApps, "App");
+  
 
     return (
 
@@ -121,9 +111,8 @@ const Dashboard = (props) => {
         </Typography>
         
         <Switch/>
-        <TextField id="outlined-basic" label="Outlined" variant="outlined" />
-
         
+        <TextField id="outlined-basic" label="Outlined" variant="outlined" />
         
       </div>
     );
