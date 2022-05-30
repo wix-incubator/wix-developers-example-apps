@@ -14,7 +14,7 @@ class ApiController {
 
     registerRoutes() {
         this._router.post('/buyers-count', this.updateBuyersCountController)
-        // this._router.get('/buyers-count', this.buyersCountController)
+        this._router.get('/buyers-count', this.buyersCountController)
         this._router.get('/dashboard', this.dashboardController);
         this._router.get('/installation', this.installationController);
     }
@@ -30,21 +30,14 @@ class ApiController {
 
     buyersCountController = async (req, res) => {
         const parsedInstance = this.instanceDecoder.decodeOrThrow(req.query.instance);
-        const buyersCount = this.buyersCountService.get(parsedInstance.instanceId)
+        const buyersCount = this.buyersCountService.get(parsedInstance.instanceId, req.query.productId)
         res.json({buyersCount});
     }
 
     updateBuyersCountController = async (req, res) => {
-        console.log(1)
         const parsedInstance = this.instanceDecoder.decodeOrThrow(req.query.instance);
-        console.log(2)
-
         await this.buyersCountService.set(parsedInstance.instanceId, req.body.delta)
-        console.log(3)
-
-        const currentDelta = this.buyersCountService.get(parsedInstance.instanceId)
-        console.log(4)
-
+        const currentDelta = await this.buyersCountService.getDelta(parsedInstance.instanceId)
         res.json({currentDelta})
     }
 

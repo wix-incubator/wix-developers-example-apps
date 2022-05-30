@@ -14,6 +14,7 @@ class FileBasedRefreshTokenDao extends RefreshTokenDao {
     }
 
     async save(instanceId, refreshToken) {
+        
         this.store[instanceId] = refreshToken;
         fs.writeFileSync("refresh_token.localdb", JSON.stringify(this.store))
     }
