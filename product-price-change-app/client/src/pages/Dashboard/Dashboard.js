@@ -12,7 +12,6 @@ import TextField from '@material-ui/core/TextField';
 import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button'
 
-
 const instance = axios.create();
 
 // Override timeout default for the library
@@ -53,17 +52,22 @@ const useAPI = (url) => {
   return { data, isLoading, error }
 }
 
+
+
 const Dashboard = (props) => {
   let url = props.location.search;
   let params = queryString.parse(url);
   const classes = useStyles();
   const [isDisabled, setIsDisabled] = useState(true);
-  const { data, error, isLoading } = useAPI(`http://localhost:8080/api/dashboard?instance=${params.instance}`);
+  const [delta, setDelta] = useState(0);
+  const baseURI = `http://localhost:8080/api`
+  const { data, error, isLoading } = useAPI(`${baseURI}/dashboard?instance=${params.instance}`);
+  const addDeltaToCount = async (delta) => instance.post(`${baseURI}/buyers-count?instance=${params.instance}`, {delta})
   
   if (isLoading) {
     return (
       <Lottie options={defaultOptions}
-        height={300}
+        height={3000}
         width={300}
       />
     )
@@ -92,9 +96,9 @@ const Dashboard = (props) => {
               <Switch label="Enable Delta" onChange={() => setIsDisabled(!isDisabled)} />
             </div>
             <div className='input-container'>
-              <TextField disabled={isDisabled} id="outlined-basic" label="Delta" variant="outlined" />
+              <TextField disabled={isDisabled} type='number' onChange={(e) => setDelta(e.target.value)} id="outlined-basic" label="Delta" variant="outlined" />
               &nbsp; &nbsp;
-              <Button disabled={isDisabled} variant="contained">Submit</Button>
+              <Button disabled={isDisabled} onClick={async () => await addDeltaToCount(delta)} variant="contained">Submit</Button>
             </div>
             </Box>
           </div>

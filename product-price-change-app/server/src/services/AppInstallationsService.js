@@ -1,9 +1,7 @@
-
-
-
 class AppInstallationsService {
     constructor(appInstallationsDao, buyersCountDao) {
         this.appInstallationsDao = appInstallationsDao;
+        this.buyersCountDao = buyersCountDao;
     }
 
 

@@ -14,8 +14,11 @@ class FileBasedBuyersCountDao extends BuyersCountDao {
     }
 
     async save(instanceId, buyersCount) {
-        this.store[instanceId] = buyersCount;
-        fs.writeFileSync("buyers_count.localdb", JSON.stringify(this.store))
+        throw new Error('Unimplemented')
+        // console.log("d1")
+        // this.store[instanceId] = buyersCount;
+        // console.log("OGOGOGOGOGOGOOGOGOGOGOGOOG")
+        // fs.writeFileSync("buyers_count.localdb", JSON.stringify(this.store))
     }
 
     async getBy(instanceId) {
