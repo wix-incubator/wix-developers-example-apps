@@ -32,7 +32,7 @@ const defaultOptions = {
   }
 };
 
-const useAPI = (url, setDelta) => {
+const useAPI = (url, setDelta, setIsDisabled) => {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState({});
@@ -45,6 +45,8 @@ const useAPI = (url, setDelta) => {
       setData(result.data)
       setDelta(result.data.currentDelta)
       setIsLoading(false)
+      setIsDisabled(result.data.isDisabled)
+      
     }, (error) => {
       setError(error);
       setIsLoading(false);
@@ -60,14 +62,12 @@ const Dashboard = (props) => {
   let params = queryString.parse(url);
   const classes = useStyles();
   const [isDisabled, setIsDisabled] = useState(true);
-  
   const [delta, setDelta] = useState(undefined);
   const [newDelta, setNewDelta] = useState(undefined);
   const baseURI = `http://localhost:8080/api`
-  const { data, error, isLoading } = useAPI(`${baseURI}/dashboard?instance=${params.instance}`, setDelta);
+  const { data, error, isLoading } = useAPI(`${baseURI}/dashboard?instance=${params.instance}`, setDelta, setIsDisabled);
   
 
-  
   const addDeltaToCount = async (newDelta) => {
     const res = await instance.post(`${baseURI}/buyers-count?instance=${params.instance}`, {delta: newDelta})
     setDelta(res.data.currentDelta)
@@ -102,10 +102,11 @@ const Dashboard = (props) => {
             <div className='delta-container'>
               Fake Your buyers count
               <br />
-              <Switch label="Enable Delta" onChange={() => setIsDisabled(!isDisabled)} />
+              <Switch label="Enable Delta" checked={!isDisabled} onChange={() => setIsDisabled(!isDisabled)} />
             </div>
+
             <div className='input-container'>
-              <TextField disabled={isDisabled} type='number' onChange={(e) => setNewDelta(e.target.value) } id="outlined-basic" label={delta} variant="outlined" />
+              <TextField disabled={isDisabled} type='number' onChange={(e) => setNewDelta(e.target.value) } id="outlined-basic" label={delta && delta !== '0' && delta} variant="outlined" />
               &nbsp; &nbsp;
               <Button disabled={isDisabled} onClick={async () => await addDeltaToCount(newDelta)} variant="contained">Submit</Button>
             </div>

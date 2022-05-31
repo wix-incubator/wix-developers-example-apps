@@ -33,7 +33,7 @@ const startServer = (config) => {
   const installationsDao = new FileBasedAppInstallationsDao();
   const buyersCountDao = new FileBasedBuyersCountDao();
   const installationsService = new AppInstallationsService(installationsDao, buyersCountDao);
-  const wixOAuthFacade = new WixOAuthFacade(wixBaseUrl, APP_ID, APP_SECRET);
+  const wixOAuthFacade = new WixOAuthFacade(APP_ID, APP_SECRET);
   const storesApis = new StoresApis('https://www.wixapis.com/stores/v2/orders', refreshTokenDao, wixOAuthFacade)
   const buyersCountService = new BuyersCountService(buyersCountDao, storesApis);
   const appApis = new AppApis('https://www.wixapis.com/apps/v1', refreshTokenDao, wixOAuthFacade);

@@ -33,7 +33,6 @@ class MyWebComponent extends Component {
     registerListener = async () => {
         window.wixDevelopersAnalytics.register('head',
             async (eventName, eventParams) => {
-                console.log('wix devsss shead', eventName, eventParams)
                 if (eventName === "productPageLoaded") {
                     const res = await this.getProductBuyersCount(eventParams.productId)
                     const json = await res.json()

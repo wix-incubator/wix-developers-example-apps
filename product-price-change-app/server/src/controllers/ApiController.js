@@ -43,19 +43,20 @@ class ApiController {
     }
 
     buyersCountDeltaController = async (req, res) => {
+        //need a different way to decode instance from editor
         // const parsedInstance = this.instanceDecoder.decodeOrThrow(req.query.instance);
-        console.log(req.query)
         const buyersCount = await this.buyersCountService.get(req.query.instanceId, req.query.productId)
-        console.log("here2", buyersCount)
         res.json({ buyersCount });
     }
 
     dashboardController = async (req, res) => {
         const parsedInstance = this.instanceDecoder.decodeOrThrow(req.query.instance);
+        
         const getAppInstancePromise = this.appApis.getAppInstance(parsedInstance.instanceId);
         const currentDelta = await this.buyersCountService.getDelta(parsedInstance.instanceId)
         const [siteInfo] = await Promise.all([getAppInstancePromise]);
-        res.json({ parsedInstance, currentDelta , siteInfo});
+        console.log("parsed instance: ", siteInfo)
+        res.json({ parsedInstance, currentDelta , siteInfo, isDisabled: currentDelta <= 0});
     }
 
 }
