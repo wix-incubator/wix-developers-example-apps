@@ -336,9 +336,9 @@
     js-tokens "^4.0.0"
 
 "@babel/parser@^7.1.0", "@babel/parser@^7.12.11", "@babel/parser@^7.12.3", "@babel/parser@^7.12.7", "@babel/parser@^7.14.7", "@babel/parser@^7.16.7", "@babel/parser@^7.18.0", "@babel/parser@^7.7.0":
-  version "7.18.3"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@babel/parser/-/parser-7.18.3.tgz#39e99c7b0c4c56cef4d1eed8de9f506411c2ebc2"
-  integrity sha1-OemcewxMVs700e7Y3p9QZBHC68I=
+  version "7.18.4"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@babel/parser/-/parser-7.18.4.tgz#6774231779dd700e0af29f6ad8d479582d7ce5ef"
+  integrity sha1-Z3QjF3ndcA4K8p9q2NR5WC185e8=
 
 "@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression@^7.17.12":
   version "7.17.12"
@@ -698,23 +698,23 @@
     "@babel/helper-plugin-utils" "^7.16.7"
 
 "@babel/plugin-transform-block-scoping@^7.12.12", "@babel/plugin-transform-block-scoping@^7.17.12":
-  version "7.17.12"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@babel/plugin-transform-block-scoping/-/plugin-transform-block-scoping-7.17.12.tgz#68fc3c4b3bb7dfd809d97b7ed19a584052a2725c"
-  integrity sha1-aPw8Szu339gJ2Xt+0ZpYQFKiclw=
+  version "7.18.4"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@babel/plugin-transform-block-scoping/-/plugin-transform-block-scoping-7.18.4.tgz#7988627b3e9186a13e4d7735dc9c34a056613fb9"
+  integrity sha1-eYhiez6RhqE+TXc13Jw0oFZhP7k=
   dependencies:
     "@babel/helper-plugin-utils" "^7.17.12"
 
 "@babel/plugin-transform-classes@^7.12.1", "@babel/plugin-transform-classes@^7.17.12":
-  version "7.17.12"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@babel/plugin-transform-classes/-/plugin-transform-classes-7.17.12.tgz#da889e89a4d38375eeb24985218edeab93af4f29"
-  integrity sha1-2oieiaTTg3XuskmFIY7eq5OvTyk=
+  version "7.18.4"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@babel/plugin-transform-classes/-/plugin-transform-classes-7.18.4.tgz#51310b812a090b846c784e47087fa6457baef814"
+  integrity sha1-UTELgSoJC4RseE5HCH+mRXuu+BQ=
   dependencies:
     "@babel/helper-annotate-as-pure" "^7.16.7"
-    "@babel/helper-environment-visitor" "^7.16.7"
+    "@babel/helper-environment-visitor" "^7.18.2"
     "@babel/helper-function-name" "^7.17.9"
     "@babel/helper-optimise-call-expression" "^7.16.7"
     "@babel/helper-plugin-utils" "^7.17.12"
-    "@babel/helper-replace-supers" "^7.16.7"
+    "@babel/helper-replace-supers" "^7.18.2"
     "@babel/helper-split-export-declaration" "^7.16.7"
     globals "^11.1.0"
 
@@ -813,9 +813,9 @@
     babel-plugin-dynamic-import-node "^2.3.3"
 
 "@babel/plugin-transform-modules-systemjs@^7.18.0":
-  version "7.18.0"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.18.0.tgz#50ecdb43de97c8483824402f7125edb94cddb09a"
-  integrity sha1-UOzbQ96XyEg4JEAvcSXtuUzdsJo=
+  version "7.18.4"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.18.4.tgz#3d6fd9868c735cce8f38d6ae3a407fb7e61e6d46"
+  integrity sha1-PW/ZhoxzXM6PONauOkB/t+YebUY=
   dependencies:
     "@babel/helper-hoist-variables" "^7.16.7"
     "@babel/helper-module-transforms" "^7.18.0"
@@ -972,9 +972,9 @@
     "@babel/helper-plugin-utils" "^7.17.12"
 
 "@babel/plugin-transform-typescript@^7.17.12":
-  version "7.18.1"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@babel/plugin-transform-typescript/-/plugin-transform-typescript-7.18.1.tgz#5fd8b86130bad95c4a24377b41ab989a9ccad22d"
-  integrity sha1-X9i4YTC62VxKJDd7QauYmpzK0i0=
+  version "7.18.4"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@babel/plugin-transform-typescript/-/plugin-transform-typescript-7.18.4.tgz#587eaf6a39edb8c06215e550dc939faeadd750bf"
+  integrity sha1-WH6vajntuMBiFeVQ3JOfrq3XUL8=
   dependencies:
     "@babel/helper-create-class-features-plugin" "^7.18.0"
     "@babel/helper-plugin-utils" "^7.17.12"
@@ -1169,9 +1169,9 @@
     globals "^11.1.0"
 
 "@babel/types@^7.0.0", "@babel/types@^7.12.1", "@babel/types@^7.12.11", "@babel/types@^7.12.6", "@babel/types@^7.12.7", "@babel/types@^7.16.0", "@babel/types@^7.16.7", "@babel/types@^7.16.8", "@babel/types@^7.17.0", "@babel/types@^7.17.12", "@babel/types@^7.18.0", "@babel/types@^7.18.2", "@babel/types@^7.2.0", "@babel/types@^7.3.0", "@babel/types@^7.3.3", "@babel/types@^7.4.4", "@babel/types@^7.7.0":
-  version "7.18.2"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@babel/types/-/types-7.18.2.tgz#191abfed79ebe6f4242f643a9a5cbaa36b10b091"
-  integrity sha1-GRq/7Xnr5vQkL2Q6mly6o2sQsJE=
+  version "7.18.4"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@babel/types/-/types-7.18.4.tgz#27eae9b9fd18e9dccc3f9d6ad051336f307be354"
+  integrity sha1-J+rpuf0Y6dzMP51q0FEzbzB741Q=
   dependencies:
     "@babel/helper-validator-identifier" "^7.16.7"
     to-fast-properties "^2.0.0"
@@ -1494,6 +1494,14 @@
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@jridgewell/set-array/-/set-array-1.1.1.tgz#36a6acc93987adcf0ba50c66908bd0b70de8afea"
   integrity sha1-NqasyTmHrc8LpQxmkIvQtw3or+o=
 
+"@jridgewell/source-map@^0.3.2":
+  version "0.3.2"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@jridgewell/source-map/-/source-map-0.3.2.tgz#f45351aaed4527a298512ec72f81040c998580fb"
+  integrity sha1-9FNRqu1FJ6KYUS7HL4EEDJmFgPs=
+  dependencies:
+    "@jridgewell/gen-mapping" "^0.3.0"
+    "@jridgewell/trace-mapping" "^0.3.9"
+
 "@jridgewell/sourcemap-codec@^1.4.10":
   version "1.4.13"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.4.13.tgz#b6461fb0c2964356c469e115f504c95ad97ab88c"
@@ -1666,18 +1674,18 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@storybook/addon-actions@6.5.5", "@storybook/addon-actions@^6.4.9":
-  version "6.5.5"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/addon-actions/-/addon-actions-6.5.5.tgz#c88dc6196bc7e31cbdb7c59d4121db49b526f118"
-  integrity sha1-yI3GGWvH4xy9t8WdQSHbSbUm8Rg=
+"@storybook/addon-actions@6.5.6", "@storybook/addon-actions@^6.4.9":
+  version "6.5.6"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/addon-actions/-/addon-actions-6.5.6.tgz#0e980a0a6d8d47db8031108ffa1fd51cc627a466"
+  integrity sha1-DpgKCm2NR9uAMRCP+h/VHMYnpGY=
   dependencies:
-    "@storybook/addons" "6.5.5"
-    "@storybook/api" "6.5.5"
-    "@storybook/client-logger" "6.5.5"
-    "@storybook/components" "6.5.5"
-    "@storybook/core-events" "6.5.5"
+    "@storybook/addons" "6.5.6"
+    "@storybook/api" "6.5.6"
+    "@storybook/client-logger" "6.5.6"
+    "@storybook/components" "6.5.6"
+    "@storybook/core-events" "6.5.6"
     "@storybook/csf" "0.0.2--canary.4566f4d.1"
-    "@storybook/theming" "6.5.5"
+    "@storybook/theming" "6.5.6"
     core-js "^3.8.2"
     fast-deep-equal "^3.1.3"
     global "^4.4.0"
@@ -1691,18 +1699,18 @@
     util-deprecate "^1.0.2"
     uuid-browser "^3.1.0"
 
-"@storybook/addon-backgrounds@6.5.5":
-  version "6.5.5"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/addon-backgrounds/-/addon-backgrounds-6.5.5.tgz#60a88d6de5bde4f7009b89b79db0962c119fd02d"
-  integrity sha1-YKiNbeW95PcAm4m3nbCWLBGf0C0=
+"@storybook/addon-backgrounds@6.5.6":
+  version "6.5.6"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/addon-backgrounds/-/addon-backgrounds-6.5.6.tgz#3763acdff1f2260286e165cf35e87d8097245496"
+  integrity sha1-N2Os3/HyJgKG4WXPNeh9gJckVJY=
   dependencies:
-    "@storybook/addons" "6.5.5"
-    "@storybook/api" "6.5.5"
-    "@storybook/client-logger" "6.5.5"
-    "@storybook/components" "6.5.5"
-    "@storybook/core-events" "6.5.5"
+    "@storybook/addons" "6.5.6"
+    "@storybook/api" "6.5.6"
+    "@storybook/client-logger" "6.5.6"
+    "@storybook/components" "6.5.6"
+    "@storybook/core-events" "6.5.6"
     "@storybook/csf" "0.0.2--canary.4566f4d.1"
-    "@storybook/theming" "6.5.5"
+    "@storybook/theming" "6.5.6"
     core-js "^3.8.2"
     global "^4.4.0"
     memoizerific "^1.11.3"
@@ -1710,47 +1718,47 @@
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-controls@6.5.5":
-  version "6.5.5"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/addon-controls/-/addon-controls-6.5.5.tgz#157348019f532a39081aba507eaa844cbe11ec2c"
-  integrity sha1-FXNIAZ9TKjkIGrpQfqqETL4R7Cw=
+"@storybook/addon-controls@6.5.6":
+  version "6.5.6"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/addon-controls/-/addon-controls-6.5.6.tgz#bca1e33dd1edb059b6d6b1e1616c60ecdc9eb294"
+  integrity sha1-vKHjPdHtsFm21rHhYWxg7NyespQ=
   dependencies:
-    "@storybook/addons" "6.5.5"
-    "@storybook/api" "6.5.5"
-    "@storybook/client-logger" "6.5.5"
-    "@storybook/components" "6.5.5"
-    "@storybook/core-common" "6.5.5"
+    "@storybook/addons" "6.5.6"
+    "@storybook/api" "6.5.6"
+    "@storybook/client-logger" "6.5.6"
+    "@storybook/components" "6.5.6"
+    "@storybook/core-common" "6.5.6"
     "@storybook/csf" "0.0.2--canary.4566f4d.1"
-    "@storybook/node-logger" "6.5.5"
-    "@storybook/store" "6.5.5"
-    "@storybook/theming" "6.5.5"
+    "@storybook/node-logger" "6.5.6"
+    "@storybook/store" "6.5.6"
+    "@storybook/theming" "6.5.6"
     core-js "^3.8.2"
     lodash "^4.17.21"
     ts-dedent "^2.0.0"
 
-"@storybook/addon-docs@6.5.5":
-  version "6.5.5"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/addon-docs/-/addon-docs-6.5.5.tgz#6f96d2c037933736c33f98bed2c1dbf522e13ec1"
-  integrity sha1-b5bSwDeTNzbDP5i+0sHb9SLhPsE=
+"@storybook/addon-docs@6.5.6":
+  version "6.5.6"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/addon-docs/-/addon-docs-6.5.6.tgz#39ea88cf5feebc82cc7faf9c0a10f9f3cba420bb"
+  integrity sha1-OeqIz1/uvILMf6+cChD588ukILs=
   dependencies:
     "@babel/plugin-transform-react-jsx" "^7.12.12"
     "@babel/preset-env" "^7.12.11"
     "@jest/transform" "^26.6.2"
     "@mdx-js/react" "^1.6.22"
-    "@storybook/addons" "6.5.5"
-    "@storybook/api" "6.5.5"
-    "@storybook/components" "6.5.5"
-    "@storybook/core-common" "6.5.5"
-    "@storybook/core-events" "6.5.5"
+    "@storybook/addons" "6.5.6"
+    "@storybook/api" "6.5.6"
+    "@storybook/components" "6.5.6"
+    "@storybook/core-common" "6.5.6"
+    "@storybook/core-events" "6.5.6"
     "@storybook/csf" "0.0.2--canary.4566f4d.1"
-    "@storybook/docs-tools" "6.5.5"
+    "@storybook/docs-tools" "6.5.6"
     "@storybook/mdx1-csf" "^0.0.1"
-    "@storybook/node-logger" "6.5.5"
-    "@storybook/postinstall" "6.5.5"
-    "@storybook/preview-web" "6.5.5"
-    "@storybook/source-loader" "6.5.5"
-    "@storybook/store" "6.5.5"
-    "@storybook/theming" "6.5.5"
+    "@storybook/node-logger" "6.5.6"
+    "@storybook/postinstall" "6.5.6"
+    "@storybook/preview-web" "6.5.6"
+    "@storybook/source-loader" "6.5.6"
+    "@storybook/store" "6.5.6"
+    "@storybook/theming" "6.5.6"
     babel-loader "^8.0.0"
     core-js "^3.8.2"
     fast-deep-equal "^3.1.3"
@@ -1763,36 +1771,36 @@
     util-deprecate "^1.0.2"
 
 "@storybook/addon-essentials@^6.4.9":
-  version "6.5.5"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/addon-essentials/-/addon-essentials-6.5.5.tgz#125e5ad7a1b8a112c06f2e17de24b55ac1f1f01b"
-  integrity sha1-El5a16G4oRLAby4X3iS1WsHx8Bs=
+  version "6.5.6"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/addon-essentials/-/addon-essentials-6.5.6.tgz#502e6152b729696d8de8c792fb44aae76fae934e"
+  integrity sha1-UC5hUrcpaW2N6MeS+0Sq52+uk04=
   dependencies:
-    "@storybook/addon-actions" "6.5.5"
-    "@storybook/addon-backgrounds" "6.5.5"
-    "@storybook/addon-controls" "6.5.5"
-    "@storybook/addon-docs" "6.5.5"
-    "@storybook/addon-measure" "6.5.5"
-    "@storybook/addon-outline" "6.5.5"
-    "@storybook/addon-toolbars" "6.5.5"
-    "@storybook/addon-viewport" "6.5.5"
-    "@storybook/addons" "6.5.5"
-    "@storybook/api" "6.5.5"
-    "@storybook/core-common" "6.5.5"
-    "@storybook/node-logger" "6.5.5"
+    "@storybook/addon-actions" "6.5.6"
+    "@storybook/addon-backgrounds" "6.5.6"
+    "@storybook/addon-controls" "6.5.6"
+    "@storybook/addon-docs" "6.5.6"
+    "@storybook/addon-measure" "6.5.6"
+    "@storybook/addon-outline" "6.5.6"
+    "@storybook/addon-toolbars" "6.5.6"
+    "@storybook/addon-viewport" "6.5.6"
+    "@storybook/addons" "6.5.6"
+    "@storybook/api" "6.5.6"
+    "@storybook/core-common" "6.5.6"
+    "@storybook/node-logger" "6.5.6"
     core-js "^3.8.2"
     regenerator-runtime "^0.13.7"
     ts-dedent "^2.0.0"
 
 "@storybook/addon-links@^6.4.9":
-  version "6.5.5"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/addon-links/-/addon-links-6.5.5.tgz#1f5aeac63f526f7cf802d2921fe3ff7013213a8b"
-  integrity sha1-H1rqxj9Sb3z4AtKSH+P/cBMhOos=
+  version "6.5.6"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/addon-links/-/addon-links-6.5.6.tgz#1074d239c3c9c8b7168d20c9cc20b8918e4993a6"
+  integrity sha1-EHTSOcPJyLcWjSDJzCC4kY5Jk6Y=
   dependencies:
-    "@storybook/addons" "6.5.5"
-    "@storybook/client-logger" "6.5.5"
-    "@storybook/core-events" "6.5.5"
+    "@storybook/addons" "6.5.6"
+    "@storybook/client-logger" "6.5.6"
+    "@storybook/core-events" "6.5.6"
     "@storybook/csf" "0.0.2--canary.4566f4d.1"
-    "@storybook/router" "6.5.5"
+    "@storybook/router" "6.5.6"
     "@types/qs" "^6.9.5"
     core-js "^3.8.2"
     global "^4.4.0"
@@ -1801,95 +1809,95 @@
     regenerator-runtime "^0.13.7"
     ts-dedent "^2.0.0"
 
-"@storybook/addon-measure@6.5.5":
-  version "6.5.5"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/addon-measure/-/addon-measure-6.5.5.tgz#19165fc24c3b24a7ec31480a6a1a7fd5d333c774"
-  integrity sha1-GRZfwkw7JKfsMUgKahp/1dMzx3Q=
+"@storybook/addon-measure@6.5.6":
+  version "6.5.6"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/addon-measure/-/addon-measure-6.5.6.tgz#843de6286861fed1761544adecf3c49d2982136c"
+  integrity sha1-hD3mKGhh/tF2FUSt7PPEnSmCE2w=
   dependencies:
-    "@storybook/addons" "6.5.5"
-    "@storybook/api" "6.5.5"
-    "@storybook/client-logger" "6.5.5"
-    "@storybook/components" "6.5.5"
-    "@storybook/core-events" "6.5.5"
+    "@storybook/addons" "6.5.6"
+    "@storybook/api" "6.5.6"
+    "@storybook/client-logger" "6.5.6"
+    "@storybook/components" "6.5.6"
+    "@storybook/core-events" "6.5.6"
     "@storybook/csf" "0.0.2--canary.4566f4d.1"
     core-js "^3.8.2"
     global "^4.4.0"
 
-"@storybook/addon-outline@6.5.5":
-  version "6.5.5"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/addon-outline/-/addon-outline-6.5.5.tgz#d3e8fbfdf9727dab96c33f4e24fb75e6503f8805"
-  integrity sha1-0+j7/flyfauWwz9OJPt15lA/iAU=
+"@storybook/addon-outline@6.5.6":
+  version "6.5.6"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/addon-outline/-/addon-outline-6.5.6.tgz#8fedfc7b86faf3dc552b7ca12972909fd022ee5b"
+  integrity sha1-j+38e4b689xVK3yhKXKQn9Ai7ls=
   dependencies:
-    "@storybook/addons" "6.5.5"
-    "@storybook/api" "6.5.5"
-    "@storybook/client-logger" "6.5.5"
-    "@storybook/components" "6.5.5"
-    "@storybook/core-events" "6.5.5"
+    "@storybook/addons" "6.5.6"
+    "@storybook/api" "6.5.6"
+    "@storybook/client-logger" "6.5.6"
+    "@storybook/components" "6.5.6"
+    "@storybook/core-events" "6.5.6"
     "@storybook/csf" "0.0.2--canary.4566f4d.1"
     core-js "^3.8.2"
     global "^4.4.0"
     regenerator-runtime "^0.13.7"
     ts-dedent "^2.0.0"
 
-"@storybook/addon-toolbars@6.5.5":
-  version "6.5.5"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/addon-toolbars/-/addon-toolbars-6.5.5.tgz#04ba874b481afafe139dea0b9f8135b185cb3aff"
-  integrity sha1-BLqHS0ga+v4TneoLn4E1sYXLOv8=
+"@storybook/addon-toolbars@6.5.6":
+  version "6.5.6"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/addon-toolbars/-/addon-toolbars-6.5.6.tgz#f4f311aaf918e1922d21e9c6f15b06e2cb7ac66c"
+  integrity sha1-9PMRqvkY4ZItIenG8VsG4st6xmw=
   dependencies:
-    "@storybook/addons" "6.5.5"
-    "@storybook/api" "6.5.5"
-    "@storybook/client-logger" "6.5.5"
-    "@storybook/components" "6.5.5"
-    "@storybook/theming" "6.5.5"
+    "@storybook/addons" "6.5.6"
+    "@storybook/api" "6.5.6"
+    "@storybook/client-logger" "6.5.6"
+    "@storybook/components" "6.5.6"
+    "@storybook/theming" "6.5.6"
     core-js "^3.8.2"
     regenerator-runtime "^0.13.7"
 
-"@storybook/addon-viewport@6.5.5":
-  version "6.5.5"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/addon-viewport/-/addon-viewport-6.5.5.tgz#42d2825ccdd5a56ac028eda8ed1352684270f62a"
-  integrity sha1-QtKCXM3VpWrAKO2o7RNSaEJw9io=
+"@storybook/addon-viewport@6.5.6":
+  version "6.5.6"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/addon-viewport/-/addon-viewport-6.5.6.tgz#bc6456b1d2f586da104fdc6b91a2d0355530e730"
+  integrity sha1-vGRWsdL1htoQT9xrkaLQNVUw5zA=
   dependencies:
-    "@storybook/addons" "6.5.5"
-    "@storybook/api" "6.5.5"
-    "@storybook/client-logger" "6.5.5"
-    "@storybook/components" "6.5.5"
-    "@storybook/core-events" "6.5.5"
-    "@storybook/theming" "6.5.5"
+    "@storybook/addons" "6.5.6"
+    "@storybook/api" "6.5.6"
+    "@storybook/client-logger" "6.5.6"
+    "@storybook/components" "6.5.6"
+    "@storybook/core-events" "6.5.6"
+    "@storybook/theming" "6.5.6"
     core-js "^3.8.2"
     global "^4.4.0"
     memoizerific "^1.11.3"
     prop-types "^15.7.2"
     regenerator-runtime "^0.13.7"
 
-"@storybook/addons@6.5.5":
-  version "6.5.5"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/addons/-/addons-6.5.5.tgz#7e1f68ea96a24f529100f313e61a01bade061ae1"
-  integrity sha1-fh9o6paiT1KRAPMT5hoBut4GGuE=
+"@storybook/addons@6.5.6":
+  version "6.5.6"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/addons/-/addons-6.5.6.tgz#ed7ab72ac3a4e2d74e2ba4d10b4a0721d66cd1cd"
+  integrity sha1-7Xq3KsOk4tdOK6TRC0oHIdZs0c0=
   dependencies:
-    "@storybook/api" "6.5.5"
-    "@storybook/channels" "6.5.5"
-    "@storybook/client-logger" "6.5.5"
-    "@storybook/core-events" "6.5.5"
+    "@storybook/api" "6.5.6"
+    "@storybook/channels" "6.5.6"
+    "@storybook/client-logger" "6.5.6"
+    "@storybook/core-events" "6.5.6"
     "@storybook/csf" "0.0.2--canary.4566f4d.1"
-    "@storybook/router" "6.5.5"
-    "@storybook/theming" "6.5.5"
+    "@storybook/router" "6.5.6"
+    "@storybook/theming" "6.5.6"
     "@types/webpack-env" "^1.16.0"
     core-js "^3.8.2"
     global "^4.4.0"
     regenerator-runtime "^0.13.7"
 
-"@storybook/api@6.5.5":
-  version "6.5.5"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/api/-/api-6.5.5.tgz#f825f1c2fa65ffc15e6a3f48bd979e07f636ee9f"
-  integrity sha1-+CXxwvpl/8Feaj9IvZeeB/Y27p8=
+"@storybook/api@6.5.6":
+  version "6.5.6"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/api/-/api-6.5.6.tgz#7f7c7bc561b3888033eb7074a8c9ecce9f07cb54"
+  integrity sha1-f3x7xWGziIAz63B0qMnszp8Hy1Q=
   dependencies:
-    "@storybook/channels" "6.5.5"
-    "@storybook/client-logger" "6.5.5"
-    "@storybook/core-events" "6.5.5"
+    "@storybook/channels" "6.5.6"
+    "@storybook/client-logger" "6.5.6"
+    "@storybook/core-events" "6.5.6"
     "@storybook/csf" "0.0.2--canary.4566f4d.1"
-    "@storybook/router" "6.5.5"
+    "@storybook/router" "6.5.6"
     "@storybook/semver" "^7.3.2"
-    "@storybook/theming" "6.5.5"
+    "@storybook/theming" "6.5.6"
     core-js "^3.8.2"
     fast-deep-equal "^3.1.3"
     global "^4.4.0"
@@ -1901,28 +1909,28 @@
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
 
-"@storybook/builder-webpack4@6.5.5":
-  version "6.5.5"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/builder-webpack4/-/builder-webpack4-6.5.5.tgz#1886753564a627b5194f26c46f853e5a55da77dc"
-  integrity sha1-GIZ1NWSmJ7UZTybEb4U+WlXad9w=
+"@storybook/builder-webpack4@6.5.6":
+  version "6.5.6"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/builder-webpack4/-/builder-webpack4-6.5.6.tgz#49eb7272402ff185ae12ffc679aef4677c48537d"
+  integrity sha1-SetyckAv8YWuEv/Gea70Z3xIU30=
   dependencies:
     "@babel/core" "^7.12.10"
-    "@storybook/addons" "6.5.5"
-    "@storybook/api" "6.5.5"
-    "@storybook/channel-postmessage" "6.5.5"
-    "@storybook/channels" "6.5.5"
-    "@storybook/client-api" "6.5.5"
-    "@storybook/client-logger" "6.5.5"
-    "@storybook/components" "6.5.5"
-    "@storybook/core-common" "6.5.5"
-    "@storybook/core-events" "6.5.5"
-    "@storybook/node-logger" "6.5.5"
-    "@storybook/preview-web" "6.5.5"
-    "@storybook/router" "6.5.5"
+    "@storybook/addons" "6.5.6"
+    "@storybook/api" "6.5.6"
+    "@storybook/channel-postmessage" "6.5.6"
+    "@storybook/channels" "6.5.6"
+    "@storybook/client-api" "6.5.6"
+    "@storybook/client-logger" "6.5.6"
+    "@storybook/components" "6.5.6"
+    "@storybook/core-common" "6.5.6"
+    "@storybook/core-events" "6.5.6"
+    "@storybook/node-logger" "6.5.6"
+    "@storybook/preview-web" "6.5.6"
+    "@storybook/router" "6.5.6"
     "@storybook/semver" "^7.3.2"
-    "@storybook/store" "6.5.5"
-    "@storybook/theming" "6.5.5"
-    "@storybook/ui" "6.5.5"
+    "@storybook/store" "6.5.6"
+    "@storybook/theming" "6.5.6"
+    "@storybook/ui" "6.5.6"
     "@types/node" "^14.0.10 || ^16.0.0"
     "@types/webpack" "^4.41.26"
     autoprefixer "^9.8.6"
@@ -1954,51 +1962,51 @@
     webpack-hot-middleware "^2.25.1"
     webpack-virtual-modules "^0.2.2"
 
-"@storybook/channel-postmessage@6.5.5":
-  version "6.5.5"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/channel-postmessage/-/channel-postmessage-6.5.5.tgz#37a24483f809a378ebe87b914e1717fe17d4b829"
-  integrity sha1-N6JEg/gJo3jr6HuRThcX/hfUuCk=
+"@storybook/channel-postmessage@6.5.6":
+  version "6.5.6"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/channel-postmessage/-/channel-postmessage-6.5.6.tgz#3cfaef29c9ff62321152924de478058fdfd9d812"
+  integrity sha1-PPrvKcn/YjIRUpJN5HgFj9/Z2BI=
   dependencies:
-    "@storybook/channels" "6.5.5"
-    "@storybook/client-logger" "6.5.5"
-    "@storybook/core-events" "6.5.5"
+    "@storybook/channels" "6.5.6"
+    "@storybook/client-logger" "6.5.6"
+    "@storybook/core-events" "6.5.6"
     core-js "^3.8.2"
     global "^4.4.0"
     qs "^6.10.0"
     telejson "^6.0.8"
 
-"@storybook/channel-websocket@6.5.5":
-  version "6.5.5"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/channel-websocket/-/channel-websocket-6.5.5.tgz#3d1f3d829718c3e92abbb5321ef14f5ad747061e"
-  integrity sha1-PR89gpcYw+kqu7UyHvFPWtdHBh4=
+"@storybook/channel-websocket@6.5.6":
+  version "6.5.6"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/channel-websocket/-/channel-websocket-6.5.6.tgz#9d31ef139f6d86b29278452e9977a47fd3cc9706"
+  integrity sha1-nTHvE59thrKSeEUumXekf9PMlwY=
   dependencies:
-    "@storybook/channels" "6.5.5"
-    "@storybook/client-logger" "6.5.5"
+    "@storybook/channels" "6.5.6"
+    "@storybook/client-logger" "6.5.6"
     core-js "^3.8.2"
     global "^4.4.0"
     telejson "^6.0.8"
 
-"@storybook/channels@6.5.5":
-  version "6.5.5"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/channels/-/channels-6.5.5.tgz#110b3810b615b0f0b9814377ae58c599c0185c98"
-  integrity sha1-EQs4ELYVsPC5gUN3rljFmcAYXJg=
+"@storybook/channels@6.5.6":
+  version "6.5.6"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/channels/-/channels-6.5.6.tgz#a373127f0dd841dabfc31607e5cdac6245444b6c"
+  integrity sha1-o3MSfw3YQdq/wxYH5c2sYkVES2w=
   dependencies:
     core-js "^3.8.2"
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
 
-"@storybook/client-api@6.5.5":
-  version "6.5.5"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/client-api/-/client-api-6.5.5.tgz#1c591c3156c49b094994055e52d0be1f037e6491"
-  integrity sha1-HFkcMVbEmwlJlAVeUtC+HwN+ZJE=
+"@storybook/client-api@6.5.6":
+  version "6.5.6"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/client-api/-/client-api-6.5.6.tgz#935026e682d41f8f9cd122dccd8a9ae3ebc3b613"
+  integrity sha1-k1Am5oLUH4+c0SLczYqa4+vDthM=
   dependencies:
-    "@storybook/addons" "6.5.5"
-    "@storybook/channel-postmessage" "6.5.5"
-    "@storybook/channels" "6.5.5"
-    "@storybook/client-logger" "6.5.5"
-    "@storybook/core-events" "6.5.5"
+    "@storybook/addons" "6.5.6"
+    "@storybook/channel-postmessage" "6.5.6"
+    "@storybook/channels" "6.5.6"
+    "@storybook/client-logger" "6.5.6"
+    "@storybook/core-events" "6.5.6"
     "@storybook/csf" "0.0.2--canary.4566f4d.1"
-    "@storybook/store" "6.5.5"
+    "@storybook/store" "6.5.6"
     "@types/qs" "^6.9.5"
     "@types/webpack-env" "^1.16.0"
     core-js "^3.8.2"
@@ -2013,22 +2021,22 @@
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
 
-"@storybook/client-logger@6.5.5":
-  version "6.5.5"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/client-logger/-/client-logger-6.5.5.tgz#27e6f63ef2949956c7f1526f1f081451526cdf54"
-  integrity sha1-J+b2PvKUmVbH8VJvHwgUUVJs31Q=
+"@storybook/client-logger@6.5.6":
+  version "6.5.6"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/client-logger/-/client-logger-6.5.6.tgz#6ce56c687dcd7772247ffa3915b44737a62f729c"
+  integrity sha1-bOVsaH3Nd3Ikf/o5FbRHN6Yvcpw=
   dependencies:
     core-js "^3.8.2"
     global "^4.4.0"
 
-"@storybook/components@6.5.5":
-  version "6.5.5"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/components/-/components-6.5.5.tgz#6adb54b505a686cca67488b5385315b09bc2a04a"
-  integrity sha1-attUtQWmhsymdIi1OFMVsJvCoEo=
+"@storybook/components@6.5.6":
+  version "6.5.6"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/components/-/components-6.5.6.tgz#83f03967bdd1c509e5d18111b924a8cb0789718a"
+  integrity sha1-g/A5Z73RxQnl0YERuSSoyweJcYo=
   dependencies:
-    "@storybook/client-logger" "6.5.5"
+    "@storybook/client-logger" "6.5.6"
     "@storybook/csf" "0.0.2--canary.4566f4d.1"
-    "@storybook/theming" "6.5.5"
+    "@storybook/theming" "6.5.6"
     "@types/react-syntax-highlighter" "11.0.5"
     core-js "^3.8.2"
     qs "^6.10.0"
@@ -2036,21 +2044,21 @@
     regenerator-runtime "^0.13.7"
     util-deprecate "^1.0.2"
 
-"@storybook/core-client@6.5.5":
-  version "6.5.5"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/core-client/-/core-client-6.5.5.tgz#ce422d188c7a592e9c829f3b1444674874f5c2fd"
-  integrity sha1-zkItGIx6WS6cgp87FERnSHT1wv0=
+"@storybook/core-client@6.5.6":
+  version "6.5.6"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/core-client/-/core-client-6.5.6.tgz#d09d144745c6d8a24dd002ae60ffa9b0c500ae54"
+  integrity sha1-0J0UR0XG2KJN0AKuYP+psMUArlQ=
   dependencies:
-    "@storybook/addons" "6.5.5"
-    "@storybook/channel-postmessage" "6.5.5"
-    "@storybook/channel-websocket" "6.5.5"
-    "@storybook/client-api" "6.5.5"
-    "@storybook/client-logger" "6.5.5"
-    "@storybook/core-events" "6.5.5"
+    "@storybook/addons" "6.5.6"
+    "@storybook/channel-postmessage" "6.5.6"
+    "@storybook/channel-websocket" "6.5.6"
+    "@storybook/client-api" "6.5.6"
+    "@storybook/client-logger" "6.5.6"
+    "@storybook/core-events" "6.5.6"
     "@storybook/csf" "0.0.2--canary.4566f4d.1"
-    "@storybook/preview-web" "6.5.5"
-    "@storybook/store" "6.5.5"
-    "@storybook/ui" "6.5.5"
+    "@storybook/preview-web" "6.5.6"
+    "@storybook/store" "6.5.6"
+    "@storybook/ui" "6.5.6"
     airbnb-js-shims "^2.2.1"
     ansi-to-html "^0.6.11"
     core-js "^3.8.2"
@@ -2062,10 +2070,10 @@
     unfetch "^4.2.0"
     util-deprecate "^1.0.2"
 
-"@storybook/core-common@6.5.5":
-  version "6.5.5"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/core-common/-/core-common-6.5.5.tgz#15057de5f526e003dd726cdc99b48b168396439f"
-  integrity sha1-FQV95fUm4APdcmzcmbSLFoOWQ58=
+"@storybook/core-common@6.5.6":
+  version "6.5.6"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/core-common/-/core-common-6.5.6.tgz#12c717f2fb9cad77b38e122fb89c15566130798a"
+  integrity sha1-EscX8vucrXezjhIvuJwVVmEweYo=
   dependencies:
     "@babel/core" "^7.12.10"
     "@babel/plugin-proposal-class-properties" "^7.12.1"
@@ -2089,7 +2097,7 @@
     "@babel/preset-react" "^7.12.10"
     "@babel/preset-typescript" "^7.12.7"
     "@babel/register" "^7.12.1"
-    "@storybook/node-logger" "6.5.5"
+    "@storybook/node-logger" "6.5.6"
     "@storybook/semver" "^7.3.2"
     "@types/node" "^14.0.10 || ^16.0.0"
     "@types/pretty-hrtime" "^1.0.0"
@@ -2118,30 +2126,30 @@
     util-deprecate "^1.0.2"
     webpack "4"
 
-"@storybook/core-events@6.5.5":
-  version "6.5.5"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/core-events/-/core-events-6.5.5.tgz#d4ae07b9c3afd2cb5597f97825377eb4f42905be"
-  integrity sha1-1K4HucOv0stVl/l4JTd+tPQpBb4=
+"@storybook/core-events@6.5.6":
+  version "6.5.6"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/core-events/-/core-events-6.5.6.tgz#b4e9150216810621ba00d8d1eb3f9414493d6e61"
+  integrity sha1-tOkVAhaBBiG6ANjR6z+UFEk9bmE=
   dependencies:
     core-js "^3.8.2"
 
-"@storybook/core-server@6.5.5":
-  version "6.5.5"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/core-server/-/core-server-6.5.5.tgz#89516f07029ac509e02867cc0985fe153309cf1a"
-  integrity sha1-iVFvBwKaxQngKGfMCYX+FTMJzxo=
+"@storybook/core-server@6.5.6":
+  version "6.5.6"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/core-server/-/core-server-6.5.6.tgz#4fe464847297117089900d5f9cc9acc08d638723"
+  integrity sha1-T+RkhHKXEXCJkA1fnMmswI1jhyM=
   dependencies:
     "@discoveryjs/json-ext" "^0.5.3"
-    "@storybook/builder-webpack4" "6.5.5"
-    "@storybook/core-client" "6.5.5"
-    "@storybook/core-common" "6.5.5"
-    "@storybook/core-events" "6.5.5"
+    "@storybook/builder-webpack4" "6.5.6"
+    "@storybook/core-client" "6.5.6"
+    "@storybook/core-common" "6.5.6"
+    "@storybook/core-events" "6.5.6"
     "@storybook/csf" "0.0.2--canary.4566f4d.1"
-    "@storybook/csf-tools" "6.5.5"
-    "@storybook/manager-webpack4" "6.5.5"
-    "@storybook/node-logger" "6.5.5"
+    "@storybook/csf-tools" "6.5.6"
+    "@storybook/manager-webpack4" "6.5.6"
+    "@storybook/node-logger" "6.5.6"
     "@storybook/semver" "^7.3.2"
-    "@storybook/store" "6.5.5"
-    "@storybook/telemetry" "6.5.5"
+    "@storybook/store" "6.5.6"
+    "@storybook/telemetry" "6.5.6"
     "@types/node" "^14.0.10 || ^16.0.0"
     "@types/node-fetch" "^2.5.7"
     "@types/pretty-hrtime" "^1.0.0"
@@ -2159,7 +2167,7 @@
     fs-extra "^9.0.1"
     global "^4.4.0"
     globby "^11.0.2"
-    ip "^1.1.5"
+    ip "^2.0.0"
     lodash "^4.17.21"
     node-fetch "^2.6.7"
     open "^8.4.0"
@@ -2176,18 +2184,18 @@
     ws "^8.2.3"
     x-default-browser "^0.4.0"
 
-"@storybook/core@6.5.5":
-  version "6.5.5"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/core/-/core-6.5.5.tgz#ef953e936b20fec6da5acf29b4701e0287af8668"
-  integrity sha1-75U+k2sg/sbaWs8ptHAeAoevhmg=
+"@storybook/core@6.5.6":
+  version "6.5.6"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/core/-/core-6.5.6.tgz#bc1792154ea010500950f0d43c78ae554ea4f9ec"
+  integrity sha1-vBeSFU6gEFAJUPDUPHiuVU6k+ew=
   dependencies:
-    "@storybook/core-client" "6.5.5"
-    "@storybook/core-server" "6.5.5"
+    "@storybook/core-client" "6.5.6"
+    "@storybook/core-server" "6.5.6"
 
-"@storybook/csf-tools@6.5.5":
-  version "6.5.5"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/csf-tools/-/csf-tools-6.5.5.tgz#a3e8de878b70fe6e84030e31fb68794f85144761"
-  integrity sha1-o+jeh4tw/m6EAw4x+2h5T4UUR2E=
+"@storybook/csf-tools@6.5.6":
+  version "6.5.6"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/csf-tools/-/csf-tools-6.5.6.tgz#147ced43313ee217c41b00d5fe32a80cb29b03bd"
+  integrity sha1-FHztQzE+4hfEGwDV/jKoDLKbA70=
   dependencies:
     "@babel/core" "^7.12.10"
     "@babel/generator" "^7.12.11"
@@ -2211,33 +2219,33 @@
   dependencies:
     lodash "^4.17.15"
 
-"@storybook/docs-tools@6.5.5":
-  version "6.5.5"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/docs-tools/-/docs-tools-6.5.5.tgz#74578a0ca10bb94eacc4d790835588e148b550f7"
-  integrity sha1-dFeKDKELuU6sxNeQg1WI4Ui1UPc=
+"@storybook/docs-tools@6.5.6":
+  version "6.5.6"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/docs-tools/-/docs-tools-6.5.6.tgz#cf27e06ce25c55327048662f833628d2e329a140"
+  integrity sha1-zyfgbOJcVTJwSGYvgzYo0uMpoUA=
   dependencies:
     "@babel/core" "^7.12.10"
     "@storybook/csf" "0.0.2--canary.4566f4d.1"
-    "@storybook/store" "6.5.5"
+    "@storybook/store" "6.5.6"
     core-js "^3.8.2"
     doctrine "^3.0.0"
     lodash "^4.17.21"
     regenerator-runtime "^0.13.7"
 
-"@storybook/manager-webpack4@6.5.5":
-  version "6.5.5"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/manager-webpack4/-/manager-webpack4-6.5.5.tgz#c82ad9f117427e2caaf37d93f45d395f9ad57818"
-  integrity sha1-yCrZ8RdCfiyq832T9F05X5rVeBg=
+"@storybook/manager-webpack4@6.5.6":
+  version "6.5.6"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/manager-webpack4/-/manager-webpack4-6.5.6.tgz#3a356ee52cb972533a98e4da426bc6cc3b8abaf3"
+  integrity sha1-OjVu5Sy5clM6mOTaQmvGzDuKuvM=
   dependencies:
     "@babel/core" "^7.12.10"
     "@babel/plugin-transform-template-literals" "^7.12.1"
     "@babel/preset-react" "^7.12.10"
-    "@storybook/addons" "6.5.5"
-    "@storybook/core-client" "6.5.5"
-    "@storybook/core-common" "6.5.5"
-    "@storybook/node-logger" "6.5.5"
-    "@storybook/theming" "6.5.5"
-    "@storybook/ui" "6.5.5"
+    "@storybook/addons" "6.5.6"
+    "@storybook/core-client" "6.5.6"
+    "@storybook/core-common" "6.5.6"
+    "@storybook/node-logger" "6.5.6"
+    "@storybook/theming" "6.5.6"
+    "@storybook/ui" "6.5.6"
     "@types/node" "^14.0.10 || ^16.0.0"
     "@types/webpack" "^4.41.26"
     babel-loader "^8.0.0"
@@ -2282,10 +2290,10 @@
     prettier ">=2.2.1 <=2.3.0"
     ts-dedent "^2.0.0"
 
-"@storybook/node-logger@6.5.5", "@storybook/node-logger@^6.4.9":
-  version "6.5.5"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/node-logger/-/node-logger-6.5.5.tgz#9045195e654ac40b1eda63820b7d7864437e0dd1"
-  integrity sha1-kEUZXmVKxAse2mOCC314ZEN+DdE=
+"@storybook/node-logger@6.5.6", "@storybook/node-logger@^6.4.9":
+  version "6.5.6"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/node-logger/-/node-logger-6.5.6.tgz#24422886f894978b10c2e23feb6bf0657f5e514f"
+  integrity sha1-JEIohviUl4sQwuI/62vwZX9eUU8=
   dependencies:
     "@types/npmlog" "^4.1.2"
     chalk "^4.1.0"
@@ -2293,10 +2301,10 @@
     npmlog "^5.0.1"
     pretty-hrtime "^1.0.3"
 
-"@storybook/postinstall@6.5.5":
-  version "6.5.5"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/postinstall/-/postinstall-6.5.5.tgz#1d2acc5b254c9608134baa92abdb21f4eb48ba01"
-  integrity sha1-HSrMWyVMlggTS6qSq9sh9OtIugE=
+"@storybook/postinstall@6.5.6":
+  version "6.5.6"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/postinstall/-/postinstall-6.5.6.tgz#df0bab91b0d1f576a9d4d63842ad56238e26c9d6"
+  integrity sha1-3wurkbDR9Xap1NY4Qq1WI44mydY=
   dependencies:
     core-js "^3.8.2"
 
@@ -2313,17 +2321,17 @@
     react-docgen-typescript-plugin "^1.0.0"
     semver "^7.3.5"
 
-"@storybook/preview-web@6.5.5":
-  version "6.5.5"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/preview-web/-/preview-web-6.5.5.tgz#2ab398cbc7ffe8c3e98793f113188c0b74fe1a08"
-  integrity sha1-KrOYy8f/6MPph5PxExiMC3T+Ggg=
+"@storybook/preview-web@6.5.6":
+  version "6.5.6"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/preview-web/-/preview-web-6.5.6.tgz#d4cf4a90a27819aa3315b48b21df6a515bb49b7a"
+  integrity sha1-1M9KkKJ4GaozFbSLId9qUVu0m3o=
   dependencies:
-    "@storybook/addons" "6.5.5"
-    "@storybook/channel-postmessage" "6.5.5"
-    "@storybook/client-logger" "6.5.5"
-    "@storybook/core-events" "6.5.5"
+    "@storybook/addons" "6.5.6"
+    "@storybook/channel-postmessage" "6.5.6"
+    "@storybook/client-logger" "6.5.6"
+    "@storybook/core-events" "6.5.6"
     "@storybook/csf" "0.0.2--canary.4566f4d.1"
-    "@storybook/store" "6.5.5"
+    "@storybook/store" "6.5.6"
     ansi-to-html "^0.6.11"
     core-js "^3.8.2"
     global "^4.4.0"
@@ -2349,23 +2357,23 @@
     tslib "^2.0.0"
 
 "@storybook/react@^6.4.9":
-  version "6.5.5"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/react/-/react-6.5.5.tgz#dcebee580129a5dc0be24e2b95633595ecc81366"
-  integrity sha1-3OvuWAEppdwL4k4rlWM1lezIE2Y=
+  version "6.5.6"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/react/-/react-6.5.6.tgz#9b7ddc678790a8af100c26b8d47c332bc6f4fc84"
+  integrity sha1-m33cZ4eQqK8QDCa41HwzK8b0/IQ=
   dependencies:
     "@babel/preset-flow" "^7.12.1"
     "@babel/preset-react" "^7.12.10"
     "@pmmmwh/react-refresh-webpack-plugin" "^0.5.3"
-    "@storybook/addons" "6.5.5"
-    "@storybook/client-logger" "6.5.5"
-    "@storybook/core" "6.5.5"
-    "@storybook/core-common" "6.5.5"
+    "@storybook/addons" "6.5.6"
+    "@storybook/client-logger" "6.5.6"
+    "@storybook/core" "6.5.6"
+    "@storybook/core-common" "6.5.6"
     "@storybook/csf" "0.0.2--canary.4566f4d.1"
-    "@storybook/docs-tools" "6.5.5"
-    "@storybook/node-logger" "6.5.5"
+    "@storybook/docs-tools" "6.5.6"
+    "@storybook/node-logger" "6.5.6"
     "@storybook/react-docgen-typescript-plugin" "1.0.2-canary.6.9d540b91e815f8fc2f8829189deb00553559ff63.0"
     "@storybook/semver" "^7.3.2"
-    "@storybook/store" "6.5.5"
+    "@storybook/store" "6.5.6"
     "@types/estree" "^0.0.51"
     "@types/node" "^14.14.20 || ^16.0.0"
     "@types/webpack-env" "^1.16.0"
@@ -2389,12 +2397,12 @@
     util-deprecate "^1.0.2"
     webpack ">=4.43.0 <6.0.0"
 
-"@storybook/router@6.5.5":
-  version "6.5.5"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/router/-/router-6.5.5.tgz#43a79e6be4d5f1d7b599961addeb6f528da6c25d"
-  integrity sha1-Q6eea+TV8de1mZYa3etvUo2mwl0=
+"@storybook/router@6.5.6":
+  version "6.5.6"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/router/-/router-6.5.6.tgz#83b442635c5a32a0eb0b4cd3f2da8b7cbecc32e7"
+  integrity sha1-g7RCY1xaMqDrC0zT8tqLfL7MMuc=
   dependencies:
-    "@storybook/client-logger" "6.5.5"
+    "@storybook/client-logger" "6.5.6"
     core-js "^3.8.2"
     regenerator-runtime "^0.13.7"
 
@@ -2406,13 +2414,13 @@
     core-js "^3.6.5"
     find-up "^4.1.0"
 
-"@storybook/source-loader@6.5.5":
-  version "6.5.5"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/source-loader/-/source-loader-6.5.5.tgz#47fc27a5bbb27661413ed45c5cf1ce9e271eb676"
-  integrity sha1-R/wnpbuydmFBPtRcXPHOnicetnY=
+"@storybook/source-loader@6.5.6":
+  version "6.5.6"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/source-loader/-/source-loader-6.5.6.tgz#e20c6a827c2021bbbab05d0bb2c1e6fb66e133a9"
+  integrity sha1-4gxqgnwgIbu6sF0LssHm+2bhM6k=
   dependencies:
-    "@storybook/addons" "6.5.5"
-    "@storybook/client-logger" "6.5.5"
+    "@storybook/addons" "6.5.6"
+    "@storybook/client-logger" "6.5.6"
     "@storybook/csf" "0.0.2--canary.4566f4d.1"
     core-js "^3.8.2"
     estraverse "^5.2.0"
@@ -2422,14 +2430,14 @@
     prettier ">=2.2.1 <=2.3.0"
     regenerator-runtime "^0.13.7"
 
-"@storybook/store@6.5.5":
-  version "6.5.5"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/store/-/store-6.5.5.tgz#0c702ca5e6e1334d768d1335a2475be054e87cbc"
-  integrity sha1-DHAspebhM012jRM1okdb4FTofLw=
+"@storybook/store@6.5.6":
+  version "6.5.6"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/store/-/store-6.5.6.tgz#0250d92f10d9590f4df2f7e6e11a07103055c350"
+  integrity sha1-AlDZLxDZWQ9N8vfm4RoHEDBVw1A=
   dependencies:
-    "@storybook/addons" "6.5.5"
-    "@storybook/client-logger" "6.5.5"
-    "@storybook/core-events" "6.5.5"
+    "@storybook/addons" "6.5.6"
+    "@storybook/client-logger" "6.5.6"
+    "@storybook/core-events" "6.5.6"
     "@storybook/csf" "0.0.2--canary.4566f4d.1"
     core-js "^3.8.2"
     fast-deep-equal "^3.1.3"
@@ -2443,13 +2451,13 @@
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
 
-"@storybook/telemetry@6.5.5":
-  version "6.5.5"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/telemetry/-/telemetry-6.5.5.tgz#61380ae6f8243c046e1e67fd76d4214f67bcf4e8"
-  integrity sha1-YTgK5vgkPARuHmf9dtQhT2e89Og=
+"@storybook/telemetry@6.5.6":
+  version "6.5.6"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/telemetry/-/telemetry-6.5.6.tgz#a7da1fa0019b307ceac24e65ff1e14ee0f36a8a5"
+  integrity sha1-p9ofoAGbMHzqwk5l/x4U7g82qKU=
   dependencies:
-    "@storybook/client-logger" "6.5.5"
-    "@storybook/core-common" "6.5.5"
+    "@storybook/client-logger" "6.5.6"
+    "@storybook/core-common" "6.5.6"
     chalk "^4.1.0"
     core-js "^3.8.2"
     detect-package-manager "^2.0.1"
@@ -2461,29 +2469,29 @@
     read-pkg-up "^7.0.1"
     regenerator-runtime "^0.13.7"
 
-"@storybook/theming@6.5.5":
-  version "6.5.5"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/theming/-/theming-6.5.5.tgz#ea4c4a2340d6a8f9c0cb318bf2b054e82174bf5b"
-  integrity sha1-6kxKI0DWqPnAyzGL8rBU6CF0v1s=
+"@storybook/theming@6.5.6":
+  version "6.5.6"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/theming/-/theming-6.5.6.tgz#519e1675a7ff5c780f5a41b05b4b679c37b62fe8"
+  integrity sha1-UZ4Wdaf/XHgPWkGwW0tnnDe2L+g=
   dependencies:
-    "@storybook/client-logger" "6.5.5"
+    "@storybook/client-logger" "6.5.6"
     core-js "^3.8.2"
     regenerator-runtime "^0.13.7"
 
-"@storybook/ui@6.5.5":
-  version "6.5.5"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/ui/-/ui-6.5.5.tgz#4d244825f4c33654cbe12b7be2081b062388f96b"
-  integrity sha1-TSRIJfTDNlTL4St74ggbBiOI+Ws=
+"@storybook/ui@6.5.6":
+  version "6.5.6"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/ui/-/ui-6.5.6.tgz#3b312728c11d1bdba9cac41d18d91b6806496028"
+  integrity sha1-OzEnKMEdG9upysQdGNkbaAZJYCg=
   dependencies:
-    "@storybook/addons" "6.5.5"
-    "@storybook/api" "6.5.5"
-    "@storybook/channels" "6.5.5"
-    "@storybook/client-logger" "6.5.5"
-    "@storybook/components" "6.5.5"
-    "@storybook/core-events" "6.5.5"
-    "@storybook/router" "6.5.5"
+    "@storybook/addons" "6.5.6"
+    "@storybook/api" "6.5.6"
+    "@storybook/channels" "6.5.6"
+    "@storybook/client-logger" "6.5.6"
+    "@storybook/components" "6.5.6"
+    "@storybook/core-events" "6.5.6"
+    "@storybook/router" "6.5.6"
     "@storybook/semver" "^7.3.2"
-    "@storybook/theming" "6.5.5"
+    "@storybook/theming" "6.5.6"
     core-js "^3.8.2"
     regenerator-runtime "^0.13.7"
     resolve-from "^5.0.0"
@@ -5706,26 +5714,26 @@ cssnano-preset-default@^4.0.8:
     postcss-svgo "^4.0.3"
     postcss-unique-selectors "^4.0.1"
 
-cssnano-preset-default@^5.2.9:
-  version "5.2.9"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/cssnano-preset-default/-/cssnano-preset-default-5.2.9.tgz#63f6aa9a9f0b21d9a526371dd308253b656a9784"
-  integrity sha1-Y/aqmp8LIdmlJjcd0wglO2Vql4Q=
+cssnano-preset-default@^5.2.10:
+  version "5.2.10"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/cssnano-preset-default/-/cssnano-preset-default-5.2.10.tgz#6dfffe6cc3b13f3bb356a42c49a334a98700ef45"
+  integrity sha1-bf/+bMOxPzuzVqQsSaM0qYcA70U=
   dependencies:
     css-declaration-sorter "^6.2.2"
     cssnano-utils "^3.1.0"
     postcss-calc "^8.2.3"
     postcss-colormin "^5.3.0"
-    postcss-convert-values "^5.1.1"
-    postcss-discard-comments "^5.1.1"
+    postcss-convert-values "^5.1.2"
+    postcss-discard-comments "^5.1.2"
     postcss-discard-duplicates "^5.1.0"
     postcss-discard-empty "^5.1.1"
     postcss-discard-overridden "^5.1.0"
     postcss-merge-longhand "^5.1.5"
-    postcss-merge-rules "^5.1.1"
+    postcss-merge-rules "^5.1.2"
     postcss-minify-font-values "^5.1.0"
     postcss-minify-gradients "^5.1.1"
     postcss-minify-params "^5.1.3"
-    postcss-minify-selectors "^5.2.0"
+    postcss-minify-selectors "^5.2.1"
     postcss-normalize-charset "^5.1.0"
     postcss-normalize-display-values "^5.1.0"
     postcss-normalize-positions "^5.1.0"
@@ -5779,11 +5787,11 @@ cssnano@^4.1.10:
     postcss "^7.0.0"
 
 cssnano@^5.0.2:
-  version "5.1.9"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/cssnano/-/cssnano-5.1.9.tgz#e6cb286c4907cbd55678eb315837a21008be21be"
-  integrity sha1-5ssobEkHy9VWeOsxWDeiEAi+Ib4=
+  version "5.1.10"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/cssnano/-/cssnano-5.1.10.tgz#fc6ddd9a4d7d238f320634326ed814cf0abf6e1c"
+  integrity sha1-/G3dmk19I48yBjQybtgUzwq/bhw=
   dependencies:
-    cssnano-preset-default "^5.2.9"
+    cssnano-preset-default "^5.2.10"
     lilconfig "^2.0.3"
     yaml "^1.10.2"
 
@@ -6268,9 +6276,9 @@ ejs@^2.6.1:
   integrity sha1-SGYSh1c9zFPjZsehrlLDoSDuybo=
 
 electron-to-chromium@^1.3.564, electron-to-chromium@^1.4.118:
-  version "1.4.141"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/electron-to-chromium/-/electron-to-chromium-1.4.141.tgz#4dd9119e8a99f1c83c51dfcf1bed79ea541f08d6"
-  integrity sha1-TdkRnoqZ8cg8Ud/PG+156lQfCNY=
+  version "1.4.142"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/electron-to-chromium/-/electron-to-chromium-1.4.142.tgz#70cc8871f7c0122b29256089989e67cee637b40d"
+  integrity sha1-cMyIcffAEispJWCJmJ5nzuY3tA0=
 
 elliptic@^6.5.3:
   version "6.5.4"
@@ -8328,6 +8336,11 @@ ip@^1.1.0, ip@^1.1.5:
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/ip/-/ip-1.1.8.tgz#ae05948f6b075435ed3307acce04629da8cdbf48"
   integrity sha1-rgWUj2sHVDXtMweszgRinajNv0g=
 
+ip@^2.0.0:
+  version "2.0.0"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/ip/-/ip-2.0.0.tgz#4cf4ab182fee2314c75ede1276f8c80b479936da"
+  integrity sha1-TPSrGC/uIxTHXt4SdvjIC0eZNto=
+
 ipaddr.js@1.9.1, ipaddr.js@^1.9.0:
   version "1.9.1"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/ipaddr.js/-/ipaddr.js-1.9.1.tgz#bff38543eeb8984825079ff3a2a8e6cbd46781b3"
@@ -9707,11 +9720,6 @@ lodash.merge@^4.6.2:
   version "4.6.2"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/lodash.merge/-/lodash.merge-4.6.2.tgz#558aa53b43b661e1925a0afdfa36a9a1085fe57a"
   integrity sha1-VYqlO0O2YeGSWgr9+japoQhf5Xo=
-
-lodash.sortby@^4.7.0:
-  version "4.7.0"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/lodash.sortby/-/lodash.sortby-4.7.0.tgz#edd14c824e2cc9c1e0b0a1b42bb5210516a42438"
-  integrity sha1-7dFMgk4sycHgsKG0K7UhBRakJDg=
 
 lodash.template@^4.5.0:
   version "4.5.0"
@@ -11228,10 +11236,10 @@ postcss-convert-values@^4.0.1:
     postcss "^7.0.0"
     postcss-value-parser "^3.0.0"
 
-postcss-convert-values@^5.1.1:
-  version "5.1.1"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/postcss-convert-values/-/postcss-convert-values-5.1.1.tgz#31c8ffba650e86dc750631cafcf1db022c5bb6f1"
-  integrity sha1-Mcj/umUOhtx1BjHK/PHbAixbtvE=
+postcss-convert-values@^5.1.2:
+  version "5.1.2"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/postcss-convert-values/-/postcss-convert-values-5.1.2.tgz#31586df4e184c2e8890e8b34a0b9355313f503ab"
+  integrity sha1-MVht9OGEwuiJDos0oLk1UxP1A6s=
   dependencies:
     browserslist "^4.20.3"
     postcss-value-parser "^4.2.0"
@@ -11274,10 +11282,10 @@ postcss-discard-comments@^4.0.2:
   dependencies:
     postcss "^7.0.0"
 
-postcss-discard-comments@^5.1.1:
-  version "5.1.1"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/postcss-discard-comments/-/postcss-discard-comments-5.1.1.tgz#e90019e1a0e5b99de05f63516ce640bd0df3d369"
-  integrity sha1-6QAZ4aDluZ3gX2NRbOZAvQ3z02k=
+postcss-discard-comments@^5.1.2:
+  version "5.1.2"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/postcss-discard-comments/-/postcss-discard-comments-5.1.2.tgz#8df5e81d2925af2780075840c1526f0660e53696"
+  integrity sha1-jfXoHSklryeAB1hAwVJvBmDlNpY=
 
 postcss-discard-duplicates@^4.0.2:
   version "4.0.2"
@@ -11463,10 +11471,10 @@ postcss-merge-rules@^4.0.3:
     postcss-selector-parser "^3.0.0"
     vendors "^1.0.0"
 
-postcss-merge-rules@^5.1.1:
-  version "5.1.1"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/postcss-merge-rules/-/postcss-merge-rules-5.1.1.tgz#d327b221cd07540bcc8d9ff84446d8b404d00162"
-  integrity sha1-0yeyIc0HVAvMjZ/4REbYtATQAWI=
+postcss-merge-rules@^5.1.2:
+  version "5.1.2"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/postcss-merge-rules/-/postcss-merge-rules-5.1.2.tgz#7049a14d4211045412116d79b751def4484473a5"
+  integrity sha1-cEmhTUIRBFQSEW15t1He9EhEc6U=
   dependencies:
     browserslist "^4.16.6"
     caniuse-api "^3.0.0"
@@ -11538,10 +11546,10 @@ postcss-minify-selectors@^4.0.2:
     postcss "^7.0.0"
     postcss-selector-parser "^3.0.0"
 
-postcss-minify-selectors@^5.2.0:
-  version "5.2.0"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/postcss-minify-selectors/-/postcss-minify-selectors-5.2.0.tgz#17c2be233e12b28ffa8a421a02fc8b839825536c"
-  integrity sha1-F8K+Iz4Sso/6ikIaAvyLg5glU2w=
+postcss-minify-selectors@^5.2.1:
+  version "5.2.1"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/postcss-minify-selectors/-/postcss-minify-selectors-5.2.1.tgz#d4e7e6b46147b8117ea9325a915a801d5fe656c6"
+  integrity sha1-1OfmtGFHuBF+qTJakVqAHV/mVsY=
   dependencies:
     postcss-selector-parser "^6.0.5"
 
@@ -13630,13 +13638,6 @@ source-map@^0.7.3:
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/source-map/-/source-map-0.7.3.tgz#5302f8169031735226544092e64981f751750383"
   integrity sha1-UwL4FpAxc1ImVECS5kmB91F1A4M=
 
-source-map@~0.8.0-beta.0:
-  version "0.8.0-beta.0"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/source-map/-/source-map-0.8.0-beta.0.tgz#d4c1bb42c3f7ee925f005927ba10709e0d1d1f11"
-  integrity sha1-1MG7QsP37pJfAFknuhBwng0dHxE=
-  dependencies:
-    whatwg-url "^7.0.0"
-
 sourcemap-codec@^1.4.8:
   version "1.4.8"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/sourcemap-codec/-/sourcemap-codec-1.4.8.tgz#ea804bd94857402e6992d05a38ef1ae35a9ab4c4"
@@ -14250,13 +14251,13 @@ terser@^4.1.2, terser@^4.6.2, terser@^4.6.3:
     source-map-support "~0.5.12"
 
 terser@^5.10.0, terser@^5.3.4, terser@^5.7.2:
-  version "5.13.1"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/terser/-/terser-5.13.1.tgz#66332cdc5a01b04a224c9fad449fc1a18eaa1799"
-  integrity sha1-ZjMs3FoBsEoiTJ+tRJ/BoY6qF5k=
+  version "5.14.0"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/terser/-/terser-5.14.0.tgz#eefeec9af5153f55798180ee2617f390bdd285e2"
+  integrity sha1-7v7smvUVP1V5gYDuJhfzkL3SheI=
   dependencies:
+    "@jridgewell/source-map" "^0.3.2"
     acorn "^8.5.0"
     commander "^2.20.0"
-    source-map "~0.8.0-beta.0"
     source-map-support "~0.5.20"
 
 test-exclude@^6.0.0:
@@ -14368,13 +14369,6 @@ tough-cookie@^4.0.0:
     psl "^1.1.33"
     punycode "^2.1.1"
     universalify "^0.1.2"
-
-tr46@^1.0.1:
-  version "1.0.1"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/tr46/-/tr46-1.0.1.tgz#a8b13fd6bfd2489519674ccde55ba3693b706d09"
-  integrity sha1-qLE/1r/SSJUZZ0zN5VujaTtwbQk=
-  dependencies:
-    punycode "^2.1.0"
 
 tr46@^2.1.0:
   version "2.1.0"
@@ -14988,11 +14982,6 @@ webidl-conversions@^3.0.0:
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/webidl-conversions/-/webidl-conversions-3.0.1.tgz#24534275e2a7bc6be7bc86611cc16ae0a5654871"
   integrity sha1-JFNCdeKnvGvnvIZhHMFq4KVlSHE=
 
-webidl-conversions@^4.0.2:
-  version "4.0.2"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/webidl-conversions/-/webidl-conversions-4.0.2.tgz#a855980b1f0b6b359ba1d5d9fb39ae941faa63ad"
-  integrity sha1-qFWYCx8LazWbodXZ+zmulB+qY60=
-
 webidl-conversions@^5.0.0:
   version "5.0.0"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/webidl-conversions/-/webidl-conversions-5.0.0.tgz#ae59c8a00b121543a2acc65c0434f57b0fc11aff"
@@ -15311,15 +15300,6 @@ whatwg-url@^5.0.0:
   dependencies:
     tr46 "~0.0.3"
     webidl-conversions "^3.0.0"
-
-whatwg-url@^7.0.0:
-  version "7.1.0"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/whatwg-url/-/whatwg-url-7.1.0.tgz#c2c492f1eca612988efd3d2266be1b9fc6170d06"
-  integrity sha1-wsSS8eymEpiO/T0iZr4bn8YXDQY=
-  dependencies:
-    lodash.sortby "^4.7.0"
-    tr46 "^1.0.1"
-    webidl-conversions "^4.0.2"
 
 whatwg-url@^8.0.0, whatwg-url@^8.5.0:
   version "8.7.0"

@@ -11,8 +11,12 @@ class StoresApis {
 
     async queryOrders(instanceId, query = {}) {
         const refreshToken = await this.refreshTokenDao.getBy(instanceId);
+        
         const { accessToken } = await this.wixOAuthFacade.getFreshAccessToken(refreshToken);
-        return await axios.post(`${this.baseUrl}/orders/query`, query, { headers: { authorization: accessToken } }).then(r => r.data);
+        
+        const res = await axios.post(`${this.baseUrl}/query`, {}, { headers: { authorization: accessToken } })
+        
+        return res.data.orders.length
     }
 
     async getProductCount(instanceId, productId) {

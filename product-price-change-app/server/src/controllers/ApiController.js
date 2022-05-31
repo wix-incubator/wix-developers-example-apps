@@ -43,10 +43,13 @@ class ApiController {
     }
 
     buyersCountDeltaController = async (req, res) => {
-        const parsedInstance = this.instanceDecoder.decodeOrThrow(req.query.instance);
-        const buyersCount = this.buyersCountService.get(parsedInstance.instanceId, req.query.productId)
+        // const parsedInstance = this.instanceDecoder.decodeOrThrow(req.query.instance);
+        console.log(req.query)
+        const buyersCount = await this.buyersCountService.get(req.query.instanceId, req.query.productId)
+        console.log("here2", buyersCount)
         res.json({ buyersCount });
     }
+
     dashboardController = async (req, res) => {
         const parsedInstance = this.instanceDecoder.decodeOrThrow(req.query.instance);
         const getAppInstancePromise = this.appApis.getAppInstance(parsedInstance.instanceId);

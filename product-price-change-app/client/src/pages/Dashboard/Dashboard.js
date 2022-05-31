@@ -70,9 +70,7 @@ const Dashboard = (props) => {
   
   const addDeltaToCount = async (newDelta) => {
     const res = await instance.post(`${baseURI}/buyers-count?instance=${params.instance}`, {delta: newDelta})
-    console.log(res.data)
     setDelta(res.data.currentDelta)
-    
 }
   
   if (isLoading) {
