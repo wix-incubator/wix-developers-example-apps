@@ -71,7 +71,7 @@ const Dashboard = (props) => {
   const addDeltaToCount = async (newDelta) => {
     const res = await instance.post(`${baseURI}/buyers-count?instance=${params.instance}`, {delta: newDelta})
     setDelta(res.data.currentDelta)
-}
+  }
   
   if (isLoading) {
     return (
@@ -94,13 +94,13 @@ const Dashboard = (props) => {
               <strong>{data.siteInfo.site.siteDisplayName}</strong> |  Products Buyers Count
               <Typography variant="h5" component="h4"  >
                 <br />
-                This app will display customers count in a product page
+                This app widget will display the number of orders in your product page.
                 <br />
               </Typography>
             </Typography>
             <Box className="input-box">
             <div className='delta-container'>
-              Fake Your buyers count
+              Add A Fix Number To Your order count.
               <br />
               <Switch label="Enable Delta" checked={!isDisabled} onChange={() => setIsDisabled(!isDisabled)} />
             </div>
