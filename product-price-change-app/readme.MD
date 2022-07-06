@@ -15,7 +15,7 @@ https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
 # Installation:
 1. clone this Repo
 2. go to https://dev.wix.com and create an app
-3. go to OAuth tab in devcenter and copy the app id and app secret to a .env file under wix-react-web-component/server foler
+3. go to OAuth tab in devcenter and copy the app id and app secret to a .env file under wix-react-web-component/server folder
 for example here is a .env file:
 ```
 APP_ID=2734202e-f600-46a5-0000-9bf8a3c6a139
