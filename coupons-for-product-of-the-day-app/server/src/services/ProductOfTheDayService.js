@@ -1,7 +1,7 @@
 const fs = require('fs');
 
-class FileBasedProductOfTheDayDao {
-    async set(productId) {
+class ProductOfTheDayService {
+    async setProductOfTheDay(productId) {
         fs.writeFile(this.databasePath, productId, err => {
             if (err) {
                 console.err(`Error writing to file db: ${err}`);
@@ -10,12 +10,12 @@ class FileBasedProductOfTheDayDao {
         });
     }
 
-    async get() {
+    async getProductOfTheDay() {
         const productOfTheDay = fs.readFileSync(this.databasePath).toString();
         return productOfTheDay;
     }
 }
 
 module.exports = {
-    FileBasedProductOfTheDayDao
+    ProductOfTheDayService
 }
