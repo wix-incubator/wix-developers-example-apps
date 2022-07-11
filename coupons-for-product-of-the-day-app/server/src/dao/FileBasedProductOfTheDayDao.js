@@ -19,6 +19,7 @@ class FileBasedProductOfTheDayDao {
 
     async get() {
         return this.store.productOfTheDay;
+
     }
 }
 
