@@ -1,13 +1,14 @@
 const axios = require('axios');
-const fs = require('fs/promises');
 
 class CouponsApis {
 
-    constructor(baseUrl, refreshTokenDao, wixOAuthFacade, databasePath) {
+    constructor(baseUrl, refreshTokenDao, wixOAuthFacade, productOfTheDayDao, discountPercentage, couponCode) {
         this.refreshTokenDao = refreshTokenDao;
         this.wixOAuthFacade = wixOAuthFacade;
         this.baseUrl = baseUrl;
-        this.databasePath = databasePath;
+        this.discountPercentage = discountPercentage;
+        this.couponCode = couponCode;
+        this.productOfTheDayDao = productOfTheDayDao;
     }
 
     async createCoupon(instanceId, specification) {
@@ -15,22 +16,23 @@ class CouponsApis {
         
         const { accessToken } = await this.wixOAuthFacade.getFreshAccessToken(refreshToken);
         
-        try {
-            const productOfTheDay = await fs.readFile(this.databasePath, { encoding: 'utf8' });
-        } catch (err) {
-            console.error(err);
-            return;
-        }
+        const productOfTheDay = await this.productOfTheDayDao.get();
 
         const specification = {
             specification: {
+                name: "ProductOfTheDayDiscount",
+                code: this.couponCode,
+                startTime: Date.now(),
+                limitedToOneItem: false,
+                appliesToSubscriptions: false,
                 scope: {
                     namespace: 'stores',
                     group: {
-                        name: product,
+                        name: 'product',
                         entityId: productOfTheDay
                     }
-                }
+                },
+                percentOffRate: discountPercentage
             }
         }
         const res = await axios.post(`${this.baseUrl}/v2/coupons`, specification, { headers: { authorization: accessToken } })

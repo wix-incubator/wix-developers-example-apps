@@ -1,18 +1,29 @@
 const fs = require('fs');
 
 class FileBasedProductOfTheDayDao {
-    async set(productId) {
-        fs.writeFile(this.databasePath, productId, err => {
-            if (err) {
-                console.err(`Error writing to file db: ${err}`);
-                return;
-            }
-        });
+    constructor() {
+        super();
+        this.initStore() = this.initStore.bind();
+        this.store = this.initStore();
     }
 
-    async get() {
-        const productOfTheDay = fs.readFileSync(this.databasePath).toString();
-        return productOfTheDay;
+    initStore() {
+        if (fs.existsSync("product_of_the_day.localdb")) return JSON.parse(fs.readFileSync("product_of_the_day.localdb"))
+        else { return {} }
+    }
+
+    async setProductOfTheDay(productId, discountPercentage) {
+        this.store.productOfTheDay = productId;
+        this.store.discountPercentage = discountPercentage;
+        fs.writeFileSync("product_of_the_day.localdb", JSON.stringify(this.store));
+    }
+
+    async getProductOfTheDay() {
+        return this.store.productOfTheDay;
+    }
+
+    async getDiscountPercentage() {
+        return this.store.discountPercentage;
     }
 }
 
