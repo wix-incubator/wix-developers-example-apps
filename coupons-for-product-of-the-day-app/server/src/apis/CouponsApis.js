@@ -1,13 +1,12 @@
 const axios = require('axios');
-const fs = require('fs/promises');
 
 class CouponsApis {
 
-    constructor(baseUrl, refreshTokenDao, wixOAuthFacade, databasePath) {
+    constructor(baseUrl, refreshTokenDao, wixOAuthFacade, productOfTheDayDao) {
         this.refreshTokenDao = refreshTokenDao;
         this.wixOAuthFacade = wixOAuthFacade;
         this.baseUrl = baseUrl;
-        this.databasePath = databasePath;
+        this.productOfTheDayDao = productOfTheDayDao;
     }
 
     async createCoupon(instanceId, specification) {
@@ -15,12 +14,7 @@ class CouponsApis {
         
         const { accessToken } = await this.wixOAuthFacade.getFreshAccessToken(refreshToken);
         
-        try {
-            const productOfTheDay = await fs.readFile(this.databasePath, { encoding: 'utf8' });
-        } catch (err) {
-            console.error(err);
-            return;
-        }
+        const productOfTheDay = await this.productOfTheDayDao.get();
 
         const specification = {
             specification: {

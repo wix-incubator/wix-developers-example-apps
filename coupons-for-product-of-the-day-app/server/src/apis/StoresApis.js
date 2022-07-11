@@ -34,19 +34,6 @@ class StoresApis {
     }
 
 
-    async setProductOfTheDay(instanceId, productId) {
-        const refreshToken = await this.refreshTokenDao.getBy(instanceId);
-        
-        const { accessToken } = await this.wixOAuthFacade.getFreshAccessToken(refreshToken);
-        
-        fs.writeFile(this.databasePath, productId, err => {
-            if (err) {
-                console.err(`Error writing to file db: ${err}`);
-                return;
-            }
-        });
-    }
-
     async getProductCount(instanceId, productId) {
         const query = {
             "query":
