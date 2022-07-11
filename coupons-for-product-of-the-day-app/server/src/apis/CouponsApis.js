@@ -2,10 +2,12 @@ const axios = require('axios');
 
 class CouponsApis {
 
-    constructor(baseUrl, refreshTokenDao, wixOAuthFacade, productOfTheDayDao) {
+    constructor(baseUrl, refreshTokenDao, wixOAuthFacade, productOfTheDayDao, discountPercentage, couponCode) {
         this.refreshTokenDao = refreshTokenDao;
         this.wixOAuthFacade = wixOAuthFacade;
         this.baseUrl = baseUrl;
+        this.discountPercentage = discountPercentage;
+        this.couponCode = couponCode;
         this.productOfTheDayDao = productOfTheDayDao;
     }
 
@@ -18,13 +20,19 @@ class CouponsApis {
 
         const specification = {
             specification: {
+                name: "ProductOfTheDayDiscount",
+                code: this.couponCode,
+                startTime: Date.now(),
+                limitedToOneItem: false,
+                appliesToSubscriptions: false,
                 scope: {
                     namespace: 'stores',
                     group: {
-                        name: product,
+                        name: 'product',
                         entityId: productOfTheDay
                     }
-                }
+                },
+                percentOffRate: discountPercentage
             }
         }
         const res = await axios.post(`${this.baseUrl}/v2/coupons`, specification, { headers: { authorization: accessToken } })

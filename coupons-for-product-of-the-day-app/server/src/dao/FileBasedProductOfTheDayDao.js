@@ -12,14 +12,18 @@ class FileBasedProductOfTheDayDao {
         else { return {} }
     }
 
-    async set(productId) {
+    async setProductOfTheDay(productId, discountPercentage) {
         this.store.productOfTheDay = productId;
+        this.store.discountPercentage = discountPercentage;
         fs.writeFileSync("product_of_the_day.localdb", JSON.stringify(this.store));
     }
 
-    async get() {
+    async getProductOfTheDay() {
         return this.store.productOfTheDay;
+    }
 
+    async getDiscountPercentage() {
+        return this.store.discountPercentage;
     }
 }
 
