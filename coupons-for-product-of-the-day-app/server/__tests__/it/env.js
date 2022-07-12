@@ -15,6 +15,7 @@ const axiosInstance = axios.create({baseURL: `http://localhost:${port}`});
 const redirectUrl = `http://localhost:${port}/auth/redirect-wix`;
 
 
+
 const startEnv = () => {
 
     let server;
@@ -27,6 +28,7 @@ const startEnv = () => {
             port,
             redirectUrl: redirectUrl,
             wixBaseUrl: oauthTestkit.baseUrl,
+            wixApiUrl: oauthTestkit.baseUrl,
             WEBHOOK_PUBLIC_KEY: webhooksTestkit.publicKey
         });
         server = createServer(expressApp);

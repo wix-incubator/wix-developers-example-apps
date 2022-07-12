@@ -6,7 +6,7 @@ const {appId, appSecret, refreshToken} = require('../../__tests__/drivers/defaul
 describe('WixOAuthFacade', () => {
 
     const baseUrl = `http://${randomString()}`;
-    const wixOAuthFacade = new WixOAuthFacade( appId, appSecret);
+    const wixOAuthFacade = new WixOAuthFacade( appId, appSecret, baseUrl);
 
     const givenTokensFromAuthCode = (forCode, refreshToken, accessToken) => {
         nock(baseUrl).post('/oauth/access', {

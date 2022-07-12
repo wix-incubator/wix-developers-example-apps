@@ -1,5 +1,5 @@
 const axios = require('axios');
-const fs = require('fs')
+
 
 class StoresApis {
 
@@ -14,31 +14,31 @@ class StoresApis {
 
     async queryOrders(instanceId, query = {}) {
         const refreshToken = await this.refreshTokenDao.getBy(instanceId);
-        
+
         const { accessToken } = await this.wixOAuthFacade.getFreshAccessToken(refreshToken);
-        
+
         const res = await axios.post(`${this.baseUrl}/v2/orders/query`, {}, { headers: { authorization: accessToken } })
-        
-        return res.data.orders.length
+
+        return res.data
     }
 
 
     async queryProducts(instanceId, query = {}) {
         const refreshToken = await this.refreshTokenDao.getBy(instanceId);
-        
+
         const { accessToken } = await this.wixOAuthFacade.getFreshAccessToken(refreshToken);
-        
+
         const res = await axios.post(`${this.baseUrl}/v1/products/query`, { query: query }, { headers: { authorization: accessToken } })
-        
+
         return res.data.products
     }
 
 
     async setProductOfTheDay(instanceId, productId) {
         const refreshToken = await this.refreshTokenDao.getBy(instanceId);
-        
+
         const { accessToken } = await this.wixOAuthFacade.getFreshAccessToken(refreshToken);
-        
+
         fs.writeFile(this.databasePath, productId, err => {
             if (err) {
                 console.err(`Error writing to file db: ${err}`);
@@ -60,6 +60,7 @@ class StoresApis {
         const response = await this.queryOrders(instanceId, query)
         return response
     }
+
 }
 
 module.exports = {

@@ -4,6 +4,13 @@ const {
     instanceId,
     givenRefreshTokenFor
 } = require("../../__tests__/drivers/dao/RefreshTokenDaoTestSupport");
+
+const {
+    productOfTheDayDao,
+    productId,
+    discountPercentage,
+    givenProductOfTheDayAndDiscountFor
+} = require("../../__tests__/drivers/dao/ProductOfTheDayDaoTestSupport");
 const {
     wixOAuthFacade,
     givenAccessToken,
@@ -16,7 +23,7 @@ const {ProductOfTheDay} = require("../dao/FileBasedProductOfTheDayDao");
 
 describe('CouponsApis', () => {
     const baseUrl = randomUrl();
-    const couponsApisInstance = () => new CouponsApis(baseUrl, refreshTokenDao, wixOAuthFacade);
+    const couponsApisInstance = () => new CouponsApis(baseUrl, refreshTokenDao, wixOAuthFacade, productOfTheDayDao);
 
     const givenInstance = (accessToken, createCouponResult) =>
         nock(baseUrl, {reqheaders: {authorization: accessToken}}).post('/v2/coupons').reply(200, createCouponResult)
@@ -27,7 +34,8 @@ describe('CouponsApis', () => {
         givenRefreshTokenFor(instanceId, refreshToken);
         givenAccessToken(refreshToken, accessToken);
         givenInstance(accessToken, createCouponResult);
-        await expect(couponsApis.createCoupon(instanceId, {})).resolves.toEqual(createCouponResult);
+        givenProductOfTheDayAndDiscountFor(instanceId, productId, discountPercentage)
+        await expect(couponsApis.createCoupon(instanceId)).resolves.toEqual(createCouponResult);
     })
 
 

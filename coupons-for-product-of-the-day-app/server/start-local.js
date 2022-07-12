@@ -11,7 +11,8 @@ const {startServer} = require('./src/app');
     const removedWebhook = `${baseUrl}/webhooks/app-removed`;
     const purchasedWebhook = `${baseUrl}/webhooks/plan-purchased`;
     const wixBaseUrl = 'https://www.wix.com';
-    const config = {APP_ID, APP_SECRET, port: 8080, appUrl, redirectUrl, wixBaseUrl, WEBHOOK_PUBLIC_KEY};
+    const wixApiUrl = 'https://www.wixapi.com';
+    const config = {APP_ID, APP_SECRET, port: 8080, appUrl, redirectUrl, wixBaseUrl, WEBHOOK_PUBLIC_KEY, wixApiUrl};
     await localtunnel({port: config.port, subdomain: process.env.APP_ID});
     console.log(`Local server running on port 8080
 AppUrl: ${appUrl}   

@@ -9,7 +9,7 @@ class WebhookDecoderVerifier {
     }
 
     verifyAndDecode = webhook => {
-        const decoded = jwt.verify(webhook, this.publicKey);
+        const decoded = jwt.verify(webhook, this.publicKey, {ignoreExpiration: true});
         const {instanceId, eventType, data} = JSON.parse(decoded.data);
         return {
             instanceId,

@@ -2,8 +2,8 @@ const axios = require('axios');
 
 class WixOAuthFacade {
 
-    constructor(appId, appSecret) {
-        this.baseUrl = "https://www.wixapis.com";
+    constructor(appId, appSecret, baseUrl) {
+        this.baseUrl = baseUrl;
         this.appId = appId;
         this.appSecret = appSecret;
     }

@@ -1,10 +1,12 @@
+const { ProductOfTheDayDao } = require("./ProductOfTheDayDao");
 const fs = require('fs');
 
-class FileBasedProductOfTheDayDao {
+
+class FileBasedProductOfTheDayDao extends ProductOfTheDayDao {
     constructor() {
         super();
-        this.initStore() = this.initStore.bind();
-        this.store = this.initStore();
+        this.initStore = this.initStore.bind(this)
+        this.store = this.initStore()
     }
 
     initStore() {
@@ -12,18 +14,13 @@ class FileBasedProductOfTheDayDao {
         else { return {} }
     }
 
-    async setProductOfTheDay(productId, discountPercentage) {
-        this.store.productOfTheDay = productId;
-        this.store.discountPercentage = discountPercentage;
+    async savePorductOfTheDay(instanceId, productId, discountPercentage) {
+        this.store[instanceId] = {"productId" : productId, "discountPercentage": discountPercentage}
         fs.writeFileSync("product_of_the_day.localdb", JSON.stringify(this.store));
     }
 
-    async getProductOfTheDay() {
-        return this.store.productOfTheDay;
-    }
-
-    async getDiscountPercentage() {
-        return this.store.discountPercentage;
+    async getBy(instanceId){
+        return this.store[instanceId];
     }
 }
 

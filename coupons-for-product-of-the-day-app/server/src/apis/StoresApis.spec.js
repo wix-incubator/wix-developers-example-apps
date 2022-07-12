@@ -20,7 +20,7 @@ describe('StoresApis', () => {
     const storesApisInstance = () => new StoresApis(baseUrl, refreshTokenDao, wixOAuthFacade, databasePath);
 
     const givenInstance = (accessToken, queryResult) =>
-        nock(baseUrl, {reqheaders: {authorization: accessToken}}).post('/orders/query').reply(200, queryResult)
+        nock(baseUrl, {reqheaders: {authorization: accessToken}}).post('/v2/orders/query').reply(200, queryResult)
 
     it('should get the refresh token, get a fresh access token and finally call wix to get orders', async () => {
         const storesApis = storesApisInstance();
