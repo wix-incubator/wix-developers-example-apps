@@ -6,14 +6,16 @@
   "license": "MIT",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon ./start-local.js",
+    "start": "pm2 start ./start-local.js --watch && pm2 logs",
+    "stop": "pm2 stop start-local",
+    "logs": "pm2 logs",
     "test": "jest"
   },
   "dependencies": {
     "axios": "^0.19.1",
     "body-parser": "^1.19.1",
     "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
+    "dotenv": "^16.0.1",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "jsonwebtoken": "^8.5.1",
@@ -27,6 +29,7 @@
     "mockdate": "^3.0.5",
     "nock": "^13.2.1",
     "nodemon": "^1.18.10",
+    "pm2": "^5.2.0",
     "ts-mockito": "^2.6.1",
     "uuid": "^8.3.2"
   },

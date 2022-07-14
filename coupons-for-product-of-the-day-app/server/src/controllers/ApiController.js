@@ -1,4 +1,5 @@
 const express = require("express");
+const Console = require("console");
 
 
 class ApiController {
@@ -26,11 +27,18 @@ class ApiController {
     }
 
     dashboardController = async (req, res) => {
-        const parsedInstance = this.instanceDecoder.decodeOrThrow(req.query.instance);
-        const getAppInstancePromise = this.appApis.getAppInstance(parsedInstance.instanceId);
-        const [siteInfo] = await Promise.all([getAppInstancePromise]);
-        console.log("parsed instance: ", siteInfo)
-        res.json({ parsedInstance , siteInfo});
+        if(!req.query.instance) {
+            const err = new Error('Required query params missing');
+            err.status = 400;
+            res.send(err);
+        }else {
+            const parsedInstance = this.instanceDecoder.decodeOrThrow(req.query.instance);
+            const getAppInstancePromise = this.appApis.getAppInstance(parsedInstance.instanceId);
+            const [siteInfo] = await Promise.all([getAppInstancePromise]);
+            console.log("parsed instance: ", siteInfo)
+            res.json({parsedInstance, siteInfo});
+        }
+
     }
 
 }
