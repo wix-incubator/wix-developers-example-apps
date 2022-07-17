@@ -2,3 +2,9 @@ node_modules
 .DS_Store
 **/.env
 *.localdb
+.idea
+*.iml
+*.iws
+.last_module
+*.sc
+yarn-error.log
