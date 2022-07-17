@@ -52,7 +52,9 @@ class ApiController {
         try {
             const parsedInstance = this.instanceDecoder.decodeOrThrow(req.query.instance);
             const productOfTheDayData = await this.productOfTheDayService.getProductOfTheDay(parsedInstance.instanceId)
-            res.json({productOfTheDayData});
+            const query = {"filter":`{\"id\": {\"$eq\": \"${productOfTheDayData.productId}\"}}`}
+            const productData = await this.storesApis.queryProducts(parsedInstance.instanceId, query)
+            res.json({"productOfTheDay" : productData, "discountPercentage": productOfTheDayData.discountPercentage});
         } catch {
             res.status(500).send("an error occurred");
         }
