@@ -1,18 +1,17 @@
-const fs = require('fs');
+
 
 class ProductOfTheDayService {
-    async setProductOfTheDay(productId) {
-        fs.writeFile(this.databasePath, productId, err => {
-            if (err) {
-                console.err(`Error writing to file db: ${err}`);
-                return;
-            }
-        });
+
+    constructor(FileBasedAppInstallationsDao) {
+        this.FileBasedAppInstallationsDao = FileBasedAppInstallationsDao;
     }
 
-    async getProductOfTheDay() {
-        const productOfTheDay = fs.readFileSync(this.databasePath).toString();
-        return productOfTheDay;
+    async saveProductOfTheDay(instanceId, productId, discountPercentage) {
+        this.FileBasedAppInstallationsDao.saveProductOfTheDay(instanceId, productId, discountPercentage)
+    }
+
+    async getProductOfTheDay(instanceId) {
+        return this.FileBasedAppInstallationsDao.getBy(instanceId);
     }
 }
 

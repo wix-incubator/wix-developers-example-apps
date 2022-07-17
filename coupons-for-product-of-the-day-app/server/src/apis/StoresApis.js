@@ -8,8 +8,8 @@ class StoresApis {
         this.wixOAuthFacade = wixOAuthFacade;
         this.baseUrl = baseUrl;
         this.databasePath = databasePath;
-        this.queryOrders = this.queryOrders.bind(this)
-        this.queryProducts = this.queryProducts.bind(this)
+        //this.queryOrders = this.queryOrders.bind(this)
+        //this.queryProducts = this.queryProducts.bind(this)
     }
 
     async queryOrders(instanceId, query = {}) {
@@ -23,42 +23,13 @@ class StoresApis {
     }
 
 
-    async queryProducts(instanceId, query = {}) {
+    async queryProducts(instanceId, query) {
         const refreshToken = await this.refreshTokenDao.getBy(instanceId);
-
         const { accessToken } = await this.wixOAuthFacade.getFreshAccessToken(refreshToken);
 
         const res = await axios.post(`${this.baseUrl}/v1/products/query`, { query: query }, { headers: { authorization: accessToken } })
 
         return res.data.products
-    }
-
-
-    async setProductOfTheDay(instanceId, productId) {
-        const refreshToken = await this.refreshTokenDao.getBy(instanceId);
-
-        const { accessToken } = await this.wixOAuthFacade.getFreshAccessToken(refreshToken);
-
-        fs.writeFile(this.databasePath, productId, err => {
-            if (err) {
-                console.err(`Error writing to file db: ${err}`);
-                return;
-            }
-        });
-    }
-
-    async getProductCount(instanceId, productId) {
-        const query = {
-            "query":
-            {
-                "filter": {
-                    "paymentStatus": "PAID",
-                    "lineItems.productId": productId
-                }
-            }
-        }
-        const response = await this.queryOrders(instanceId, query)
-        return response
     }
 
 }

@@ -12,6 +12,8 @@ const { json, text } = require('body-parser');
 const { WebhookDecoderVerifier } = require("./utils/WebhookDecoderVerifier");
 const { FileBasedAppInstallationsDao } = require("./dao/FileBasedAppInstallationsDao");
 const { AppInstallationsService } = require("./services/AppInstallationsService");
+const { ProductOfTheDayService } = require("./services/ProductOfTheDayService");
+const { FileBasedProductOfTheDayDao } = require("./dao/FileBasedProductOfTheDayDao");
 
 
 
@@ -31,13 +33,15 @@ const startServer = (config) => {
   const instanceDecoder = new InstanceDecoder(APP_SECRET);
   const refreshTokenDao = new FileBasedRefreshTokenDao();
   const installationsDao = new FileBasedAppInstallationsDao();
+  const productOfTheDayDao = new FileBasedProductOfTheDayDao();
   const installationsService = new AppInstallationsService(installationsDao);
+  const productOfTheDayService = new ProductOfTheDayService(productOfTheDayDao);
   const wixOAuthFacade = new WixOAuthFacade(APP_ID, APP_SECRET, wixApiUrl);
   const storesApis = new StoresApis(`${wixApiUrl}/stores/`, refreshTokenDao, wixOAuthFacade)
   const appApis = new AppApis(`${wixApiUrl}/apps/v1`, refreshTokenDao, wixOAuthFacade);
   const webhookDecoderVerifier = new WebhookDecoderVerifier(WEBHOOK_PUBLIC_KEY);
   const wixAuthController = new WixAuthController(APP_ID, wixOAuthFacade, refreshTokenDao, redirectUrl, wixBaseUrl);
-  const apiController = new ApiController(instanceDecoder, storesApis, appApis, installationsService);
+  const apiController = new ApiController(instanceDecoder, storesApis, appApis, installationsService, productOfTheDayService);
   const webhooksController = new WebhooksController(installationsService, webhookDecoderVerifier)
 
   app.use('/auth', wixAuthController.router)

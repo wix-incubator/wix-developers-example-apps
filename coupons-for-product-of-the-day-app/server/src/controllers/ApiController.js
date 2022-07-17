@@ -1,24 +1,40 @@
 const express = require("express");
-const Console = require("console");
+const schemas = require('./schemas');
+const {validatePostParams, validateGetParams} = require('../middlewares/validateParams');
 
 
 class ApiController {
-    constructor(instanceDecoder, storesApis, appApis, installationsService) {
+    constructor(instanceDecoder, storesApis, appApis, installationsService, productOfTheDayService) {
         this._router = express.Router();
         this.instanceDecoder = instanceDecoder;
         this.storesApis = storesApis;
         this.installationsService = installationsService;
         this.appApis = appApis;
+        this.productOfTheDayService = productOfTheDayService;
         this.registerRoutes();
     }
 
     registerRoutes() {
-        this._router.get('/dashboard', this.dashboardController);
+        this._router.get('/dashboard', validateGetParams(schemas.dashboard), this.dashboardController);
         this._router.get('/installation', this.installationController);
+        this._router.get('/test',validateGetParams(schemas.test), this.testController)
+        this._router.post('/product',validatePostParams(schemas.productOfTheDay), this.productOfTheDayController)
+        this._router.get('/search',validateGetParams(schemas.searchProduct), this.searchProductOfTheDayController)
     }
 
     get router() {
         return this._router;
+    }
+
+    testController = async (req, res) => {
+        res.json('api is ok');
+    }
+
+    searchProductOfTheDayController = async (req, res) => {
+        const parsedInstance = this.instanceDecoder.decodeOrThrow(req.query.instance);
+        const query = {"filter":`{\"name\": {\"$startsWith\": \"${req.query.term}\"}}`}
+        const result = await this.storesApis.queryProducts(parsedInstance.instanceId, query)
+        res.json(result);
     }
 
     installationController = async (req, res) => {
@@ -26,19 +42,20 @@ class ApiController {
         res.json(result);
     }
 
-    dashboardController = async (req, res) => {
-        if(!req.query.instance) {
-            const err = new Error('Required query params missing');
-            err.status = 400;
-            res.send(err);
-        }else {
-            const parsedInstance = this.instanceDecoder.decodeOrThrow(req.query.instance);
-            const getAppInstancePromise = this.appApis.getAppInstance(parsedInstance.instanceId);
-            const [siteInfo] = await Promise.all([getAppInstancePromise]);
-            console.log("parsed instance: ", siteInfo)
-            res.json({parsedInstance, siteInfo});
-        }
+    productOfTheDayController = async (req, res) => {
+        const parsedInstance = this.instanceDecoder.decodeOrThrow(req.body.instance);
+        await this.productOfTheDayService.saveProductOfTheDay(parsedInstance.instanceId, req.body.productId, req.body.discountPercentage)
+        res.status(200).send();
+    }
 
+    dashboardController = async (req, res) => {
+        try {
+            const parsedInstance = this.instanceDecoder.decodeOrThrow(req.query.instance);
+            const productOfTheDayData = await this.productOfTheDayService.getProductOfTheDay(parsedInstance.instanceId)
+            res.json({productOfTheDayData});
+        } catch {
+            res.status(500).send("an error occurred");
+        }
     }
 
 }

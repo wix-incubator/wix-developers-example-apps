@@ -14,12 +14,12 @@ class FileBasedProductOfTheDayDao extends ProductOfTheDayDao {
         else { return {} }
     }
 
-    async savePorductOfTheDay(instanceId, productId, discountPercentage) {
+    async saveProductOfTheDay(instanceId, productId, discountPercentage) {
         this.store[instanceId] = {"productId" : productId, "discountPercentage": discountPercentage}
         fs.writeFileSync("product_of_the_day.localdb", JSON.stringify(this.store));
     }
 
-    async getBy(instanceId){
+    async getBy(instanceId) {
         return this.store[instanceId];
     }
 }

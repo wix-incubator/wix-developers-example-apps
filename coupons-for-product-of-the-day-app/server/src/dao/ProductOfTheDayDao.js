@@ -1,5 +1,5 @@
 class ProductOfTheDayDao {
-    async savePorductOfTheDay(instanceId, productId, discountPercentage) {
+    async saveProductOfTheDay(instanceId, productId, discountPercentage) {
         throw new Error('Unimplemented')
     }
 
