@@ -8,7 +8,7 @@ describe('FileBasedProductOfTheDayDao', () => {
         const instanceId = randomString();
         const productId = randomString();
         const discountPercentage = 10;
-        await dao.savePorductOfTheDay(instanceId, productId, discountPercentage);
+        await dao.saveProductOfTheDay(instanceId, productId, discountPercentage);
         await expect(dao.getBy(instanceId)).resolves.toEqual({"productId": productId,  "discountPercentage": 10})
     })
 
