@@ -21,7 +21,7 @@ function SearchBar({ onSearch }) {
       fullWidth
       InputProps={{
         endAdornment: (
-          <InputAdornment>
+          <InputAdornment position="end">
             <IconButton onClick={() => onSearch(searchTerm)}>
               <SearchIcon />
             </IconButton>

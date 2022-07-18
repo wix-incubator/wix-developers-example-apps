@@ -1,12 +1,23 @@
-import { Box, Stack } from '@mui/material';
+import { Box } from '@mui/material';
 import React from 'react';
 import ProductCard from '../ProductCard';
 
-function ProductsList({ products }) {
+function ProductsList({ products, onSelect, selectedProduct }) {
   return (
-    <Box sx={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
+    <Box
+      sx={{
+        display: 'flex',
+        gap: '24px',
+        flexWrap: 'wrap',
+      }}
+    >
       {products.map((product) => (
-        <ProductCard product={product} />
+        <ProductCard
+          key={product?.id}
+          product={product}
+          onSelect={onSelect}
+          disableSelect={selectedProduct?.id === product?.id}
+        />
       ))}
     </Box>
   );

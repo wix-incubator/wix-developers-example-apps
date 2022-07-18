@@ -1,51 +1,56 @@
 import { Box, Grid, Stack, Typography } from '@mui/material';
-import React, { useState } from 'react';
-import './App.css';
-import DiscountForm from './components/DiscountForm';
-import NoChosenProduct from './components/NoChosenProduct';
+import React, { useEffect, useState } from 'react';
+import ProductDiscountForm from './components/ProductDiscountForm';
+import NoProductSelected from './components/NoProductSelected';
 import ProductsList from './components/ProductsList';
 import SearchBar from './components/SearchBar';
+import { useQueryParams } from './hooks/useQueryParams';
+import Loader from './components/Loader';
+import { searchProducts } from './api/products';
+import { getProductOfTheDay } from './api/productOfTheDay';
 
 function App() {
-  const [products, setProducts] = useState([
-    {
-      id: 1,
-      name: 'Nike Air',
-      price: '43.65$',
-      src: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
-    },
-    {
-      id: 2,
-      name: 'Vans Classic',
-      price: '30.65$',
-      src: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-    },
-    {
-      id: 3,
-      name: 'Vans Classic',
-      price: '30.65$',
-      src: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-    },
-    // {
-    //   id: 4,
-    //   name: 'Vans Classic',
-    //   price: '30.65$',
-    //   src: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-    // },
-  ]);
+  const [showAppLoader, setShowAppLoader] = useState(false);
+  const [products, setProducts] = useState(null);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [productOfTheDayDiscount, setProductOfTheDayDiscount] = useState('');
+  const [searchInProgress, setSearchInProgress] = useState(false);
+  const [searchError, setSearchError] = useState(null);
+  const queryParams = useQueryParams();
 
-  const searchProducts = (value) => {
-    alert('searching for products with search term: ' + value);
-  };
+  useEffect(() => {
+    setShowAppLoader(true);
+    getProductOfTheDay(queryParams.get('instance'))
+      .then((result) => {
+        setSelectedProduct(result.data?.productOfTheDay?.[0]);
+        setProductOfTheDayDiscount(result.data?.discountPercentage);
+      })
+      .catch((err) => {
+        // if not found it will throw an error, maybe we want to return empty array from server
+        console.error(err);
+      })
+      .finally(() => setShowAppLoader(false));
+  }, []);
 
-  const chosenProduct = {
-    name: 'Nike shoes',
-  };
+  if (showAppLoader) {
+    return (
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          height: '100vh',
+          width: '100%',
+        }}
+      >
+        <Loader size={180} />
+      </Box>
+    );
+  }
 
   return (
     <Grid container spacing="30px" padding="0 120px">
       <Grid item xs={12}>
-        <Box sx={{ margin: '24px 0' }}>
+        <Box sx={{ marginTop: '24px' }}>
           <Typography fontWeight="bold" variant="h5">
             Coupon of the day
           </Typography>
@@ -54,26 +59,61 @@ function App() {
       <Grid item xs={8}>
         <Stack spacing="30px">
           <SearchBar
-            onSearch={(value) => {
-              searchProducts(value);
+            onSearch={(searchTerm) => {
+              setSearchError(null);
+              setSearchInProgress(true);
+              searchProducts({
+                searchTerm,
+                instance: queryParams.get('instance'),
+              })
+                .then((result) => {
+                  setProducts(result.data);
+                })
+                .catch((err) => {
+                  setSearchError(err);
+                  console.error(err);
+                })
+                .finally(() => setSearchInProgress(false));
             }}
           />
-          {products && <ProductsList products={products} />}
+          {searchInProgress ? (
+            <Loader />
+          ) : searchError ? (
+            <Typography>Error... Please try again later.</Typography>
+          ) : (
+            products &&
+            (products.length > 0 ? (
+              <ProductsList
+                selectedProduct={selectedProduct}
+                products={products}
+                onSelect={(product) => setSelectedProduct(product)}
+              />
+            ) : (
+              <Box textAlign="center" marginBottom="30px">
+                <Typography variant="h5">{'No products found :('}</Typography>
+              </Box>
+            ))
+          )}
         </Stack>
       </Grid>
       <Grid item xs={4}>
         <Box
           sx={{
-            minHeight: '210px',
+            position: 'sticky',
+            top: '30px',
+            minHeight: '420px',
             border: '1px solid #ababab',
             borderRadius: '5px',
             padding: '24px',
           }}
         >
-          {chosenProduct ? (
-            <DiscountForm chosenProduct={chosenProduct} />
+          {selectedProduct ? (
+            <ProductDiscountForm
+              selectedProduct={selectedProduct}
+              initialDiscount={productOfTheDayDiscount}
+            />
           ) : (
-            <NoChosenProduct />
+            <NoProductSelected />
           )}
         </Box>
       </Grid>

@@ -1,10 +1,10 @@
 import { Box, Stack } from '@mui/material';
 import React from 'react';
 
-function NoChosenProduct() {
+function NoProductSelected() {
   return (
     <Stack alignItems="center" spacing={4}>
-      <Box>No Product Chosen</Box>
+      <Box>Selected product will be shown here</Box>
       <Box textAlign="center">
         Search for products, select one from the list, then set it's discount.
       </Box>
@@ -12,4 +12,4 @@ function NoChosenProduct() {
   );
 }
 
-export default NoChosenProduct;
+export default NoProductSelected;
