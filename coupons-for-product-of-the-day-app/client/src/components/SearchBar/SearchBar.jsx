@@ -24,10 +24,6 @@ function SearchBar({ onSearch }) {
         value={searchTerm}
         fullWidth
         InputProps={{
-          autocomplete: 'new-password',
-          // form: {
-          //   autocomplete: 'off',
-          // },
           startAdornment: (
             <InputAdornment position="start">
               <IconButton onClick={() => onSearch(searchTerm)}>
