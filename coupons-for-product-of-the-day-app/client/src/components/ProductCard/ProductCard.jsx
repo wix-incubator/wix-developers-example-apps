@@ -10,7 +10,12 @@ import React from 'react';
 
 function ProductCard({ product, onSelect, disableSelect }) {
   return (
-    <Card>
+    <Card
+      sx={{
+        borderRadius: '8px',
+        boxShadow: 'none',
+      }}
+    >
       <CardMedia
         component="img"
         sx={{ width: '260px', height: '180px' }}
@@ -25,12 +30,19 @@ function ProductCard({ product, onSelect, disableSelect }) {
           </Typography>
         </Box>
         <Button
+          sx={{
+            borderRadius: '15px',
+            height: '30px',
+            backgroundColor: '#116DFF',
+            textTransform: 'none',
+            boxShadow: 'none',
+          }}
           disabled={disableSelect}
           onClick={() => onSelect(product)}
           size="small"
           variant="contained"
         >
-          select
+          Select
         </Button>
       </CardContent>
     </Card>

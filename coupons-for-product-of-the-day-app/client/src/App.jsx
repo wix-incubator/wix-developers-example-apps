@@ -51,7 +51,11 @@ function App() {
     <Grid container spacing="30px" padding="0 120px">
       <Grid item xs={12}>
         <Box sx={{ marginTop: '24px' }}>
-          <Typography fontWeight="bold" variant="h5">
+          <Typography
+            fontWeight='bold'
+            fontSize={32}
+            variant="h1"
+          >
             Coupon of the day
           </Typography>
         </Box>
