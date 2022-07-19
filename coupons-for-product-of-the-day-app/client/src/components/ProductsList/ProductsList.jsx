@@ -7,7 +7,7 @@ function ProductsList({ products, onSelect, selectedProduct }) {
     <Box
       sx={{
         display: 'flex',
-        gap: '24px',
+        gap: '36px',
         flexWrap: 'wrap',
       }}
     >

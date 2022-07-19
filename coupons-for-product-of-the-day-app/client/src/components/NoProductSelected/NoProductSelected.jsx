@@ -6,7 +6,7 @@ function NoProductSelected() {
     <Stack alignItems="center" spacing={4}>
       <Box>Selected product will be shown here</Box>
       <Box textAlign="center">
-        Search for products, select one from the list, then set it's discount.
+        Search for product, select one from the list, then set it's discount and save.
       </Box>
     </Stack>
   );

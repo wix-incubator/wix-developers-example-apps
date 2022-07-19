@@ -61,6 +61,13 @@ function ProductDiscountForm({ selectedProduct, initialDiscount }) {
         <Button
           disabled={discount === '' || showSuccessfulSaveIndicator}
           variant="outlined"
+          sx={{
+            borderRadius: '15px',
+            height: '30px',
+            // backgroundColor: '#116DFF',
+            textTransform: 'none',
+            boxShadow: 'none',
+          }}
           onClick={() => {
             setSaveError(null);
             setSaveInProgress(true);
@@ -85,9 +92,9 @@ function ProductDiscountForm({ selectedProduct, initialDiscount }) {
           {saveInProgress ? (
             <CircularProgress size={'24px'} />
           ) : showSuccessfulSaveIndicator ? (
-            'product saved'
+            'Product Saved'
           ) : (
-            'save'
+            'Save'
           )}
         </Button>
       </Box>
