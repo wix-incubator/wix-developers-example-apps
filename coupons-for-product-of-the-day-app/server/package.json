@@ -20,7 +20,8 @@
     "express": "^4.16.4",
     "joi": "^17.6.0",
     "jsonwebtoken": "^8.5.1",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.15",
+    "mytunnel": "^3.2.1"
   },
   "devDependencies": {
     "concurrently": "^6.5.1",

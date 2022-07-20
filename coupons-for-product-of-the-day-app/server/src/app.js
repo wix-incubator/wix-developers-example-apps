@@ -14,6 +14,8 @@ const { FileBasedAppInstallationsDao } = require("./dao/FileBasedAppInstallation
 const { AppInstallationsService } = require("./services/AppInstallationsService");
 const { ProductOfTheDayService } = require("./services/ProductOfTheDayService");
 const { FileBasedProductOfTheDayDao } = require("./dao/FileBasedProductOfTheDayDao");
+const {WixInboxApis} = require("./apis/WixInboxApis");
+const {CouponsApis} = require("./apis/CouponsApis");
 
 
 
@@ -30,19 +32,32 @@ const startServer = (config) => {
   app.use(text());
   app.use(json());
 
+  //Helpers
   const instanceDecoder = new InstanceDecoder(APP_SECRET);
+  const webhookDecoderVerifier = new WebhookDecoderVerifier(WEBHOOK_PUBLIC_KEY);
+
+  //Databases Dao's
   const refreshTokenDao = new FileBasedRefreshTokenDao();
   const installationsDao = new FileBasedAppInstallationsDao();
   const productOfTheDayDao = new FileBasedProductOfTheDayDao();
-  const installationsService = new AppInstallationsService(installationsDao);
-  const productOfTheDayService = new ProductOfTheDayService(productOfTheDayDao);
+
+  //Wix OAUTH
   const wixOAuthFacade = new WixOAuthFacade(APP_ID, APP_SECRET, wixApiUrl);
+
+  //Wix APIs
   const storesApis = new StoresApis(`${wixApiUrl}/stores/`, refreshTokenDao, wixOAuthFacade)
   const appApis = new AppApis(`${wixApiUrl}/apps/v1`, refreshTokenDao, wixOAuthFacade);
-  const webhookDecoderVerifier = new WebhookDecoderVerifier(WEBHOOK_PUBLIC_KEY);
+  const couponsApis = new CouponsApis(`${wixApiUrl}/stores/v2`, refreshTokenDao, wixOAuthFacade);
+  const wixInboxApis = new WixInboxApis(`${wixApiUrl}/inbox/v2`, refreshTokenDao, wixOAuthFacade);
+
+  //App Services
+  const installationsService = new AppInstallationsService(installationsDao);
+  const productOfTheDayService = new ProductOfTheDayService(productOfTheDayDao, wixInboxApis, couponsApis, storesApis, APP_ID);
+
+  //App controllers
   const wixAuthController = new WixAuthController(APP_ID, wixOAuthFacade, refreshTokenDao, redirectUrl, wixBaseUrl);
   const apiController = new ApiController(instanceDecoder, storesApis, appApis, installationsService, productOfTheDayService);
-  const webhooksController = new WebhooksController(installationsService, webhookDecoderVerifier)
+  const webhooksController = new WebhooksController(installationsService, productOfTheDayService, webhookDecoderVerifier)
 
   app.use('/auth', wixAuthController.router)
   app.use('/api', apiController.router)

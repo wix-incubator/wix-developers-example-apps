@@ -3,22 +3,26 @@ const crypto = require('crypto');
 
 class CouponsApis {
 
-    constructor(baseUrl, refreshTokenDao, wixOAuthFacade, productOfTheDayDao) {
+    constructor(baseUrl, refreshTokenDao, wixOAuthFacade) {
         this.refreshTokenDao = refreshTokenDao;
         this.wixOAuthFacade = wixOAuthFacade;
         this.baseUrl = baseUrl;
-        this.productOfTheDayDao = productOfTheDayDao;
     }
 
-    async createCoupon(instanceId) {
+    async createCoupon(instanceId, productId, discountPercentage) {
         const refreshToken = await this.refreshTokenDao.getBy(instanceId);
-
         const { accessToken } = await this.wixOAuthFacade.getFreshAccessToken(refreshToken);
 
-        const productOfTheDayObject = await this.productOfTheDayDao.getBy(instanceId);
+        const specification = this.generateCoupon(productId, discountPercentage);
+        const res = await axios.post(`${this.baseUrl}/coupons`, specification, { headers: { authorization: accessToken } })
+
+        return specification.specification
+    }
+
+    generateCoupon(productId, discountPercentage) {
         const now = new Date();
-        const tomorrowInMs =  now.getTime() + 86400000
-        const specification = {
+        const tomorrowInMs = now.getTime() + 86400000
+        return {
             specification: {
                 name: "ProductOfTheDay",
                 code: crypto.randomBytes(12).toString('base64'),
@@ -27,19 +31,16 @@ class CouponsApis {
                 usageLimit: 1,
                 expirationTime: tomorrowInMs,
                 scope: {
-                  namespace: "stores",
-                  group: {
-                    name: "product",
-                    entityId: productOfTheDayObject.productId
-                  }
+                    namespace: "stores",
+                    group: {
+                        name: "product",
+                        entityId: productId
+                    }
                 },
                 limitedToOneItem: true,
-                percentOffRate: productOfTheDayObject.discountPercentage
-              }
-        }
-        const res = await axios.post(`${this.baseUrl}/v2/coupons`, specification, { headers: { authorization: accessToken } })
-
-        return res.data
+                percentOffRate: discountPercentage
+            }
+        };
     }
 
     async getCoupon(instanceId, couponId) {
