@@ -17,7 +17,7 @@ class ApiController {
     registerRoutes() {
         this._router.get('/dashboard', validateGetParams(schemas.dashboard), this.dashboardController);
         this._router.get('/installation', this.installationController);
-        this._router.get('/test',validateGetParams(schemas.test), this.testController)
+        this._router.get('/test', this.testController)
         this._router.post('/product',validatePostParams(schemas.productOfTheDay), this.productOfTheDayController)
         this._router.get('/search',validateGetParams(schemas.searchProduct), this.searchProductOfTheDayController)
     }
@@ -27,7 +27,9 @@ class ApiController {
     }
 
     testController = async (req, res) => {
-        res.json('api is ok');
+        const parsedInstance = this.instanceDecoder.decodeOrThrow(req.query.instance);
+        this.productOfTheDayService.sendCouponOfTheDay(parsedInstance.instanceId, req.query.conversationId);
+        res.json('API is working');
     }
 
     searchProductOfTheDayController = async (req, res) => {
