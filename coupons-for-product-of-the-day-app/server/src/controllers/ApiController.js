@@ -27,9 +27,7 @@ class ApiController {
     }
 
     testController = async (req, res) => {
-        const parsedInstance = this.instanceDecoder.decodeOrThrow(req.query.instance);
-        this.productOfTheDayService.sendCouponOfTheDay(parsedInstance.instanceId, req.query.conversationId);
-        res.json('API is working');
+        res.status(200).send('API is OK');
     }
 
     searchProductOfTheDayController = async (req, res) => {

@@ -9,7 +9,8 @@
     "start": "pm2 start ./start-local.js --watch && pm2 logs",
     "stop": "pm2 stop start-local",
     "logs": "pm2 logs",
-    "test": "jest"
+    "test": "jest",
+    "delete": "pm2 delete start-local"
   },
   "dependencies": {
     "axios": "^0.19.1",
