@@ -1,37 +1,51 @@
+const dayjs = require('dayjs')
+const _ = require('lodash')
+
 class ProductOfTheDayService {
 
-    constructor(fileBasedAppInstallationsDao, wixInboxApis, couponsApis, storesApis, appId) {
-        this.fileBasedAppInstallationsDao = fileBasedAppInstallationsDao;
+    constructor(ProductOfTheDayDao, wixInboxApis, couponsApis, storesApis, appId, couponsDao) {
+        this.productOfTheDayDao = ProductOfTheDayDao;
         this.couponsApis = couponsApis;
         this.wixInboxApis = wixInboxApis;
         this.storesApis = storesApis;
+        this.couponsDao = couponsDao;
+        this.appId = appId
     }
 
     async saveProductOfTheDay(instanceId, productId, discountPercentage) {
-        this.fileBasedAppInstallationsDao.saveProductOfTheDay(instanceId, productId, discountPercentage)
+        this.productOfTheDayDao.saveProductOfTheDay(instanceId, productId, discountPercentage)
     }
 
     async getProductOfTheDay(instanceId) {
-        return this.fileBasedAppInstallationsDao.getBy(instanceId);
+        return this.productOfTheDayDao.getBy(instanceId);
     }
 
-    async sendCouponOfTheDay(instanceId, conversationId) {
-        const productOfTheDayData = await this.fileBasedAppInstallationsDao.getBy(instanceId)
-        const query = {"filter":`{\"id\": {\"$eq\": \"${productOfTheDayData.productId}\"}}`}
-        const [productData, couponData] = await Promise.all([
-            this.storesApis.queryProducts(instanceId, query),
-            this.couponsApis.createCoupon(instanceId, productOfTheDayData.productId, productOfTheDayData.discountPercentage)
-        ])
-        const message = this.generateCouponMessage(conversationId, couponData, productData, "appId", productOfTheDayData.discountPercentage)
-        return this.wixInboxApis.sendMessage(instanceId, message)
+    async sendCouponOfTheDay(instanceId, participantId) {
+        const today =  dayjs().format('DD/MM/YYYY')
+        const productOfTheDayData = await this.productOfTheDayDao.getBy(instanceId)
+        const result = await this.wixInboxApis.getConversation(instanceId, participantId)
+        const conversationId = result?.conversation?.id
+        const coupon = await this.couponsDao.getBy(conversationId, today)
+        
+        if(_.isEmpty(coupon)){
+            const query = {"filter":`{\"id\": {\"$eq\": \"${productOfTheDayData.productId}\"}}`}
+            const [productData, couponData] = await Promise.all([
+                this.storesApis.queryProducts(instanceId, query),
+                this.couponsApis.createCoupon(instanceId, productOfTheDayData.productId, productOfTheDayData.discountPercentage)
+            ])
+            const message = this.generateCouponMessage(conversationId, couponData, productData, productOfTheDayData.discountPercentage)
+            console.log('sending coupon');
+            this.couponsDao.save(instanceId, conversationId, today, couponData)
+            return this.wixInboxApis.sendMessage(instanceId, message)
+        }
     }
 
-    generateCouponMessage(conversationId, couponData, productData, appId, discountPercentage) {
-
+    generateCouponMessage(conversationId, couponData, productData, discountPercentage) {
+        
         return {
             "conversation_id": conversationId,
             "typing_delay": 0,
-            "send_as": appId,
+            "send_as": this.appId,
             "message": {
                 "target_channels": [
                     "CHAT"

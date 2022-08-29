@@ -1,7 +1,6 @@
 const express = require('express');
 const cors = require('cors');
 const { InstanceDecoder } = require("./utils/InstanceDecoder");
-const { FileBasedRefreshTokenDao } = require("./dao/FileBasedRefreshTokenDao")
 const { WixOAuthFacade } = require("./tokens/WixOAuthFacade");
 const { StoresApis } = require("./apis/StoresApis");
 const { AppApis } = require("./apis/AppApis");
@@ -10,12 +9,14 @@ const { ApiController } = require("./controllers/ApiController");
 const { WebhooksController } = require("./controllers/WebhooksController");
 const { json, text } = require('body-parser');
 const { WebhookDecoderVerifier } = require("./utils/WebhookDecoderVerifier");
-const { FileBasedAppInstallationsDao } = require("./dao/FileBasedAppInstallationsDao");
 const { AppInstallationsService } = require("./services/AppInstallationsService");
 const { ProductOfTheDayService } = require("./services/ProductOfTheDayService");
-const { FileBasedProductOfTheDayDao } = require("./dao/FileBasedProductOfTheDayDao");
+const { NedbProductOfTheDayDao } = require("./dao/NedbProductOfTheDayDao");
 const {WixInboxApis} = require("./apis/WixInboxApis");
 const {CouponsApis} = require("./apis/CouponsApis");
+const { NedbAppInstallationsDao } = require('./dao/NedbAppInstallationDao');
+const { NedbRefreshTokenDao } = require('./dao/NedbRefreshTokenDao');
+const { NedbCouponsDao } = require('./dao/NedbCouponsDao');
 
 
 
@@ -37,9 +38,10 @@ const startServer = (config) => {
   const webhookDecoderVerifier = new WebhookDecoderVerifier(WEBHOOK_PUBLIC_KEY);
 
   //Databases Dao's
-  const refreshTokenDao = new FileBasedRefreshTokenDao();
-  const installationsDao = new FileBasedAppInstallationsDao();
-  const productOfTheDayDao = new FileBasedProductOfTheDayDao();
+  const refreshTokenDao = new NedbRefreshTokenDao();
+  const installationsDao = new NedbAppInstallationsDao();
+  const productOfTheDayDao = new NedbProductOfTheDayDao();
+  const couponsDao = new NedbCouponsDao();
 
   //Wix OAUTH
   const wixOAuthFacade = new WixOAuthFacade(APP_ID, APP_SECRET, wixApiUrl);
@@ -52,7 +54,13 @@ const startServer = (config) => {
 
   //App Services
   const installationsService = new AppInstallationsService(installationsDao);
-  const productOfTheDayService = new ProductOfTheDayService(productOfTheDayDao, wixInboxApis, couponsApis, storesApis, APP_ID);
+  const productOfTheDayService = new ProductOfTheDayService(
+    productOfTheDayDao, 
+    wixInboxApis, 
+    couponsApis, 
+    storesApis, 
+    APP_ID,
+    couponsDao);
 
   //App controllers
   const wixAuthController = new WixAuthController(APP_ID, wixOAuthFacade, refreshTokenDao, redirectUrl, wixBaseUrl);

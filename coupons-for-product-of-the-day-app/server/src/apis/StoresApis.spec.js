@@ -11,13 +11,12 @@ const {
 } = require("../../__tests__/drivers/tokens/WixOAuthFacadeTestSupport");
 const nock = require('nock');
 const {randomUrl, randomObject} = require("../../__tests__/utils");
-const databasePath = "../database/product_of_the_day.csv"
 const {StoresApis} = require("./StoresApis");
 
 
 describe('StoresApis', () => {
     const baseUrl = randomUrl();
-    const storesApisInstance = () => new StoresApis(baseUrl, refreshTokenDao, wixOAuthFacade, databasePath);
+    const storesApisInstance = () => new StoresApis(baseUrl, refreshTokenDao, wixOAuthFacade);
 
     const givenInstance = (accessToken, queryResult) =>
         nock(baseUrl, {reqheaders: {authorization: accessToken}}).post('/v2/orders/query').reply(200, queryResult)

@@ -3,11 +3,10 @@ const axios = require('axios');
 
 class StoresApis {
 
-    constructor(baseUrl, refreshTokenDao, wixOAuthFacade, databasePath) {
+    constructor(baseUrl, refreshTokenDao, wixOAuthFacade) {
         this.refreshTokenDao = refreshTokenDao;
         this.wixOAuthFacade = wixOAuthFacade;
         this.baseUrl = baseUrl;
-        this.databasePath = databasePath;
         //this.queryOrders = this.queryOrders.bind(this)
         //this.queryProducts = this.queryProducts.bind(this)
     }

@@ -18,7 +18,7 @@ beforeEach(() => {
 })
 
 const givenProductOfTheDayAndDiscountFor = (instanceId, productId, discountPercentage) =>
-    when(productOfTheDayDaoMock.getBy(instanceId)).thenResolve({productId, discountPercentage})
+    when(productOfTheDayDaoMock.getBy(instanceId)).thenResolve({instanceId, productId, discountPercentage})
 
 module.exports = {
     productOfTheDayDao,

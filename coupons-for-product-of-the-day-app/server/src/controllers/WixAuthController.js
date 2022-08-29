@@ -35,7 +35,7 @@ class WixAuthController {
         
         await this.refreshTokenDao.save(req.query.instanceId, refreshToken);
         const s = await this.refreshTokenDao.getBy(req.query.instanceId);
-        
+        console.log('in redirectUrlHandler',s);
         res.redirect(`${tokenReceivedEndpoint}?access_token=${encodeURIComponent(accessToken)}`);
     }
 }

@@ -30,8 +30,14 @@ class WebhooksController {
     }
 
     wixInboxWebhookHandler = async (req, res) => {
+        console.log('wixInboxWebhookHandler new inbox message')
         const {instanceId, data} = this.webhooksDecoder.verifyAndDecode(req.body);
-        await this.productOfTheDayService.sendCouponOfTheDay(instanceId, data?.actionEvent?.body?.conversationId);
+        let participantId = { 
+            memberId : data?.actionEvent?.body?.message?.sender?.memberId ,
+            contactId: data?.actionEvent?.body?.message?.sender?.contactId,  
+            anonymousVisitorId: data?.actionEvent?.body?.message?.sender?.anonymousVisitorId
+        }
+        await this.productOfTheDayService.sendCouponOfTheDay(instanceId, participantId);
         res.send('ok');
     }
 
