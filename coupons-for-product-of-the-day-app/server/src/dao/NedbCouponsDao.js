@@ -27,14 +27,11 @@ class NedbCouponsDao extends CouponsDao {
     }
 
     async getBy(conversationId, date) {
-        console.log("conversationId", conversationId)
-        console.log("date", date)
         return new Promise((resolve, reject) => {
             this.store.find( { $and: [{conversationId : conversationId}, {date: date}] }, function (err, doc) {
                 if(err){
                     reject(err);
                 }
-                console.log('found coupon', doc)
                 resolve(doc);
             });
         });
