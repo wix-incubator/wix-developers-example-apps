@@ -37,7 +37,7 @@ Here is the response the site visitor gets on the site chat widget
 | [5. Create the Dashboard component.][step05]    
 | [6. Configure OAuth.][step06] 
 | [7. Add Webhooks.][step07]        
-| [8. App in action.][step08] 
+| [8. See the app in action.][step08] 
 | [9. Live coding.][step09]        
 
 
