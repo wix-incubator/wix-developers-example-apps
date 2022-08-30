@@ -21,16 +21,19 @@ Use [Wix API Documentation Center][wix-docs] to add permission to the app at the
 
 -   You can see in store product API [link][wix-api-products] that you need to use the `Read Products` permission.
 Add it to the app permission page similar to this: 
+
 ![wix development site](../images/Read-products.jpg?raw=true)
 
 ## Find the permission to generate coupon and add it to the app.
 -   You can see in coupon API [link][wix-api-coupons] that you need to use the `Manage Coupons` permission.
 Add it to the app permission page similar to this: 
+
 ![wix development site](../images/manage-coupon.jpg?raw=true)
 
 ## Find the permission to send messages to wix chat widget and add it to the app.
 -   You can see in chat API [link][wix-api-chat] that you need to use the `Manage Inbox Messages` permission.
 Add it to the app permission page similar to this: 
+
 ![wix development site](../images/chat-permission.jpg?raw=true)
 
 
