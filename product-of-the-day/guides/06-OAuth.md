@@ -32,12 +32,13 @@
     ```
 -  Under the server folder run the following command that create a `.env` file from the `example.env.text`   
     ```bash
-    cp  example.env.text .env
+    cp  example.env.txt .env
     ```
     Replace the `APP_ID` and `APP_SECRET` parameters in the `.env` file by taking them from the OAuth page of your app at the [Wix Developer Center][wix-dev-center]
     Similar to the following:
 
     ![wix development site](../images/app-id-app-secret.jpg?raw=true)
+    
     We will skip the `WEBHOOK_PUBLIC_KEY` for now.
 
 -  After the installation ends successfuly and you have `.env` file ready with your `APP_ID` and `APP_SECRET` parameters it's time to start the server.
@@ -51,6 +52,7 @@ Run the following command:
     ```
     In the terminal you will get something similar to the following:
     ![wix development site](../images/server-terminal-start.jpg?raw=true)
+    
     In the next step we will need the `AppUrl` and `RedirectUrl` you got in the terminal
 
 - Other server commands (Use `npm` insted of `yarn` if prefered):
