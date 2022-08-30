@@ -16,7 +16,7 @@
  
 ## Save the coupon data by conversion Id and date
 - In our code find the file `ProductOfTheDayService.js` 
-    - First create the date format, add [dayJs] at the top of the file
+    First create the date format, add [dayJs] at the top of the file
     ```bash
         const dayjs = require('dayjs')
     ```
@@ -49,7 +49,7 @@
        if(_.isEmpty(coupon)){
     ```
 
-    Now we are sending a coupon once every day for conversion id.
+    Now we are sending a coupon only once every day for conversion id.
 
 
 
