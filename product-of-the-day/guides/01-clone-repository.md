@@ -27,8 +27,12 @@ The repository should now be cloned to your computer.
 Change directory to the product of the day app
 
 ```bash
-cd product-of-the-day-app
+cd product-of-the-day
 ```
+
+If you do not use Git, you can download zip file of this repo, under `Code` click the `Download ZIP`, similar to the following:
+
+![Download zip](../images/download-repo-zip.jpg?raw=true)
 
 You are now ready to start :)
 

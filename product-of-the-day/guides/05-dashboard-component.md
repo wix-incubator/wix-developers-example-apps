@@ -43,12 +43,14 @@
 ## Add dashboard component to your app in the [Wix Developer Center][wix-dev-center]
 -   Go to your app at [Wix Developer Center][wix-dev-center]
 -   Look for the components page at the left toolbar and click `Add Component` button, choose `Dashborad Component` similar to the following:
+
     ![wix development site](../images/add-component.jpg?raw=true)
 -   Set the `Page URL` of the `Dashboard Page` to be: 
     ```bash
     https://localhost:3000/
     ```
     And click save, similar to the following:
+
     ![wix development site](../images/dashboard-localhost.jpg?raw=true)
 
 

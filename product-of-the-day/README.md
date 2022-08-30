@@ -9,7 +9,7 @@ During the course of this guide, you will learn about Wix APIs infrastructure, C
 Before you get started let's make sure you have the following set up in your workspace:
 
 - Sign in to Wix at [https://www.wix.com].
-- have node installed on your computer (version 16.14.0 or bigger) [https://nodejs.org/en/download/].
+- have node installed on your computer (version 16.14.0 or higher) [https://nodejs.org/en/download/].
 - IDE/text editor.
 
 ## 🚀 Your goal

@@ -1,6 +1,3 @@
-const dayjs = require('dayjs')
-const _ = require('lodash')
-
 class ProductOfTheDayService {
 
     constructor(ProductOfTheDayDao, wixInboxApis, couponsApis, storesApis, appId, couponsDao) {
@@ -21,23 +18,18 @@ class ProductOfTheDayService {
     }
 
     async sendCouponOfTheDay(instanceId, participantId) {
-        const today =  dayjs().format('DD/MM/YYYY')
         const productOfTheDayData = await this.productOfTheDayDao.getBy(instanceId)
         const result = await this.wixInboxApis.getConversation(instanceId, participantId)
         const conversationId = result?.conversation?.id
-        const coupon = await this.couponsDao.getBy(conversationId, today)
-        
-        if(_.isEmpty(coupon)){
-            const query = {"filter":`{\"id\": {\"$eq\": \"${productOfTheDayData.productId}\"}}`}
-            const [productData, couponData] = await Promise.all([
-                this.storesApis.queryProducts(instanceId, query),
-                this.couponsApis.createCoupon(instanceId, productOfTheDayData.productId, productOfTheDayData.discountPercentage)
-            ])
-            const message = this.generateCouponMessage(conversationId, couponData, productData, productOfTheDayData.discountPercentage)
-            console.log('sending coupon');
-            this.couponsDao.save(instanceId, conversationId, today, couponData)
-            return this.wixInboxApis.sendMessage(instanceId, message)
-        }
+        const query = {"filter":`{\"id\": {\"$eq\": \"${productOfTheDayData.productId}\"}}`}
+        const [productData, couponData] = await Promise.all([
+            this.storesApis.queryProducts(instanceId, query),
+            this.couponsApis.createCoupon(instanceId, productOfTheDayData.productId, productOfTheDayData.discountPercentage)
+        ])
+        const message = this.generateCouponMessage(conversationId, couponData, productData, productOfTheDayData.discountPercentage)
+        console.log('sending coupon');
+        this.couponsDao.save(instanceId, conversationId, today, couponData)
+        return this.wixInboxApis.sendMessage(instanceId, message)
     }
 
     generateCouponMessage(conversationId, couponData, productData, discountPercentage) {
