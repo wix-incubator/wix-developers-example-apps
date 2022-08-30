@@ -30,7 +30,7 @@ Change directory to the product of the day app
 cd product-of-the-day-app
 ```
 
-You are now ready to start.
+You are now ready to start :)
 
 ## Next step ➡️
 

@@ -2,7 +2,7 @@
 
 <p align="center">
   <strong>
-    <a href="../README.md#steps"> ↑ Back to ToC</a>&nbsp;&nbsp;&nbsp;
+    <a href="../README.md#steps"> ↑ Back to the beginning</a>&nbsp;&nbsp;&nbsp;
     <a href="03-find-apis.md"> ← Previous Step</a>&nbsp;&nbsp;&nbsp;
     <a href="05-dashboard-component.md"> → Next Step</a>
   </strong>

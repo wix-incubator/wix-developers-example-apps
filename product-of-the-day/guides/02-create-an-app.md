@@ -2,7 +2,7 @@
 
 <p align="center">
   <strong>
-    <a href="../README.md#steps"> ↑ Back to ToC</a>&nbsp;&nbsp;&nbsp;
+    <a href="../README.md#steps"> ↑ Back to the beginning</a>&nbsp;&nbsp;&nbsp;
     <a href="01-clone-repository.md"> ← Previous Step</a>&nbsp;&nbsp;&nbsp;
     <a href="03-find-apis.md"> → Next Step</a>
   </strong>
@@ -28,7 +28,7 @@
 
 ## Create a development site to test your app
 
--   In your app dashboard page Click the `Test your app` button, you should see the opetion to create development site.
+-   In your app dashboard page click the `Test your app` button, you should see the opetion to create development site.
 Keep the Wix business solution selection on `Wix Stores` and click the `Create Site` button.
 
 -  ![wix development site](../images/development-site.jpg?raw=true)

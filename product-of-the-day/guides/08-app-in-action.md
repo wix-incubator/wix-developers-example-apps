@@ -2,7 +2,7 @@
 
 <p align="center">
   <strong>
-    <a href="../README.md#steps"> ↑ Back to ToC</a>&nbsp;&nbsp;&nbsp;
+    <a href="../README.md#steps"> ↑ Back to the beginning</a>&nbsp;&nbsp;&nbsp;
     <a href="07-webhooks.md"> ← Previous Step</a>&nbsp;&nbsp;&nbsp;
     <a href="09-one-coupon-per-day.md"> → Next Step</a>
   </strong>
@@ -37,16 +37,19 @@
 ## Write a message in the wix chat widget and get back the generated coupon.    
 
 - in the site business manager find the live site url, similar to the following:
-![wix development site](../images/view-live-site.jpg?raw=true) 
-Click the `view live site`
+![wix development site](../images/view-live-site.jpg?raw=true)
+  
+  Click the `view live site`
 - in your live site, open the chat widget and type `Hey` similar to the following: 
+
   ![wix development site](../images/chat-live-site.jpg?raw=true) 
 - If your app works you will get response with a coupon to the product of the day you choose in the app dashboard, similar to the following:
-![wix development site](../images/coupon-gen.jpg?raw=true) 
+  ![wix development site](../images/coupon-gen.jpg?raw=true) 
 
 ## Use the coupon to get the discount on the product of the day.
 - On the message you got back you have the coupon code, and a link to the product of the day, copy the coupon code and click the link. 
 - Add the product of the day to the store cart and go to store checkout, add the coupon code to redeem the coupon and see that you got the Discount Percentage you added in the app dashboard in the previous steps.
+
 ![wix development site](../images/redeem-coupon.jpg?raw=true) 
 
 ## Next step ➡️
