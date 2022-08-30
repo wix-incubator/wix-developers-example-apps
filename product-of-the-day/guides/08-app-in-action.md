@@ -24,21 +24,38 @@
   ![wix development site](../images/installer.jpg?raw=true)
 
 
-## Configure the product of the day and the discount percentage in the app dashboard.
+## Configure the product of the day and the discount percentage in the app dashboard under the site business manager.
 
--   Go to your app at [Wix Developer Center][wix-dev-center]
--   Look for the Webhooks page at the left toolbar, click the `Add Webhook` button.
-- Since we need to recived a webhook on every new message site visitor sends in the wix chat widget we need to configure a webhook in our app At the API category select `Wix Chat` and then select the `Message Sent To Business` From the printed output in the terminal which you can see after starting the node server, copy the result of the `Message received webhook:` output and put it in the `Callback URL` field, Similar to the following:
-    ![wix development site](../images/webhook.jpg?raw=true)
+-   Go to your site business manager by going to [My Sites][wix-com] page and click `Select & Edit Site` on your development site.
+-   Look for the `Apps` at the left toolbar, click your app name to open the app dashboard.
+- In the search bar insert `I'm` or any other product name you have in your site store.
+- Select one of the product, insert `Discount Percentage` and click save.
+ Similar to the following:
+    ![wix development site](../images/app-dashboard.jpg?raw=true)
 
+
+## Write a message in the wix chat widget and get back the generated coupon.    
+
+- in the site business manager find the live site url, similar to the following:
+![wix development site](../images/view-live-site.jpg?raw=true) 
+Click the `view live site`
+- in your live site, open the chat widget and type `Hey` similar to the following: 
+![wix development site](../images/chat-live-site.jpg?raw=true) 
+- If your app works you will get response with a coupon to the product of the day you choose in the app dashboard, similar to the following:
+![wix development site](../images/coupon-gen.jpg?raw=true) 
+
+## Use the coupon to get the discount on the product of the day.
+- On the message you got back you have the coupon code, and a link to the product of the day, copy the coupon code and click the link. 
+- Add the product of the day to the store cart and go to store checkout, add the coupon code to redeem the coupon and see that you got the Discount Percentage you added in the app dashboard in the previous steps.
+![wix development site](../images/redeem-coupon.jpg?raw=true) 
 
 ## Next step ➡️
 
-[8. See the app in action.][step08]
+[9. Live coding.][step09]
 
 [webhook]: https://en.wikipedia.org/wiki/Webhook
 [gh-back]: ../README.md#steps
-[step08]: 08-app-in-action.md
-[wix-dev-center]: https://dev.wix.com
+[step09]: 09-one-coupon-per-day.md
+[wix-com]: https://manage.wix.com/account/sites
 [wix-docs]: https://dev.wix.com/api/rest/getting-started
 [wix-api-chat-webhook]: https://dev.wix.com/api/rest/inbox/messages/message-sent-to-business-webhook
