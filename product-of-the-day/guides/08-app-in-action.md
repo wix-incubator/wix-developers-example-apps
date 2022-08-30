@@ -40,7 +40,7 @@
 ![wix development site](../images/view-live-site.jpg?raw=true) 
 Click the `view live site`
 - in your live site, open the chat widget and type `Hey` similar to the following: 
-![wix development site](../images/chat-live-site.jpg?raw=true) 
+  ![wix development site](../images/chat-live-site.jpg?raw=true) 
 - If your app works you will get response with a coupon to the product of the day you choose in the app dashboard, similar to the following:
 ![wix development site](../images/coupon-gen.jpg?raw=true) 
 
