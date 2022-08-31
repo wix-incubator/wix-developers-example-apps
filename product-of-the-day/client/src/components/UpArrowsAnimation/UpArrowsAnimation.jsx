@@ -1,13 +1,10 @@
 import React from 'react';
-import Lottie from 'react-lottie';
-import { getLottieDefaultOptions } from '../../utils';
-import * as upArrowsAnimationData from '../../lottie/up-arrows.json';
+import upArrowsGif from '../../assets/up-arrow-animation.gif';
 
 function UpArrowsAnimation({ size = 240 }) {
   return (
-    <Lottie
-      isClickToPauseDisabled={true}
-      options={getLottieDefaultOptions(upArrowsAnimationData)}
+    <img
+      src={upArrowsGif}
       height={size}
       width={size}
     />

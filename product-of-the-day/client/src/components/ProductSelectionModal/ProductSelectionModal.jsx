@@ -8,6 +8,7 @@ import {
   Button,
   IconButton,
   Grid,
+  Box,
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import SearchBar from '../SearchBar';
@@ -96,7 +97,9 @@ function ProductSelectionModal({ onProductSelection, onRequestClose }) {
               .finally(() => setSearchInProgress(false));
           }}
         />
-        {renderModalContent({ searchInProgress, products, searchApiError })}
+        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+          {renderModalContent({ searchInProgress, products, searchApiError })}
+        </Box>
       </DialogContent>
       {selectedProduct && (
         <DialogActions>

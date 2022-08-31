@@ -51,6 +51,7 @@ function App() {
       <Box
         sx={{
           display: 'flex',
+          justifyContent: 'center',
           alignItems: 'center',
           height: '100vh',
           width: '100%',
@@ -87,7 +88,7 @@ function App() {
             justifyContent: 'center',
           }}
         >
-          <Stack alignItems="center" width="50%">
+          <Stack alignItems="center" maxWidth="600px" width="100%">
             <Box textAlign="center" marginBottom="30px">
               <Typography variant="h6">
                 Choose a product and then set a discount and save
@@ -141,6 +142,12 @@ function App() {
                     )}
                   </Button>
                 </Stack>
+                {saveError && (
+                  <Typography>
+                    Error occurred while trying to save the product,
+                    please try again later...
+                  </Typography>
+                )}
               </Stack>
             ) : (
               <ChooseProductButton onClick={openProductSelectionModal} />

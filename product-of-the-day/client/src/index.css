@@ -26,7 +26,7 @@ body {
 
 .product-card {
   flex: 1;
-  min-width: 260px;
+  min-width: 252px;
   max-width: 340px;
   border-radius: 8px;
 }
