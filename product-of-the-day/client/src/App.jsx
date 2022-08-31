@@ -74,7 +74,7 @@ function App() {
       )}
       <Box sx={{ padding: '24px 156px' }}>
         <Typography fontWeight="bold" fontSize={32} variant="h1">
-          Coupon of the day
+          Product of The Day
         </Typography>
         <Typography variant="subtitle2">
           Offer your users a coupon for one of your products, they will get it
@@ -89,10 +89,7 @@ function App() {
         >
           <Stack alignItems="center" width="50%">
             <Box textAlign="center" marginBottom="30px">
-              <Typography fontWeight="bold" variant="h4">
-                Product of The Day
-              </Typography>
-              <Typography variant="body1">
+              <Typography variant="h6">
                 Choose a product and then set a discount and save
               </Typography>
             </Box>

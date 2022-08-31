@@ -41,6 +41,7 @@ body {
 }
 
 .button {
+  height: 48px;
   min-width: 102px !important;
 }
 

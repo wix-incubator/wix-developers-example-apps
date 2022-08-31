@@ -68,7 +68,7 @@ function ProductSelectionModal({ onProductSelection, onRequestClose }) {
       <DialogTitle>
         <Grid container justifyContent="space-between" alignItems="center">
           <Typography fontWeight="bold" variant="h5">
-            Choose a product
+            Choose Your Product of The Day
           </Typography>
           <IconButton onClick={onRequestClose}>
             <CloseIcon />
@@ -108,7 +108,7 @@ function ProductSelectionModal({ onProductSelection, onRequestClose }) {
               onProductSelection(selectedProduct);
             }}
           >
-            Done
+            Select
           </Button>
         </DialogActions>
       )}
