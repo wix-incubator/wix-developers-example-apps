@@ -106,7 +106,7 @@ function ProductSelectionModal({ onProductSelection, onRequestClose }) {
           <Button
             className="button"
             sx={{ margin: '12px' }}
-            variant="outlined"
+            variant="contained"
             onClick={() => {
               onProductSelection(selectedProduct);
             }}

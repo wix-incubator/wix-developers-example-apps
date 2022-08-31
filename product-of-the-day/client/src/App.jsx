@@ -111,7 +111,7 @@ function App() {
                       productOfTheDayDiscount === '' ||
                       showSuccessfulSaveIndicator
                     }
-                    variant="outlined"
+                    variant="contained"
                     onClick={() => {
                       setSaveError(null);
                       setSaveInProgress(true);

@@ -7,7 +7,7 @@ function ProductOfTheDay({ product, onReplaceRequest }) {
       <Box
         component="img"
         src={product?.media?.mainMedia?.image?.url}
-        height="350px"
+        height="450px"
       />
       <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
         <Box>
@@ -19,7 +19,7 @@ function ProductOfTheDay({ product, onReplaceRequest }) {
         <Button
           onClick={onReplaceRequest}
           className="button"
-          variant="outlined"
+          variant="contained"
         >
           Replace
         </Button>
