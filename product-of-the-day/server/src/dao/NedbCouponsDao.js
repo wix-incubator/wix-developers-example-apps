@@ -1,15 +1,19 @@
 const { CouponsDao } = require("./CouponsDao");
 const Datastore = require('nedb')
+const path = require('path');
+const { Console } = require("console");
+
 
 class NedbCouponsDao extends CouponsDao {
     constructor() {
         super();
+        this.filename = process.platform === "win32"?'c:\windows\temp\coupons.localdb':'/tmp/coupons.localdb'
         this.store = this.initStore()
         this.store.persistence.setAutocompactionInterval( 5000 /*ms*/ )
     }
-
+    
     initStore() {
-        return new Datastore({ filename: '/tmp/coupons.localdb', autoload: true });
+        return new Datastore({ filename: this.filename, autoload: true });
     }
 
     async save(instanceId, conversationId, date, couponData) {

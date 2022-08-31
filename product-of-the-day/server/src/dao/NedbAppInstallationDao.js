@@ -4,13 +4,13 @@ const Datastore = require('nedb')
 class NedbAppInstallationsDao extends AppInstallationsDao {
     constructor() {
         super();
-        //this.initStore = this.initStore.bind(this)
+        this.filename = process.platform === "win32"?'c:\windows\temp\app_install.localdb':'/tmp/app_install.localdb'
         this.store = this.initStore()
         this.store.persistence.setAutocompactionInterval( 5000 /*ms*/ )
     }
 
     initStore() {
-        return new Datastore({ filename: '/tmp/app_install.localdb', autoload: true });
+        return new Datastore({ filename: this.filename, autoload: true });
     }
 
     async save(instanceId, conversationId, date, couponData) {

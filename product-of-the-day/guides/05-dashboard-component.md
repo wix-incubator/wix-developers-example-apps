@@ -36,7 +36,7 @@
     ```
     Or
     ```bash
-    npm start:secure 
+    npm run start:secure 
     ```
 
 

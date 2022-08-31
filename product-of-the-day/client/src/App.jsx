@@ -91,7 +91,7 @@ function App() {
           <Stack alignItems="center" maxWidth="600px" width="100%">
             <Box textAlign="center" marginBottom="30px">
               <Typography variant="h6">
-                Choose a product and then set a discount and save
+                Choose a product and discount precentage
               </Typography>
             </Box>
             {productOfTheDay ? (

@@ -37,14 +37,14 @@
         const coupon = await this.couponsDao.getBy(conversationId, today)
     ```
 
-    Second we add if statment to check if this coupon is empty, we will use [lodash] for that.
+    Second we add if statement to check if this coupon is empty, we will use [lodash] for that.
 
     add this code the top of our js file `ProductOfTheDayService.js`
     ```bash
         const _ = require('lodash')
     ```
 
-    Then we will create use lodash [isEmpty] in our if statment like in the following:
+    We now can use lodash [isEmpty] in our if statement like in the following:
     ```bash
        if(_.isEmpty(coupon)){
     ```
