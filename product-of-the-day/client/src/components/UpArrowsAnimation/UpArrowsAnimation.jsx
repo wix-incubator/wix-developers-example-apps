@@ -1,17 +1,17 @@
 import React from 'react';
 import Lottie from 'react-lottie';
 import { getLottieDefaultOptions } from '../../utils';
-import * as loaderAnimationData from '../../lottie/loader.json';
+import * as upArrowsAnimationData from '../../lottie/up-arrows.json';
 
-function Loader({ size = 240 }) {
+function UpArrowsAnimation({ size = 240 }) {
   return (
     <Lottie
       isClickToPauseDisabled={true}
-      options={getLottieDefaultOptions(loaderAnimationData)}
+      options={getLottieDefaultOptions(upArrowsAnimationData)}
       height={size}
       width={size}
     />
   );
 }
 
-export default Loader;
+export default UpArrowsAnimation;

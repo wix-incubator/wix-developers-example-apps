@@ -1,6 +1,5 @@
 import {
   Box,
-  Button,
   Card,
   CardContent,
   CardMedia,
@@ -8,17 +7,15 @@ import {
 } from '@mui/material';
 import React from 'react';
 
-function ProductCard({ product, onSelect, disableSelect }) {
+function ProductCard({ product, onClick, selected }) {
   return (
     <Card
-      sx={{
-        borderRadius: '8px',
-        boxShadow: 'none',
-      }}
+      className={`product-card ${selected ? 'product-card-selected' : ''}`}
+      onClick={onClick}
     >
       <CardMedia
         component="img"
-        sx={{ width: '260px', height: '180px' }}
+        sx={{ height: '168px' }}
         image={product?.media?.mainMedia?.image?.url}
         alt="Live from space album cover"
       />
@@ -29,21 +26,6 @@ function ProductCard({ product, onSelect, disableSelect }) {
             {product?.price?.formatted?.price}
           </Typography>
         </Box>
-        <Button
-          sx={{
-            borderRadius: '15px',
-            height: '30px',
-            backgroundColor: '#116DFF',
-            textTransform: 'none',
-            boxShadow: 'none',
-          }}
-          disabled={disableSelect}
-          onClick={() => onSelect(product)}
-          size="small"
-          variant="contained"
-        >
-          Select
-        </Button>
       </CardContent>
     </Card>
   );
