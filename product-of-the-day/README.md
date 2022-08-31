@@ -18,7 +18,7 @@ To build a product of the day app that will let Wix site owners the option to se
 
 The follwing will be the app dashboard where the site owner chooses the product of the day and discounts percentage
 
-![wix dashboard coupon](./images/dashboard-coupon-app.jpg?raw=true)
+![wix dashboard coupon](./images/new-dashboard.jpg?raw=true)
 
 Here is the response the site visitor gets on the site chat widget
 

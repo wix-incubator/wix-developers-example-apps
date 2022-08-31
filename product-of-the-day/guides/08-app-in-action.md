@@ -32,7 +32,7 @@
 -   Select one of the product, insert `Discount Percentage` and click save.
  Similar to the following:
 
-    ![wix development site](../images/app-dashboard.jpg?raw=true)
+    ![wix development site](../images/new-dashboard.jpg?raw=true)
 
 
 ## Write a message in the wix chat widget and get back the generated coupon.    
