@@ -37,14 +37,15 @@ It should look like this:
 
 - Replace the `WEBHOOK_PUBLIC_KEY` parameter.
 
-```bash
-  yarn run stop 
-```    
-And 
-```bash
-  yarn run start
-```   
-to restart the server
+- Restart the server by running under the server folder in the terminal
+  ```bash
+    yarn run stop 
+  ```    
+  And 
+  ```bash
+    yarn run start
+  ```   
+
 
 ## Next step ➡️
 
