@@ -5,7 +5,6 @@ class WixInboxApis {
         this.refreshTokenDao = refreshTokenDao;
         this.wixOAuthFacade = wixOAuthFacade;
         this.baseUrl = baseUrl;
-        //this.getAppInstance = this.getAppInstance.bind(this)
     }
 
     async sendMessage(instanceId, message) {

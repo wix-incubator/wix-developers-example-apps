@@ -19,12 +19,13 @@ class ProductOfTheDayService {
 
     async sendCouponOfTheDay(instanceId, participantId) {
         const productOfTheDayData = await this.productOfTheDayDao.getBy(instanceId)
-        const result = await this.wixInboxApis.getConversation(instanceId, participantId)
-        const conversationId = result?.conversation?.id
+        const conversationResult = await this.wixInboxApis.getConversation(instanceId, participantId)
+        const conversationId = conversationResult?.conversation?.id
         const query = {"filter":`{\"id\": {\"$eq\": \"${productOfTheDayData.productId}\"}}`}
         const [productData, couponData] = await Promise.all([
             this.storesApis.queryProducts(instanceId, query),
-            this.couponsApis.createCoupon(instanceId, productOfTheDayData.productId, productOfTheDayData.discountPercentage)
+            this.couponsApis.createCoupon(instanceId, productOfTheDayData.productId, 
+                productOfTheDayData.discountPercentage)
         ])
         const message = this.generateCouponMessage(conversationId, couponData, productData, productOfTheDayData.discountPercentage)
         console.log('sending coupon...');

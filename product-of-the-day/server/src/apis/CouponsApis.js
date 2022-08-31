@@ -42,16 +42,6 @@ class CouponsApis {
             }
         };
     }
-
-    async getCoupon(instanceId, couponId) {
-        const refreshToken = await this.refreshTokenDao.getBy(instanceId);
-
-        const { accessToken } = await this.wixOAuthFacade.getFreshAccessToken(refreshToken);
-
-        const res = await axios.get(`${this.baseUrl}/v2/coupons/${couponId}`, {}, { headers: { authorization: accessToken } })
-
-        return res.data.coupon
-    }
 }
 
 module.exports = {
