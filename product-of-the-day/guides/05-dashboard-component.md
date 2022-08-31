@@ -20,7 +20,7 @@
 -   Go to the client folder in the terminal
    
     ```bash
-    cd product-of-the-day/client 
+    cd client 
     ```
 -  Run one of the following to install js packages:
     ```bash

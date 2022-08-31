@@ -38,7 +38,7 @@ Keep the Wix business solution selection on `Wix Stores` and click the `Create S
 - [Go to Wix (https://www.wix.com)][wix-com]
 
 - Find the development site (site name starts with the phrase `Dev Site`) Hover it and click the button `Select & Edit Site` to open this site business manager.
-- At the business manager find the `Edit Site` to open the site. editor. 
+- At the business manager find the `Edit Site` to open the site editor. 
 - At the site editor click the `Publish` button.
 
 

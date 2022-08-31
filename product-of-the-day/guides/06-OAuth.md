@@ -17,10 +17,10 @@
 
 ## Start the nodeJs server.
 
--   Go to the server folder in the terminal
+-   Go to the server folder in a new terminal
    
     ```bash
-    cd product-of-the-day/server 
+    cd server 
     ```
 -  Run one of the following to install js packages:
     ```bash
