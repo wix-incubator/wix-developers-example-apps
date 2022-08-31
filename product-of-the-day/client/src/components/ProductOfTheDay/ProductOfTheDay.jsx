@@ -4,7 +4,11 @@ import React from 'react';
 function ProductOfTheDay({ product, onReplaceRequest }) {
   return (
     <Stack spacing={3}>
-      <Box component="img" src={product?.media?.mainMedia?.image?.url} />
+      <Box
+        component="img"
+        src={product?.media?.mainMedia?.image?.url}
+        height="350px"
+      />
       <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
         <Box>
           <Typography variant="h6">{product?.name}</Typography>
