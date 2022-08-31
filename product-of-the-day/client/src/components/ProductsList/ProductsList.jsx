@@ -7,7 +7,7 @@ function ProductsList({ products, onSelect, selectedProduct }) {
     <Box
       sx={{
         display: 'flex',
-        gap: '36px',
+        gap: '30px',
         flexWrap: 'wrap',
       }}
     >
@@ -15,8 +15,8 @@ function ProductsList({ products, onSelect, selectedProduct }) {
         <ProductCard
           key={product?.id}
           product={product}
-          onSelect={onSelect}
-          disableSelect={selectedProduct?.id === product?.id}
+          onClick={() => onSelect(product)}
+          selected={selectedProduct?.id === product?.id}
         />
       ))}
     </Box>

@@ -1,12 +1,10 @@
 import React from 'react';
-import Lottie from 'react-lottie';
-import { getLottieDefaultOptions } from '../../utils';
-import * as loaderAnimationData from '../../lottie/loader.json';
+import loaderGif from '../../assets/loader.gif';
 
 function Loader({ size = 240 }) {
   return (
-    <Lottie
-      options={getLottieDefaultOptions(loaderAnimationData)}
+    <img
+      src={loaderGif}
       height={size}
       width={size}
     />

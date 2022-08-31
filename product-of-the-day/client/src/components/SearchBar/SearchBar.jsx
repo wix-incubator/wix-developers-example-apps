@@ -3,12 +3,13 @@ import React, { useState } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
 
-function SearchBar({ onSearch }) {
+function SearchBar({ onSearch, sx }) {
   const [searchTerm, setSearchTerm] = useState('');
 
   return (
-    <Box sx={{ borderRadius: 0 }}>
+    <Box sx={{ borderRadius: 0, ...sx }}>
       <TextField
+        autoComplete="off"
         className="search-bar"
         style={{ border: '0' }}
         size="small"
