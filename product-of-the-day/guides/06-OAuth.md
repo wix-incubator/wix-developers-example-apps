@@ -11,11 +11,11 @@
 
 ## In this step you will:
 
- * Start the node js server
- * Configure the OAuth at the [Wix Developer Center][wix-dev-center] which allow us to get access token to the wix site APIs.
+ * Start the Node.js server.
+ * Configure the [OAuth] at the [Wix Developer Center][wix-dev-center] which allow us to get access token to the wix site APIs.
  
 
-## Start the nodeJs server.
+## Start the Node.js server.
 
 -   Go to the server folder in a new terminal
    
@@ -30,16 +30,16 @@
     ```bash
     npm install 
     ```
--  Under the server folder run the following command that create a `.env` file from the `example.env.text`   
+-  Under the server folder run the following command to create a `.env` file from the `example.env.text`   
     ```bash
     cp  example.env.txt .env
     ```
-    Replace the `APP_ID` and `APP_SECRET` parameters in the `.env` file by taking them from the OAuth page of your app at the [Wix Developer Center][wix-dev-center]
-    Similar to the following:
+    Replace the `APP_ID` and `APP_SECRET` parameters in the `.env` file by taking them from the OAuth page of your app in the [Wix Developer Center][wix-dev-center].
+    It should look like this:
 
     ![wix development site](../images/app-id-app-secret.jpg?raw=true)
     
-    We will skip the `WEBHOOK_PUBLIC_KEY` for now.
+    We will skip the `WEBHOOK_PUBLIC_KEY` parameter for now and replace it on the next step.
 
 -  After the installation ends successfuly and you have `.env` file ready with your `APP_ID` and `APP_SECRET` parameters it's time to start the server.
 Run the following command:
@@ -73,9 +73,9 @@ Run the following command:
         yarn run tests
         ```    
 
-## Configure the OAuth at the [Wix Developer Center][wix-dev-center]
--   Go to your app at [Wix Developer Center][wix-dev-center]
--   Look for the OAuth page at the left toolbar, under the `URLs` section insert the `Redirect URL` and the `App URL` you copied from the terminal output you got in the previous step,  Similar to the following:
+## Configure the [OAuth] at the [Wix Developer Center][wix-dev-center]
+-   Go to your app in [Wix Developer Center][wix-dev-center]
+-   Look for the `OAuth` page in the sidebar. Under the `URLs` section insert the `Redirect URL` and the `App URL` you copied from the terminal output you got in the previous step. It should look like this::
     ![wix development site](../images/oauth-appurl-redirect.jpg?raw=true)
 
 
@@ -87,3 +87,4 @@ Run the following command:
 [gh-back]: ../README.md#steps
 [step07]: 07-webhooks.md
 [wix-dev-center]: https://dev.wix.com
+[OAuth]: https://dev.wix.com/api/rest/getting-started/authentication

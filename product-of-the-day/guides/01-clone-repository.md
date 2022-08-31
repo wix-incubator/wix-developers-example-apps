@@ -19,7 +19,7 @@
 In your Terminal emulator, run the following command from the folder that will hold your projects:
 
 ```bash
-git clone git@github.com:wix/wix-developers-example-apps.git
+git clone https://github.com/wix/wix-developers-example-apps.git
 ```
 
 The repository should now be cloned to your computer.

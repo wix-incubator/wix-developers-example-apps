@@ -13,7 +13,7 @@
 
  * Create an app in the Wix Developers Center
  * Create a development site to test your app
- * Publish you new development site
+ * Publish your new development site
  * Configure app name and icon (Optional)
 
 
@@ -24,12 +24,13 @@
 
 -   Click the `Get Started` button.
 
--   If this is your first app the next button should be `Start Building` if you already have an app your next click should be on `Create New App`
+-  If this is your first app, click `Start Building`. If you already have an app, you should see and click `Create New App` instead.
+
 
 ## Create a development site to test your app
 
--   In your app dashboard page click the `Test your app` button, you should see the opetion to create development site.
-Keep the Wix business solution selection on `Wix Stores` and click the `Create Site` button.
+-  In your app dashboard page click the `Test Your App` button. you should see the option to create a development site. A site with `Wix Stores` is what we need, so just click `Create Site`.
+
 
 -  ![wix development site](../images/development-site.jpg?raw=true)
 
@@ -37,9 +38,10 @@ Keep the Wix business solution selection on `Wix Stores` and click the `Create S
 
 - [Go to Wix (https://www.wix.com)][wix-com]
 
-- Find the development site (site name starts with the phrase `Dev Site`) Hover it and click the button `Select & Edit Site` to open this site business manager.
-- At the business manager find the `Edit Site` to open the site editor. 
-- At the site editor click the `Publish` button.
+- Find the development site (site name starts with the phrase `Dev Site`). Hover over it and click `Select & Edit Site` to open this site's business manager.
+
+- In the business manager find and click `Edit Site` to open the site editor.
+- In the site editor click `Publish`.
 
 
 ## Next step ➡️

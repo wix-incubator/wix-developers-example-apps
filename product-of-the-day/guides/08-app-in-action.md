@@ -17,9 +17,10 @@
  
 ## Install the app on the development site you created
 - Go to your app at [Wix Developer Center][wix-dev-center]
-- Click the `Test Your App` button and select the `Dashboard` option, you will be redirect to select the site you want to install the app, select the development site we created that include wix stores and you will be redirect to the app installer. 
+- Click `Test Your App` and select the `App Market` option. You'll be redirected to select the site you want to install the app on. 
+Select the Wix Stores development site we created earlier and you'll be redirected to the app installer. 
   ![wix development site](../images/test-your-app.jpg?raw=true)
-- In the app installer you can see the app needed permission, this is the  permissions a site owner will see when installing your app. Click the `Add To Site` button.
+- In the app installer you can see the app needed permission. These are the permissions a site owner sees when installing your app. Click `Add To Site`.
 
   ![wix development site](../images/installer.jpg?raw=true)
 
@@ -29,15 +30,15 @@
 -   Go to your site business manager by going to [My Sites][wix-com] page and click `Select & Edit Site` on your development site.
 -   Look for the `Apps` at the left toolbar, click your app name to open the app dashboard.
 -   In the search bar insert `I'm` or any other product name you have in your site store.
--   Select one of the product, insert `Discount Percentage` and click save.
- Similar to the following:
+-   Select a product, insert `Discount Percentage` and click `Save`. 
+This is what it should look like:
 
     ![wix development site](../images/new-dashboard.jpg?raw=true)
 
 
 ## Write a message in the wix chat widget and get back the generated coupon.    
 
-- In the site business manager find the live site url, similar to the following:
+- In the site business manager find the live site url, Here's what it should look like:
 
   ![wix development site](../images/view-live-site.jpg?raw=true)
   

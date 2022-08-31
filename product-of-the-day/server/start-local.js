@@ -20,8 +20,8 @@ const startTunnel = async () => {
     await mytunnel({host: config.hostTunnel, port: config.port, subdomain: process.env.APP_ID});
 
     console.log(`Local server running on port 8080
-AppUrl: ${appUrl}   
 RedirectUrl: ${redirectUrl}
+AppUrl: ${appUrl}   
 Message received webhook: ${inboxWebhook}
 API test link: ${apiTestLink}
 `)

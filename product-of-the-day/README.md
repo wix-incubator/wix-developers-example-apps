@@ -1,7 +1,6 @@
-# Product of the day app workshop
+# Wix App Market - Product of the day app workshop
 
-You will build a new `Wix app` project in this step-by-step guide.
-During the course of this guide, you will learn about Wix APIs infrastructure, Components, webhooks, and other recommended practices.
+You'll build a new `Wix app` with the help of this step-by-step guide. In the next hour you'll learn about Wix APIs, components, webhooks, and other best practice.
 
 
 ## Prerequisites
@@ -9,14 +8,14 @@ During the course of this guide, you will learn about Wix APIs infrastructure, C
 Before you get started let's make sure you have the following set up in your workspace:
 
 - Sign in to Wix at [https://www.wix.com].
-- have node installed on your computer (version 16.14.0 or higher) [https://nodejs.org/en/download/].
-- IDE/text editor.
+- Have Node.js installed on your computer (version 16.14.0 or higher) [https://nodejs.org/en/download/].
+- IDE/text editor. (For example, Visual Studio Code) [https://code.visualstudio.com/].
 
 ## 🚀 Your goal
 
-To build a product of the day app that will let Wix site owners the option to select one of their products from the Wix stores catalog, and select the discount percentage site visitors will get when they contact the site using Wix chat widget.
+To build an app that lets Wix site owners to select one of their products from the Wix Stores catalog, then choose a discount percentage site visitors will get when they contact the site using the Wix Chat widget.
 
-The follwing will be the app dashboard where the site owner chooses the product of the day and discounts percentage
+Here's a look at the app dashboard where the site owner chooses the product of the day and discount percentage.
 
 ![wix dashboard coupon](./images/new-dashboard.jpg?raw=true)
 

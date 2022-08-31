@@ -19,14 +19,14 @@ Use [Wix API Documentation Site][wix-docs] to:
 
 ## Find the API to read store products.
 
--   In order to select the product of the day we need to access the API that get the store products, you can read more about it [here][wix-api-products] 
+-   To select the product of the day we need to access the API that gets the store products. Read more about it [here][wix-api-products]. 
 
 ## Find the API to generate coupon.
--   Once the site owner select the product of the day and the discount percentage, we can then generate a coupon for that product, you can read more about the coupon API [here][wix-api-coupons]
+-   Once the site owner selects the product of the day and the discount percentage, we can then generate a coupon for that product. Read more about the coupon API [here][wix-api-coupons].
 
 
 ## Find the API to send messages to wix chat widget.
--   After we generate the coupon we need the option to response back and write it in a messgae using the wix chat API, you can read more about it [here][wix-api-chat]
+-   After we generate the coupon we need the option to respond and write it in a message using the Wix Chat API. Read more about it [here][wix-api-chat].
 
 
 

@@ -11,7 +11,8 @@
 
 ## In this step you will:
  * Find the right webhook at the [Wix API Documentation Site][wix-docs]   
- * Add a [webhook] to your app at the [Wix Developer Center][wix-dev-center] which allow us to get a callback to our server when a site visitor write a message in the chat.
+ * Add a [webhook] to your app at the [Wix Developer Center][wix-dev-center] This lets us get a callback to our server when a site visitor writes a message in the chat.
+ * Replace the webhook public key in the .env file
  
 ## Find the right webhook 
 - Go to Message Sent To Business Webhook [wix-api-chat-webhook] and read about how to get a callback webhook on every new message from site visitors in the Wix Chat widget.
@@ -19,11 +20,28 @@
 
 ## Add a webhook to your app
 
--   Go to your app at [Wix Developer Center][wix-dev-center]
--   Look for the Webhooks page at the left toolbar, click the `Add Webhook` button.
-- Since we need to recived a webhook on every new message site visitor sends in the wix chat widget we need to configure a webhook in our app At the API category select `Wix Chat` and then select the `Message Sent To Business` From the printed output in the terminal which you can see after starting the node server, copy the result of the `Message received webhook:` output and put it in the `Callback URL` field, Similar to the following:
+-   Go to your app in [Wix Developer Center][wix-dev-center]
+-   Look for the Webhooks page in the sidebar. Click `Add Webhook` button.
+- Since we need to receive a webhook for every new message a site visitor sends in the Wix Chat widget we need to configure a webhook in our app. In the API category select `Wix Chat` and then select the `Message Sent To Business`. 
+Once you've started the node server you should see a printed output in the terminal. Copy the result of the `Message received webhook:` output and put it in the `Callback URL` field. 
+It should look like this:
     ![wix development site](../images/webhook.jpg?raw=true)
 
+## Replace the webhook public key in the .env file
+- Open the `Webhooks` page of your app in the [Wix Developer Center][wix-dev-center]
+- Look for the `Public key` section, open it and click `Copy Key`
+- Open the `.env` under the server folder.
+
+- Replace the `WEBHOOK_PUBLIC_KEY` parameter.
+
+```bash
+  yarn run stop 
+```    
+And 
+```bash
+  yarn run start
+```   
+to restart the server
 
 ## Next step ➡️
 

@@ -10,7 +10,7 @@
 <hr/>
 
 ## In this step you will:
-Use [Wix API Documentation Center][wix-docs] to add permission to the app at the [Wix Developer Center][wix-dev-center]:
+Use [Use Wix API Docs][wix-docs] to add permission to the app in the [Wix Developer Center][wix-dev-center]:
 
  * Find the permission to read store products and add it to the app.
  * Find the permission to generate coupon and add it to the app.

@@ -11,8 +11,9 @@
 
 ## In this step you will:
 
- * Start the client React js project
- * Add the dashboard component, where the site owner choose the product of the day and the discount percentage, to your app in the [Wix Developer Center][wix-dev-center]
+ * Start the client React js project.
+ * Add the dashboard component to your app in the [Wix Developer Center][wix-dev-center] This is where the site owner chooses the product of the day and the discount percentage.
+ 
  
 
 ## Start the client React js project.
@@ -40,16 +41,16 @@
     ```
 
 
-## Add dashboard component to your app in the [Wix Developer Center][wix-dev-center]
--   Go to your app at [Wix Developer Center][wix-dev-center]
--   Look for the components page at the left toolbar and click `Add Component` button, choose `Dashborad Component` similar to the following:
+## Add a dashboard component to your app in the Wix Developers Center
+-   Go to your app [Wix Developer Center][wix-dev-center]
+-   Look for the `Components` page on the left sidebar and click `Add Component`, choose `Dashboard Component`. It should look like:
 
     ![wix development site](../images/add-component.jpg?raw=true)
 -   Set the `Page URL` of the `Dashboard Page` to be: 
     ```bash
     https://localhost:3000/
     ```
-    And click save, similar to the following:
+    And click `Save`, It should look like this:
 
     ![wix development site](../images/dashboard-localhost.jpg?raw=true)
 
