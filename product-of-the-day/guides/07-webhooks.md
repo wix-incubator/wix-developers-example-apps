@@ -29,7 +29,10 @@ It should look like this:
 
 ## Replace the webhook public key in the .env file
 - Open the `Webhooks` page of your app in the [Wix Developer Center][wix-dev-center]
-- Look for the `Public key` section, open it and click `Copy Key`
+  
+- Look for the `Public key` section, open it and click `Copy Key`.
+It should look like this:
+  ![wix development site](../images/webhooks-public-key.jpg?raw=true)
 - Open the `.env` under the server folder.
 
 - Replace the `WEBHOOK_PUBLIC_KEY` parameter.
