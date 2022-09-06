@@ -42,13 +42,14 @@
 - Usually the command `run start:secure` will open `https://localhost:3000` in your browser and you will see this message:
 `Your connection is not private`.
 
-    You are getting this message, because you don't have a certificate for your local host machine, since you can trust this code, we can proceed.
-    
+    You are getting this message, because you don't have a certificate for your localhost machine, since you can trust this code, we can proceed.
+
     ![wix development site](../images/https-localhost.jpg?raw=true)
 
     Click `Advanced` and then click the `Proceed to localhost (unsafe)` link.
 
     It should look like:
+    
     ![wix development site](../images/https-proceed.jpg?raw=true)
 
     Then you will see the dashboard UI loading:
