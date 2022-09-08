@@ -4,7 +4,7 @@ const Datastore = require('nedb')
 class NedbRefreshTokenDao extends RefreshTokenDao {
     constructor() {
         super();
-        this.filename = process.platform === "win32"?'c:\windows\temp\refresh_token.localdb':'/tmp/refresh_token.localdb'
+        this.filename = process.platform === "win32"?'C:\Windows\Temp\refresh_token.localdb':'/tmp/refresh_token.localdb'
         this.store = this.initStore()
         this.store.persistence.setAutocompactionInterval( 5000 /*ms*/ )
     }

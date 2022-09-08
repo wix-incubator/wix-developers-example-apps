@@ -7,7 +7,7 @@ const { Console } = require("console");
 class NedbCouponsDao extends CouponsDao {
     constructor() {
         super();
-        this.filename = process.platform === "win32"?'c:\windows\temp\coupons.localdb':'/tmp/coupons.localdb'
+        this.filename = process.platform === "win32"?'C:\Windows\Temp\coupons.localdb':'/tmp/coupons.localdb'
         this.store = this.initStore()
         this.store.persistence.setAutocompactionInterval( 5000 /*ms*/ )
     }
