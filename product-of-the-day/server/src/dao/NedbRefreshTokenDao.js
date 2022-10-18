@@ -16,10 +16,10 @@ class NedbRefreshTokenDao extends RefreshTokenDao {
     async save(instanceId, refreshToken) {
         this.store.update(
             {"_id": instanceId },
-            {"_id": instanceId, "instanceId": instanceId, "refreshToken": refreshToken}, 
+            {"_id": instanceId, "instanceId": instanceId, "refreshToken": refreshToken},
             {upsert: true}
         )
-        
+
     }
 
     async getBy(instanceId) {
@@ -28,7 +28,7 @@ class NedbRefreshTokenDao extends RefreshTokenDao {
                 if(err){
                     reject(err);
                 }
-                resolve(doc.refreshToken);
+                resolve(doc?.refreshToken);
             });
         });
     }

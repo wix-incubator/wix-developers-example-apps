@@ -27,7 +27,7 @@ class ProductOfTheDayService {
             this.couponsApis.createCoupon(instanceId, productOfTheDayData.productId, 
                 productOfTheDayData.discountPercentage)
         ])
-        const message = this.generateCouponMessage(conversationId, couponData, productData, productOfTheDayData.discountPercentage)
+        const message = this.generateCouponMessage(conversationId, couponData, productData?.products, productOfTheDayData.discountPercentage)
         console.log('sending coupon...');
         return this.wixInboxApis.sendMessage(instanceId, message)
     }

@@ -1,4 +1,4 @@
-const axios = require('axios');
+const axios = require('axios').default;
 const crypto = require('crypto');
 
 class CouponsApis {
@@ -14,7 +14,7 @@ class CouponsApis {
         const { accessToken } = await this.wixOAuthFacade.getFreshAccessToken(refreshToken);
 
         const specification = this.generateCoupon(productId, discountPercentage);
-        const res = await axios.post(`${this.baseUrl}/coupons`, specification, { headers: { authorization: accessToken } })
+        await axios.post(`${this.baseUrl}/coupons`, specification, { headers: { authorization: accessToken } })
 
         return specification.specification
     }

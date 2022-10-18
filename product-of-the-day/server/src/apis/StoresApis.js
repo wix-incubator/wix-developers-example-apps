@@ -1,4 +1,4 @@
-const axios = require('axios');
+const axios = require('axios').default;
 
 
 class StoresApis {
@@ -16,7 +16,7 @@ class StoresApis {
 
         const res = await axios.post(`${this.baseUrl}/v1/products/query`, { query: query }, { headers: { authorization: accessToken } })
 
-        return res.data.products
+        return res.data
     }
 
 }

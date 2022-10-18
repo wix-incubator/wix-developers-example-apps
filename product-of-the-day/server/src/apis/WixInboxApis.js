@@ -1,4 +1,5 @@
-const axios = require('axios');
+const axios = require('axios').default;
+
 class WixInboxApis {
 
     constructor(baseUrl, refreshTokenDao, wixOAuthFacade) {

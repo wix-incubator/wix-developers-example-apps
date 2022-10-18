@@ -23,5 +23,9 @@ describe('WixAuthController', () => {
         expect(oauthTestkit.loggedCalls).toContainEqual(expect.objectContaining({url: expect.stringContaining('/installer/token-received?access_token')}))
     });
 
+    afterAll(() => {
+        return ;
+    });
+
 
 })

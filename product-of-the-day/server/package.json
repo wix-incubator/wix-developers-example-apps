@@ -1,19 +1,16 @@
 {
-  "name": "wix-oauth-app-example",
+  "name": "product-of-the-day",
   "version": "1.0.0",
   "description": "wix app Oauth example",
   "author": "wix app market team",
   "license": "MIT",
   "main": "app.js",
   "scripts": {
-    "start": "pm2 start ./start-local.js --watch && pm2 logs",
-    "stop": "pm2 stop start-local",
-    "logs": "pm2 logs",
-    "test": "jest",
-    "delete": "pm2 delete start-local"
+    "start": "nodemon start ./start-local.js",
+    "test": "jest --forceExit"
   },
   "dependencies": {
-    "axios": "^0.19.1",
+    "axios": "^0.22.0",
     "body-parser": "^1.19.1",
     "cors": "^2.8.5",
     "dayjs": "^1.11.5",
@@ -32,8 +29,7 @@
     "localtunnel": "^2.0.2",
     "mockdate": "^3.0.5",
     "nock": "^13.2.1",
-    "nodemon": "^1.18.10",
-    "pm2": "^5.2.0",
+    "nodemon": "^2.0.19",
     "ts-mockito": "^2.6.1",
     "uuid": "^8.3.2"
   },

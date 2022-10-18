@@ -34,7 +34,7 @@ class ApiController {
         const parsedInstance = this.instanceDecoder.decodeOrThrow(req.query.instance);
         const query = {"filter":`{\"name\": {\"$startsWith\": \"${req.query.term}\"}}`}
         const result = await this.storesApis.queryProducts(parsedInstance.instanceId, query)
-        res.json(result);
+        res.json(result?.products);
     }
 
     installationController = async (req, res) => {

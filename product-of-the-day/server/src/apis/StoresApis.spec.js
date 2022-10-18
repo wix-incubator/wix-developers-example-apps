@@ -18,7 +18,7 @@ describe('StoresApis', () => {
     const baseUrl = randomUrl();
     const storesApisInstance = () => new StoresApis(baseUrl, refreshTokenDao, wixOAuthFacade);
 
-    const givenInstance = (accessToken, queryResult) =>
+    const givenProducts = (accessToken, queryResult) =>
         nock(baseUrl, {reqheaders: {authorization: accessToken}}).post('/v1/products/query').reply(200, queryResult)
 
     it('should get the refresh token, get a fresh access token and finally call wix to get products', async () => {
@@ -26,7 +26,7 @@ describe('StoresApis', () => {
         const queryResult = randomObject();
         givenRefreshTokenFor(instanceId, refreshToken);
         givenAccessToken(refreshToken, accessToken);
-        givenInstance(accessToken, queryResult)
+        givenProducts(accessToken, queryResult)
         await expect(storesApis.queryProducts(instanceId, {})).resolves.toEqual(queryResult)
     })
 

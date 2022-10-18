@@ -13,9 +13,10 @@ class NedbAppInstallationsDao extends AppInstallationsDao {
         return new Datastore({ filename: this.filename, autoload: true });
     }
 
-    async save(instanceId, conversationId, date, couponData) {
+    async save(instanceId, data) {
+        const obj = {"_id": instanceId, "instanceId": instanceId,  ...data }
         this.store.update(
-            {"_id": instanceId }, {"_id": instanceId, "instanceId": instanceId, data}, {upsert: true}
+            {"_id": instanceId }, obj , {upsert: true}
         )
     }
 

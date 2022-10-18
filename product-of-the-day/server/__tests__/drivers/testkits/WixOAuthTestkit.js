@@ -77,7 +77,6 @@ class WixOAuthTestkit {
         this.app.get('/installer/install', (req, res) => {
             const maybeFoundEntry = this.validTokens.find(e => e.appId === req.query.appId && e.token === req.query.token);
             if (maybeFoundEntry) {
-                console.log(req.query)
                 const {authorization_code} = this.givenAuthCodeReturnsRefreshToken(req.query.appId, maybeFoundEntry.appSecret);
                 res.redirect(`${req.query.redirectUrl}?code=${authorization_code}`)
             } else {
