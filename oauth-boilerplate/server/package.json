@@ -1,0 +1,44 @@
+{
+  "name": "product-of-the-day",
+  "version": "1.0.0",
+  "description": "wix app Oauth example",
+  "author": "wix app market team",
+  "license": "MIT",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon start ./start-local.js",
+    "test": "jest --forceExit"
+  },
+  "dependencies": {
+    "axios": "^0.22.0",
+    "body-parser": "^1.19.1",
+    "connect-timeout": "^1.9.0",
+    "cors": "^2.8.5",
+    "dayjs": "^1.11.5",
+    "dotenv": "^16.0.1",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "joi": "^17.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
+    "mytunnel": "^3.2.1",
+    "nedb": "^1.8.0",
+    "ssh2": "^1.13.0"
+  },
+  "devDependencies": {
+    "concurrently": "^6.5.1",
+    "jest": "^27.4.5",
+    "localtunnel": "file:/Users/alonl/github/localtunnel",
+    "mockdate": "^3.0.5",
+    "nock": "^13.2.1",
+    "nodemon": "^2.0.19",
+    "ts-mockito": "^2.6.1",
+    "tunnel-ssh": "^5.0.5",
+    "uuid": "^8.3.2"
+  },
+  "jest": {
+    "testMatch": [
+      "**/**.spec.js"
+    ]
+  }
+}
