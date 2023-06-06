@@ -8,3 +8,4 @@ node_modules
 .last_module
 *.sc
 yarn-error.log
+**/yarn.lock
