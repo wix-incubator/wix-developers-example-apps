@@ -51,23 +51,11 @@ Run the following command:
     npm run start 
     ```
     In the terminal you will get something similar to the following:
-    ![wix development site](../images/server-terminal-start.jpg?raw=true)
+    ![wix development site](../images/product-new-terminal.jpg?raw=true)
     
     In the next step we will need the `AppUrl` and `RedirectUrl` you got in the terminal
 
 - Other server commands (Use `npm` insted of `yarn` if prefered):
-    - Stop the server    
-        ```bash
-        yarn run stop 
-        ```
-    - See the server logs    
-        ```bash
-        yarn run logs
-        ```
-    - Delete the server from [pm2]
-        ```bash
-        yarn run delete
-        ```
     - Run tests    
         ```bash
         yarn run tests

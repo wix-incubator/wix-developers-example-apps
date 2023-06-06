@@ -38,10 +38,8 @@ It should look like this:
 - Replace the `WEBHOOK_PUBLIC_KEY` parameter.
 
 - Restart the server by running under the server folder in the terminal
-  ```bash
-    yarn run stop 
-  ```    
-  And 
+  To stop the server press: `ctrl+c` 
+  And to start: 
   ```bash
     yarn run start
   ```   
