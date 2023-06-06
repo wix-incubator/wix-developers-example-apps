@@ -20,60 +20,63 @@ const { NedbCouponsDao } = require('./dao/NedbCouponsDao');
 
 
 
-const startServer = (config) => {
+const startServer = () => {
   const app = express();
   app.use(cors());
-
-  /*
-    APP_ID and APP_SECRET are secrets and you shouldn't share them with anyone!
-    Their values resides in .env file and you should NOT COMMIT THEM TO GITHUB!
-  */
-  const { APP_ID, APP_SECRET, redirectUrl, wixBaseUrl, WEBHOOK_PUBLIC_KEY, wixApiUrl } = config;
-
   app.use(text());
   app.use(json());
-
-  //Helpers
-  const instanceDecoder = new InstanceDecoder(APP_SECRET);
-  const webhookDecoderVerifier = new WebhookDecoderVerifier(WEBHOOK_PUBLIC_KEY);
-
-  //Databases Dao's
-  const refreshTokenDao = new NedbRefreshTokenDao();
-  const installationsDao = new NedbAppInstallationsDao();
-  const productOfTheDayDao = new NedbProductOfTheDayDao();
-  const couponsDao = new NedbCouponsDao();
-
-  //Wix OAUTH
-  const wixOAuthFacade = new WixOAuthFacade(APP_ID, APP_SECRET, wixApiUrl);
-
-  //Wix APIs
-  const storesApis = new StoresApis(`${wixApiUrl}/stores/`, refreshTokenDao, wixOAuthFacade)
-  const appApis = new AppApis(`${wixApiUrl}/apps/v1`, refreshTokenDao, wixOAuthFacade);
-  const couponsApis = new CouponsApis(`${wixApiUrl}/stores/v2`, refreshTokenDao, wixOAuthFacade);
-  const wixInboxApis = new WixInboxApis(`${wixApiUrl}/inbox/v2`, refreshTokenDao, wixOAuthFacade);
-
-  //App Services
-  const installationsService = new AppInstallationsService(installationsDao);
-  const productOfTheDayService = new ProductOfTheDayService(
-    productOfTheDayDao, 
-    wixInboxApis, 
-    couponsApis, 
-    storesApis, 
-    APP_ID,
-    couponsDao);
-
-  //App controllers
-  const wixAuthController = new WixAuthController(APP_ID, wixOAuthFacade, refreshTokenDao, redirectUrl, wixBaseUrl);
-  const apiController = new ApiController(instanceDecoder, storesApis, appApis, installationsService, productOfTheDayService);
-  const webhooksController = new WebhooksController(installationsService, productOfTheDayService, webhookDecoderVerifier)
-
-  app.use('/auth', wixAuthController.router)
-  app.use('/api', apiController.router)
-  app.use('/webhooks', webhooksController.router)
-
   return app;
 }
 
+
+const createControlers = (app, config) => {
+    /*
+      APP_ID and APP_SECRET are secrets and you shouldn't share them with anyone!
+      Their values resides in .env file and you should NOT COMMIT THEM TO GITHUB!
+    */
+    const { APP_ID, APP_SECRET, redirectUrl, wixBaseUrl, WEBHOOK_PUBLIC_KEY, wixApiUrl } = config;
+
+   //Helpers
+    const instanceDecoder = new InstanceDecoder(APP_SECRET);
+    const webhookDecoderVerifier = new WebhookDecoderVerifier(WEBHOOK_PUBLIC_KEY);
+
+    //Databases Dao's
+    const refreshTokenDao = new NedbRefreshTokenDao();
+    const installationsDao = new NedbAppInstallationsDao();
+    const productOfTheDayDao = new NedbProductOfTheDayDao();
+    const couponsDao = new NedbCouponsDao();
+
+    //Wix OAUTH
+    const wixOAuthFacade = new WixOAuthFacade(APP_ID, APP_SECRET, wixApiUrl);
+
+    //Wix APIs
+    const storesApis = new StoresApis(`${wixApiUrl}/stores/`, refreshTokenDao, wixOAuthFacade)
+    const appApis = new AppApis(`${wixApiUrl}/apps/v1`, refreshTokenDao, wixOAuthFacade);
+    const couponsApis = new CouponsApis(`${wixApiUrl}/stores/v2`, refreshTokenDao, wixOAuthFacade);
+    const wixInboxApis = new WixInboxApis(`${wixApiUrl}/inbox/v2`, refreshTokenDao, wixOAuthFacade);
+
+    //App Services
+    const installationsService = new AppInstallationsService(installationsDao);
+    const productOfTheDayService = new ProductOfTheDayService(
+      productOfTheDayDao, 
+      wixInboxApis, 
+      couponsApis, 
+      storesApis, 
+      APP_ID,
+      couponsDao);
+
+    //App controllers
+    const wixAuthController = new WixAuthController(APP_ID, wixOAuthFacade, refreshTokenDao, redirectUrl, wixBaseUrl);
+    const apiController = new ApiController(instanceDecoder, storesApis, appApis, installationsService, productOfTheDayService);
+    const webhooksController = new WebhooksController(installationsService, productOfTheDayService, webhookDecoderVerifier)
+
+    app.use('/auth', wixAuthController.router)
+    app.use('/api', apiController.router)
+    app.use('/webhooks', webhooksController.router)
+    
+}
+
 module.exports = {
-  startServer
+  startServer,
+  createControlers
 }
