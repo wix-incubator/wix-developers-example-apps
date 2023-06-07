@@ -13,7 +13,6 @@ const startTunnel = async () => {
 
     // Create an SSH client
     const conn = new Client();
-    // Config, just like the second example in my question
     const configSSH = {
         remoteHost: "localhost",
         remotePort: 80,
@@ -27,13 +26,11 @@ const startTunnel = async () => {
     conn.on("ready", () => {
     // When the connection is ready
     console.log("Connection ready");
-    //firstTimePrint = false
     // Start an interactive shell session
     conn.shell((err, stream) => {
       if (err) throw err;
       // And display the shell output (Serveo link)
       stream.on("data", data => {
-        //console.log("data: " + data);
         if(!firstTimePrint){
             const baseUrl = getBaseUrl(data.toString());
             if(baseUrl != ""){
@@ -64,14 +61,6 @@ const startTunnel = async () => {
             //console.log("TCP :: CLOSED");
           })
           .on("data", data => {
-            // console.log(
-            //   "TCP :: DATA: " +
-            //   data
-            //   .toString()
-            //   .split(/\n/g)
-            //   .slice(0, 2)
-            //   .join("\n")
-            // );
           });
         //console.log("Accept remote connection");
         srcSocket.pipe(remote).pipe(srcSocket);
