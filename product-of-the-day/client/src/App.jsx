@@ -1,37 +1,60 @@
+import React, { useEffect, useState } from "react";
+import { useQueryParams } from "./hooks/useQueryParams";
+import { getProductOfTheDay, saveProductOfTheDay } from "./api/productOfTheDay";
 import {
+  Page,
+  WixDesignSystemProvider,
+  Modal,
+  Notification,
+  FloatingNotification,
+  Text,
   Box,
-  Stack,
-  Typography,
-  Button,
-  CircularProgress,
-} from '@mui/material';
-import React, { useEffect, useState } from 'react';
-import { useQueryParams } from './hooks/useQueryParams';
-import Loader from './components/Loader';
-import { getProductOfTheDay, saveProductOfTheDay } from './api/productOfTheDay';
-import ProductSelectionModal from './components/ProductSelectionModal';
-import ProductOfTheDay from './components/ProductOfTheDay';
-import DiscountField from './components/DiscountField';
-import ChooseProductButton from './components/ChooseProductButton';
+} from "@wix/design-system";
+import { StatusWarning } from "@wix/wix-ui-icons-common";
+import { ChooseProductButton } from "./components/ChooseProductButton";
+import { ChooseProductModal } from "./components/ChooseProductModal/ChooseProductModal";
+import { ProductCard } from "./components//ProductCard/ProductCard";
 
 function App() {
   const [showProductSelectionModal, setShowProductSelectionModal] =
     useState(false);
 
-  const [showAppLoader, setShowAppLoader] = useState(false);
   const [productOfTheDay, setProductOfTheDay] = useState(null);
-  const [productOfTheDayDiscount, setProductOfTheDayDiscount] = useState('');
-
-  const [saveError, setSaveError] = useState(null);
-  const [saveInProgress, setSaveInProgress] = useState(false);
+  const [productOfTheDayDiscount, setProductOfTheDayDiscount] = useState(
+    productOfTheDay?.price.discountedPrice || 15
+  );
+  const [showWrWarning, setShowWarningMsg] = React.useState(false);
   const [showSuccessfulSaveIndicator, setShowSuccessfulSaveIndicator] =
     useState(false);
 
   const queryParams = useQueryParams();
 
+  const onSelectProduct = (product) => {
+    setShowProductSelectionModal(false);
+    setProductOfTheDay(product);
+
+    setShowWarningMsg(true);
+  };
+
+  const onActive = async () => {
+    saveProductOfTheDay({
+      instance: queryParams.get("instance"),
+      discountPercentage: productOfTheDayDiscount,
+      productId: productOfTheDay?.id,
+    })
+      .then(() => {
+        setShowSuccessfulSaveIndicator(true);
+        setTimeout(() => {
+          setShowSuccessfulSaveIndicator(false);
+        }, 3500);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
+
   useEffect(() => {
-    setShowAppLoader(true);
-    getProductOfTheDay(queryParams.get('instance'))
+    getProductOfTheDay(queryParams.get("instance"))
       .then((result) => {
         setProductOfTheDay(result.data?.productOfTheDay?.[0]);
         setProductOfTheDayDiscount(result.data?.discountPercentage);
@@ -39,123 +62,82 @@ function App() {
       .catch((err) => {
         // if there is no product of the day it will throw an error, maybe we want to return empty array from server
         console.error(err);
-      })
-      .finally(() => setShowAppLoader(false));
+      });
   }, []);
 
-  const openProductSelectionModal = () => setShowProductSelectionModal(true);
-  const closeProductSelectionModal = () => setShowProductSelectionModal(false);
-
-  if (showAppLoader) {
-    return (
-      <Box
-        sx={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          height: '100vh',
-          width: '100%',
-        }}
-      >
-        <Loader size={180} />
-      </Box>
-    );
-  }
-
+  const onChangeDiscount = (discount) => {
+    setProductOfTheDayDiscount(discount);
+  };
   return (
-    <>
-      {showProductSelectionModal && (
-        <ProductSelectionModal
-          onRequestClose={closeProductSelectionModal}
-          onProductSelection={(product) => {
-            closeProductSelectionModal();
-            setProductOfTheDay(product);
-          }}
+    <WixDesignSystemProvider>
+      <Page height={"100vh"}>
+        <Page.Header
+          title="Product of The Day"
+          subtitle="Provide your website visitors with a discount for one of the products available in your store. The coupon will be visible to them once they engage with Wix Chat."
         />
-      )}
-      <Box sx={{ padding: '24px 156px' }}>
-        <Typography fontWeight="bold" fontSize={32} variant="h1">
-          Product of The Day
-        </Typography>
-        <Typography variant="subtitle2">
-          Offer your users a coupon for one of your products, they will get it
-          once they interact with the Wix Chat bot.
-        </Typography>
-        <Box
-          sx={{
-            marginTop: '30px',
-            display: 'flex',
-            justifyContent: 'center',
-          }}
-        >
-          <Stack alignItems="center" maxWidth="600px" width="100%">
-            <Box textAlign="center" marginBottom="30px">
-              <Typography variant="h6">
-                Choose a product and discount precentage
-              </Typography>
+        <Page.Content>
+          <Notification
+            type="sticky"
+            theme="success"
+            show={showSuccessfulSaveIndicator}
+          >
+            <Notification.TextLabel>
+              Product of the day is live on your site.
+            </Notification.TextLabel>
+            <Notification.CloseButton
+              onClose={() => setShowSuccessfulSaveIndicator(false)}
+            />
+          </Notification>
+
+          {showWrWarning && (
+            <Box marginBottom="SP4">
+              <FloatingNotification
+                prefixIcon={<StatusWarning />}
+                width={"100%"}
+                onClose={() => setShowWarningMsg(false)}
+                type="warning"
+                buttonProps={{
+                  label: "Got It",
+                  onClick: () => setShowWarningMsg(false),
+                }}
+                text={
+                  <Text>
+                    Click “Update” to activate your coupon and any other changes
+                    you make.
+                  </Text>
+                }
+              />
             </Box>
-            {productOfTheDay ? (
-              <Stack spacing={4} width="100%">
-                <ProductOfTheDay
-                  product={productOfTheDay}
-                  onReplaceRequest={openProductSelectionModal}
-                />
-                <Stack direction="row" spacing={10}>
-                  <DiscountField
-                    value={productOfTheDayDiscount}
-                    onChange={setProductOfTheDayDiscount}
-                  />
-                  <Button
-                    className="button"
-                    disabled={
-                      productOfTheDayDiscount === '' ||
-                      showSuccessfulSaveIndicator
-                    }
-                    variant="contained"
-                    onClick={() => {
-                      setSaveError(null);
-                      setSaveInProgress(true);
-                      saveProductOfTheDay({
-                        instance: queryParams.get('instance'),
-                        discountPercentage: productOfTheDayDiscount,
-                        productId: productOfTheDay?.id,
-                      })
-                        .then(() => {
-                          setShowSuccessfulSaveIndicator(true);
-                          setTimeout(() => {
-                            setShowSuccessfulSaveIndicator(false);
-                          }, 3500);
-                        })
-                        .catch((err) => {
-                          setSaveError(err);
-                          console.error(err);
-                        })
-                        .finally(() => setSaveInProgress(false));
-                    }}
-                  >
-                    {saveInProgress ? (
-                      <CircularProgress size={'24px'} />
-                    ) : showSuccessfulSaveIndicator ? (
-                      'Saved'
-                    ) : (
-                      'Save'
-                    )}
-                  </Button>
-                </Stack>
-                {saveError && (
-                  <Typography>
-                    Error occurred while trying to save the product,
-                    please try again later...
-                  </Typography>
-                )}
-              </Stack>
-            ) : (
-              <ChooseProductButton onClick={openProductSelectionModal} />
-            )}
-          </Stack>
-        </Box>
-      </Box>
-    </>
+          )}
+          {productOfTheDay ? (
+            <ProductCard
+              product={productOfTheDay}
+              discountPercentage={productOfTheDayDiscount}
+              onChangeDiscount={onChangeDiscount}
+              onReplace={() => setShowProductSelectionModal(true)}
+              onDelete={() => setProductOfTheDay(null)}
+              onSave={onActive}
+            />
+          ) : (
+            <ChooseProductButton
+              onClick={() => setShowProductSelectionModal(true)}
+            />
+          )}
+          <Modal
+            isOpen={showProductSelectionModal}
+            onRequestClose={() => setShowProductSelectionModal(false)}
+            shouldCloseOnOverlayClick
+            screen="desktop"
+          >
+            <ChooseProductModal
+              onSelectProduct={onSelectProduct}
+              onClose={() => setShowProductSelectionModal(false)}
+              onSave={onSelectProduct}
+            />
+          </Modal>
+        </Page.Content>
+      </Page>
+    </WixDesignSystemProvider>
   );
 }
 
