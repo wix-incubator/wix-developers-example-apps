@@ -54,29 +54,30 @@ If you do not use Git, you can download zip file of this repo, under `Code` clic
 
 -   [Go to Wix Developers Center (https://dev.wix.com)][wix-dev-center]
 
--   Click the `Get Started` button.
+-   Click the `Start Now` button.
 
 -  If this is your first app, click `Start Building`. If you already have an app, you should see and click `Create New App` instead.
 
 
-### Step 3 - Create a development site to test your app 
- 
--  In your app dashboard page click the `Test Your App` button. you should see the option to create a development site. A site with `Wix Stores` is what we need for now, so just click `Create Site`.
-
-
--  ![wix development site](../images/development-site.jpg?raw=true)
-
-
-### Step 4 - Add a dashboard component to your app in the Wix Developers Center
+### Step 3 - Add a dashboard component to your app in the Wix Developers Center
 
 1. Go to your app [Wix Developer Center][wix-dev-center]
 2. Look for the `Components` page on the left sidebar and click `Add Component`, choose `Dashboard Component`. It should look like:
 
     ![wix development site](../images/add-component.jpg?raw=true)
 3. If you already started your server you will see in the terminal the `app dashboard link:` copy it and set it to be the `Page URL` of the `Dashboard Page`
-    And click `Save`, It should look like this:
+4. Click `Save`, It should look like this:
 
     ![wix development site](../images/dashboard-new.jpg?raw=true)
+
+
+### Step 4 - Create a development site to test your app 
+ 
+-  In your app dashboard page click the `Test Your App` button. you should see the option to create a development site. A site with `Wix Stores` is what we need for now, so just click `Create Site`.
+
+
+-  ![wix development site](../images/development-site.jpg?raw=true)
+
 
 ### Step 5 - Start NOde.js and configure OAuth
  
@@ -125,7 +126,8 @@ Run the following command:
 
 2. Configure the [OAuth] at the [Wix Developer Center][wix-dev-center]
 -   Go to your app in [Wix Developer Center][wix-dev-center]
--   Look for the `OAuth` page in the sidebar. Under the `URLs` section insert the `Redirect URL` and the `App URL` you copied from the terminal output you got in the previous step. It should look like this::
+-   Look for the `OAuth` page in the sidebar. Under the `URLs` section insert the `Redirect URL` and the `App URL` you copied from the terminal output you got in the previous step.
+-   Click `Save`. It should look like this:
     ![wix development site](../images/oauth-appurl-redirect.jpg?raw=true)
 
 ### Step 6 - Configure your app to fulfill your use case
@@ -153,7 +155,6 @@ Wix eCommerce:
 
 Wix Payments:
 - Payment Event
-
 
 
 ### Step 7 - Install the app on the development site you created
