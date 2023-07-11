@@ -12,6 +12,7 @@ Before you get started, let's make sure you have the following set up in your wo
 - Sign in to Wix at [https://www.wix.com] with a non-wix email account.
 - Have Node.js installed on your computer (version 16.14.0 or higher) [https://nodejs.org/en/download/].
 - IDE/text editor. (For example, Visual Studio Code) [https://code.visualstudio.com/].
+- An email client like [nodemailer](https://www.npmjs.com/package/nodemailer)
 
 ## 🚀 Your goal
 
