@@ -1,4 +1,4 @@
-# Step 5 - Create the Dashboard component.
+# Step 4 - Create the Dashboard component.
 
 <p align="center">
   <strong>
