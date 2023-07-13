@@ -30,15 +30,15 @@ Here's a look at the app dashboard with the result of the app instance API.
 |---------------------------------------|---------------------------------------------------------------------------------------|
 | [1. Clone the repository.][step01]             
 | [2. Create an app in the Wix Developers Center.][step02]
-| [3. Create the Dashboard component.][step03]    
-| [4. Configure OAuth.][step04] 
+| [3. Configure OAuth.][step03]    
+| [4. Create the Dashboard component.][step04] 
 | [5. See the app in action.][step05] 
    
 
 [step01]: guides/01-clone-repository.md
 [step02]: guides/02-create-an-app.md
-[step03]: guides/03-dashboard-component.md
-[step04]: guides/04-OAuth.md
+[step03]: guides/03-OAuth.md
+[step04]: guides/04-dashboard-component.md
 [step05]: guides/05-app-in-action.md
 
 

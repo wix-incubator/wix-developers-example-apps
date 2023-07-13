@@ -2,7 +2,7 @@
 
 <p align="center">
   <strong>
-    <a href="../README.md#steps"> ↑ Back to ToC</a>&nbsp;&nbsp;&nbsp;
+    <a href="../README.md#steps"> ↑ Back to the beginning</a>&nbsp;&nbsp;&nbsp;
     <em> ← Previous Step</em>&nbsp;&nbsp;&nbsp;
     <a href="02-create-an-app.md"> → Next Step</a>
   </strong>

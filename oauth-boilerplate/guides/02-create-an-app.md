@@ -4,7 +4,7 @@
   <strong>
     <a href="../README.md#steps"> ↑ Back to the beginning</a>&nbsp;&nbsp;&nbsp;
     <a href="01-clone-repository.md"> ← Previous Step</a>&nbsp;&nbsp;&nbsp;
-    <a href="05-dashboard-component.md"> → Next Step</a>
+    <a href="03-OAuth.md"> → Next Step</a>
   </strong>
 </p>
 <hr/>
