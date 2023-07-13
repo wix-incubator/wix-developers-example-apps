@@ -1,4 +1,4 @@
-# Step 8 - See your new app in action.
+# Step 5 - See your new app in action.
 
 <p align="center">
   <strong>
