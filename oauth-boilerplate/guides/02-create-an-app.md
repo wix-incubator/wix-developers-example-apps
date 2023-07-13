@@ -35,11 +35,11 @@
 
 ## Next step ➡️
 
-[3. Create dashboard component.][step03]
+[3. Configure OAuth.][step03]
 
 
 [gh-back]: ../README.md#steps
 
 [wix-dev-center]: https://dev.wix.com
 [wix-com]: https://www.wix.com
-[step03]: 03-dashboard-component.md
+[step03]: 03-OAuth.md

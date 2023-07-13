@@ -1,10 +1,10 @@
-# Step 6 - Configure OAuth.
+# Step 3 - Configure OAuth.
 
 <p align="center">
   <strong>
     <a href="../README.md#steps"> ↑ Back to the beginning</a>&nbsp;&nbsp;&nbsp;
-    <a href="03-dashboard-component.md"> ← Previous Step</a>&nbsp;&nbsp;&nbsp;
-    <a href="05-app-in-action.md"> → Next Step</a>
+    <a href="02-create-an-app.md"> ← Previous Step</a>&nbsp;&nbsp;&nbsp;
+    <a href="04-dashboard-component.md"> → Next Step</a>
   </strong>
 </p>
 <hr/>
@@ -65,10 +65,10 @@ Run the following command:
 
 ## Next step ➡️
 
-[5. Install the app.][step05]
+[4. Create dashboard component.][step04]
 
 
 [gh-back]: ../README.md#steps
-[step05]: 05-app-in-action.md
+[step04]: 04-dashboard-component.md
 [wix-dev-center]: https://dev.wix.com
 [OAuth]: https://dev.wix.com/api/rest/getting-started/authentication

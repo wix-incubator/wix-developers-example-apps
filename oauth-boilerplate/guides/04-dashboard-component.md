@@ -3,8 +3,8 @@
 <p align="center">
   <strong>
     <a href="../README.md#steps"> ↑ Back to the beginning</a>&nbsp;&nbsp;&nbsp;
-    <a href="02-create-an-app.md"> ← Previous Step</a>&nbsp;&nbsp;&nbsp;
-    <a href="04-OAuth.md"> → Next Step</a>
+    <a href="03-OAuth.md"> ← Previous Step</a>&nbsp;&nbsp;&nbsp;
+    <a href="05-app-in-action.md"> → Next Step</a>
   </strong>
 </p>
 <hr/>
@@ -29,14 +29,15 @@
 
     ![wix development site](../images/dashboard-new.jpg?raw=true)
 
+Use [Use Wix API Docs][wix-docs] to add permission to the app in the [Wix Developer Center][wix-dev-center]:
 
-
+![wix development site](../images/Read-products.jpg?raw=true)
 
 ## Next step ➡️
 
-[4. Configure OAuth.][step04]
+[5. Install the app.][step05]
 
-
+[wix-docs]: https://dev.wix.com/api/rest/getting-started
 [gh-back]: ../README.md#steps
-[step04]: 04-OAuth.md
+[step05]: 05-app-in-action.md
 [wix-dev-center]: https://dev.wix.com
