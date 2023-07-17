@@ -23,7 +23,8 @@ You can review the current user flow in Wix and where your app should trigger it
    [place order](./images/place-order.png?raw=true)  
 1. Wix sends an email to the customer:  
    [wix email sent](./images/wix-email-sent.png?raw=true)  
-1. Your app sends a chat message with an invoice including:
+1. Your app sends a chat message with an invoice including:  
+   Basic:
      - subject line
      - site name
      - site logo
@@ -31,6 +32,16 @@ You can review the current user flow in Wix and where your app should trigger it
      - invoice number
      - transaction date
      - shipping info
-     - order details (line item name, quanity and price)
+     - line item name  
+     - line item quanity  
+     - line item price
      - total price
+  
+   Advanced:
+     - line item image  
+     - Wix Bookings number of attendees  
+     - Wix Events guest details
+     - Wix Pricing Plans free trial info  
+     - Wix Restaurants fulfillment type  
+     - Wix Stores subscription info
    
