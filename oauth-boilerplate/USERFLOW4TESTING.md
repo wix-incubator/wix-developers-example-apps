@@ -42,6 +42,6 @@ You can review the current user flow in Wix and where your app should trigger it
      - Wix Bookings number of attendees  
      - Wix Events guest details
      - Wix Pricing Plans free trial info  
-     - Wix Restaurants fulfillment type  
+     - Wix Restaurants order fulfillment type  
      - Wix Stores subscription info
    
