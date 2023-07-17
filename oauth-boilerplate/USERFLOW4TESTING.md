@@ -34,7 +34,7 @@ You can review the current user flow in Wix and where your app should trigger it
      - customer name
      - shipping address
      - line item name  
-     - line item quanity  
+     - line item quantity  
      - line item price
      - total price
   
