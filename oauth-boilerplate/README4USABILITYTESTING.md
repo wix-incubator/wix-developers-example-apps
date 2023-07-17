@@ -187,6 +187,8 @@ Basic:
   - [Transactions List](https://dev.wix.com/api/rest/wix-cashier/payments/transactions-list)  
 - Wix Ecommerce
   - [Get Order](https://dev.wix.com/api/rest/wix-ecommerce/orders/get-order)
+- Inbox  
+  - [Send Message](https://dev.wix.com/api/rest/inbox/messages/send-message)  
  
 Advanced:  
 - Wix Stores
