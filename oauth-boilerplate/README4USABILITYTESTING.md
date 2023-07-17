@@ -133,7 +133,8 @@ The following permissions are relevant to most invoicing apps:
 Basic:  
 - Contacts & Members > Read members & contacts - all read permissions   
 - Wix eCommerce > Read eCommerce - all read permissions  
-- Wix Payments > Wix Payments - view transactions  
+- Wix Payments > Wix Payments - view transactions
+- Inbox > Manage Inbox Messages
 
 Advanced:  
 - Wix Stores > Read Orders  
@@ -157,6 +158,10 @@ Basic:
 
 - Wix Payments:
   - Payment Event
+
+- Inbox:   
+  - Message Sent to Participant
+  - Message Sent to Business  
 
 Advanced:  
 - Wix Stores
