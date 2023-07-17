@@ -12,7 +12,7 @@ Before you get started, let's make sure you have the following set up in your wo
 - Sign in to Wix at [https://www.wix.com] with a non-wix email account.
 - Have Node.js installed on your computer (version 16.14.0 or higher) [https://nodejs.org/en/download/].
 - IDE/text editor. (For example, Visual Studio Code) [https://code.visualstudio.com/].
-- An email client like [nodemailer](https://www.npmjs.com/package/nodemailer)
+  
 
 ## 🚀 Your goal
 
@@ -71,15 +71,8 @@ If you do not use Git, you can download zip file of this repo, under `Code` clic
     ![wix development site](../images/dashboard-new.jpg?raw=true)
 
 
-### Step 4 - Create a development site to test your app 
- 
--  In your app dashboard page click the `Test Your App` button. you should see the option to create a development site. A site with `Wix Stores` is what we need for now, so just click `Create Site`.
 
-
--  ![wix development site](../images/development-site.jpg?raw=true)
-
-
-### Step 5 - Start NOde.js and configure OAuth
+### Step 4 - Start NOde.js and configure OAuth
  
 
 1. Start the Node.js server:
@@ -130,38 +123,88 @@ Run the following command:
 -   Click `Save`. It should look like this:
     ![wix development site](../images/oauth-appurl-redirect.jpg?raw=true)
 
-### Step 6 - Configure your app to fulfill your use case
+### Step 5 - Configure your app to fulfill your use case
 
 Here are some things you will likely need to get your app to work as expected:
 
 **Permissions**  
-The following permissions are relevant to most invoicing apps:  
-Contacts & Members > Read members & contacts - all read permissions  
-Wix eCommerce > Read eCommerce - all read permissions  
-Wix Payments > Wix Payments - view transactions  
+The following permissions are relevant to most invoicing apps:   
+
+Basic:  
+- Contacts & Members > Read members & contacts - all read permissions   
+- Wix eCommerce > Read eCommerce - all read permissions  
+- Wix Payments > Wix Payments - view transactions  
+
+Advanced:  
+- Wix Stores > Read Orders  
+- Wix Bookings > Read Bookings (Including Participants)  
+- Wix Events > Read Basic Events Order Info  
+- Wix Restaurants > Read Orders  
+- Wix Pricing Plans > Read Orders  
 
 **Webhooks**  
 The following webhooks are relevant to most invoicing apps: 
+Basic:  
+- App Management: 
+  - App Installed
+  - App Removed
 
-App Management: 
-- App Installed
-- App Removed
+- Wix eCommerce:
+  - Order Approved
+  - Order Updated
+  - Payment Status Updated
+  - Order Canceled
 
-Wix eCommerce:
-- Order Approved
-- Order Updated
-- Payment Status Updated
-- Order Canceled
+- Wix Payments:
+  - Payment Event
 
-Wix Payments:
-- Payment Event
+Advanced:  
+- Wix Stores
+  - Order Paid
+  - Order Canceled
+  - Order Refunded
+  
+- Wix Bookings     
+  - Booking Confirmed
+     
+- Wix Pricing Plans
+  - Order Purchased
+  - Order Marked as Paid
+
+**API Calls**
+
+Basic:
+- App Management   
+  - [Get App Instance](https://dev.wix.com/api/rest/app-management/apps/app-instance/get-app-instance)  
+- Business Info  
+  - [Get Site Properties](https://dev.wix.com/api/rest/business-info/site-properties/properties/get-site-properties)  
+- Wix Cashier  
+  - [Transactions List](https://dev.wix.com/api/rest/wix-cashier/payments/transactions-list)  
+- Wix Ecommerce
+  - [Get Order](https://dev.wix.com/api/rest/wix-ecommerce/orders/get-order)
+ 
+Advanced:  
+- Wix Stores
+  - [Get Order](https://dev.wix.com/api/rest/wix-stores/orders/get-order)
+  - [Query Orders](https://dev.wix.com/api/rest/wix-stores/orders/query-orders)  
+- Wix Bookings
+  - [Query Extended Bookings](https://dev.wix.com/api/rest/wix-bookings/bookings-reader-v2/query-extended-bookings)
+- Wix Restaurants
+  - [Get Order](https://dev.wix.com/api/rest/wix-restaurants/orders/get-order)
+  - [List Orders](https://dev.wix.com/api/rest/wix-restaurants/orders/list-orders)
+- Wix Events
+  - [Get Order](https://dev.wix.com/api/rest/wix-events/wix-events/order/get-order)
+  - [List Orders](https://dev.wix.com/api/rest/wix-events/wix-events/order/list-order)  
+- Wix Pricing Plans
+  - [Get Order](https://dev.wix.com/api/rest/wix-pricing-plans/pricing-plans/orders/get-order)
+  - [List Orders](https://dev.wix.com/api/rest/wix-pricing-plans/pricing-plans/orders/list-orders)  
 
 
-### Step 7 - Install the app on the development site you created
+### Step 6 - Install the app on the test site 
 
 1. Go to your app at [Wix Developer Center][wix-dev-center]  
 2. Click `Test Your App` and select the `App Market` option. You'll be redirected to select the site you want to install the app on.   
-3. Select any site and you'll be redirected to the app installer.   
+3. Select the test site you were added to, and you'll be redirected to the app installer.   
   ![wix development site](../images/test-your-app.jpg?raw=true)
 4. In the app installer you can see the app needed permission. These are the permissions a site owner sees when installing your app. Click `Add To Site`.  
   ![wix development site](../images/installer.jpg?raw=true)
