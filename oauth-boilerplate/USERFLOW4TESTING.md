@@ -33,7 +33,6 @@ You can review the current user flow in Wix and where your app should trigger it
      - transaction date
      - customer name
      - shipping address
-     - shipping type
      - line item name  
      - line item quanity  
      - line item price
