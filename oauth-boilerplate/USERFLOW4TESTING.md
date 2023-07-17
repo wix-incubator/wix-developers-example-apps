@@ -25,7 +25,9 @@ You can review the current user flow in Wix and where your app should trigger it
    [wix email sent](./images/wix-email-sent.png?raw=true)  
 1. Your app sends a chat message with an invoice including:
      - subject line
-     - site name and logo
+     - site name
+     - site logo
+     - site address
      - invoice number
      - transaction date
      - shipping info
