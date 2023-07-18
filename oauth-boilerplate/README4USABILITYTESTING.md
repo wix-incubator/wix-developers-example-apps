@@ -227,3 +227,5 @@ Advanced:
 
 
   [app-instance]: https://devforum.wix.com/kb/en/article/app-instance-client-side
+  [wix-dev-center]: https://dev.wix.com
+  [OAuth]: https://dev.wix.com/api/rest/getting-started/authentication
