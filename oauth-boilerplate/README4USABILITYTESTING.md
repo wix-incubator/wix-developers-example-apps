@@ -114,10 +114,11 @@ Run the following command:
 1. Go to your app [Wix Developer Center][wix-dev-center]
 2. Look for the `Components` page on the left sidebar and click `Add Component`, choose `Dashboard Component`. It should look like:
 
-    ![wix development site](images/components-page.jpg?raw=true)
-3. Click `Dashboard Page`, It should look like:
+    images/components-page.jpg?raw=true
+   
+4. Click `Dashboard Page`, It should look like:
 
-   images/dashboard-component-types.jpg?raw=true
+   images/dashboard-component-types.png?raw=true
    
 5. If you already started your server you will see in the terminal the `app dashboard link:` copy it and set it to be the `Page URL` of the `Dashboard Page`
 6. Click `Save`, It should look like this:
