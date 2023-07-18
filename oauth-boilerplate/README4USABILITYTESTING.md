@@ -51,7 +51,6 @@ If you do not use Git, you can download zip file of this repo, under `Code` clic
 
 ### Step 2 - Create an app in the Wix Developers Center
 
-
 -   [Go to Wix Developers Center (https://dev.wix.com)][wix-dev-center]
 
 -   Click the `Start Now` button.
@@ -214,9 +213,9 @@ Advanced:
 1. Go to your app at [Wix Developer Center][wix-dev-center]  
 2. Click `Test Your App` and select the `App Market` option. You'll be redirected to select the site you want to install the app on.   
 3. Select the test site you were added to, and you'll be redirected to the app installer.   
-  ![wix development site](../images/test-your-app.jpg?raw=true)
+  ![wix development site](images/test-your-app.jpg?raw=true)
 4. In the app installer you can see the app needed permission. These are the permissions a site owner sees when installing your app. Click `Add To Site`.  
-  ![wix development site](../images/installer.jpg?raw=true)
+  ![wix development site](images/installer.jpg?raw=true)
 5. After installation you will be redirected to the app dashboard to see the result of calling the API of app instance
 
 
