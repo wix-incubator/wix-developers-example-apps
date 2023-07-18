@@ -45,7 +45,7 @@ cd wix-developers-example-apps/oauth-boilerplate
 
 If you do not use Git, you can download zip file of this repo, under `Code` click the `Download ZIP`, similar to the following:
 
-![Download zip](../images/download-repo-zip.jpg?raw=true)
+![Download zip](images/download-repo-zip.jpg?raw=true)
 
 
 
@@ -83,7 +83,7 @@ If you do not use Git, you can download zip file of this repo, under `Code` clic
     Replace the `APP_ID` and `APP_SECRET` parameters in the `.env` file by taking them from the OAuth page of your app in the [Wix Developer Center][wix-dev-center].
     It should look like this:
 
-    ![app secret](../images/app-id-app-secret.jpg?raw=true)
+    ![app secret](images/app-id-app-secret.jpg?raw=true)
     
     We will skip the `WEBHOOK_PUBLIC_KEY` parameter for now.
 
@@ -98,7 +98,7 @@ Run the following command:
     ```
     In the terminal you will get something similar to the following:
 
-    ![terminal](../images/terminal-new.jpg?raw=true)
+    ![terminal](images/terminal-new.jpg?raw=true)
     
     In the next step we will need the `AppUrl` and `RedirectUrl` you got in the terminal
 
@@ -107,20 +107,22 @@ Run the following command:
 -   Go to your app in [Wix Developer Center][wix-dev-center]
 -   Look for the `OAuth` page in the sidebar. Under the `URLs` section insert the `Redirect URL` and the `App URL` you copied from the terminal output you got in the previous step.
 -   Click `Save`. It should look like this:
-    ![wix development site](../images/oauth-appurl-redirect.jpg?raw=true)
+    ![wix development site](images/oauth-appurl-redirect.jpg?raw=true)
 
 ### Step 3 - Add a dashboard component to your app in the Wix Developers Center
 
 1. Go to your app [Wix Developer Center][wix-dev-center]
 2. Look for the `Components` page on the left sidebar and click `Add Component`, choose `Dashboard Component`. It should look like:
 
-    ![wix development site](images/add-component.jpg?raw=true)
+    ![wix development site](images/components-page.jpg?raw=true)
 3. Click `Dashboard Page`, It should look like:
+
+   images/dashboard-component-types.jpg?raw=true
    
 5. If you already started your server you will see in the terminal the `app dashboard link:` copy it and set it to be the `Page URL` of the `Dashboard Page`
 6. Click `Save`, It should look like this:
 
-    ![wix development site](../images/dashboard-new.jpg?raw=true)
+    ![wix development site](images/dashboard-new.jpg?raw=true)
 
 ### Step 5 - Configure your app to fulfill your use case
 
