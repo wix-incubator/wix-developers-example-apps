@@ -57,4 +57,7 @@ You can review the current user flow in Wix and where your app should trigger it
         - CC number: 4000 0000 0000 0002 
         - Exp.date: 03/30
         - CVV: 111
+    - Troubleshooting: If you experience difficulties with the test transactions, you might need the following petri experiments:
+        - specs.EnableSandboxTestMode
+        - specs.StripeAdyenBalancingSpec
    
