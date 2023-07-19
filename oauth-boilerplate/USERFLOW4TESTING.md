@@ -1,4 +1,4 @@
-# User flow in Wix today
+# User flow for usability testing
 
 You can review the current user flow in Wix and where your app should trigger its email.
 
@@ -23,7 +23,7 @@ You can review the current user flow in Wix and where your app should trigger it
    [place order](./images/place-order.png?raw=true)  
 1. Wix sends an email to the customer:  
    [wix email sent](./images/wix-email-sent.png?raw=true)  
-1. Your app sends an email message to the customer through Wix Inbox with an invoice including:  
+1. Your app sends an email message to the customer with an invoice including:  
    Basic:
      - subject line
      - site name
@@ -45,4 +45,16 @@ You can review the current user flow in Wix and where your app should trigger it
      - Wix Pricing Plans free trial info  
      - Wix Restaurants order fulfillment type  
      - Wix Stores subscription info
+  
+ ## Notes:
+  - You can use Wix Inbox functionality to send the invoice to the customer via email.
+  - On the test sites we've prepared for you, you can make test transactions with the following credit cards:
+     - For SUCCESSFUL (APPROVED) Transactions
+       - CC number: 4111 1111 1111 1111 
+       - Exp.date: 03/30 
+       - CVV: 737
+    - For UNSUCCESSFUL (DECLINED) Transaction
+        - CC number: 4000 0000 0000 0002 
+        - Exp.date: 03/30
+        - CVV: 111
    
