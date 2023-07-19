@@ -14,6 +14,7 @@ Before you get started, let's make sure you have the following set up in your wo
 - Have Node.js installed on your computer (version 16.14.0 or higher) [https://nodejs.org/en/download/].
 - IDE/text editor. (For example, Visual Studio Code) [https://code.visualstudio.com/].
 - Access to one our test sites.
+- Access to our [feedback form]() - please fill it out as you go through the process.
   
 
 ## 🚀 Your goal
