@@ -15,7 +15,7 @@ class WixInboxApis {
         }
         const conversationResult = await this.getConversation(instanceId, participantId)
         const conversationId = conversationResult?.conversation?.id
-        const message = this.generateMessage(this.appId, conversationId, text, title)
+        const message = this.generateMessage(conversationId, title, text,  "EMAIL");
         const refreshToken = await this.refreshTokenDao.getBy(instanceId);
         const {accessToken} = await this.wixOAuthFacade.getFreshAccessToken(refreshToken);
         return await axios.post(`${this.baseUrl}/messages`, message,  {headers: {authorization: accessToken}}).then(r => r.data);
@@ -28,18 +28,18 @@ class WixInboxApis {
         return await axios.post(`${this.baseUrl}/conversations`,data ,  {headers: {authorization: accessToken}}).then(r => r.data).catch(error => console.log("error"));
     }
 
-    generateMessage(appId, conversationId, title, text) {
+    generateMessage(conversationId, title, text, channel) {
         
         return {
             "conversation_id": conversationId,
             "typing_delay": 0,
-            "send_as": appId,
+            "send_as": this.appId,
             "message": {
                 "target_channels": [
-                    "CHAT"
+                    channel
                 ],
                 "content": {
-                    "preview_text": "A coupon of the day",
+                    "preview_text": text,
                     "basic": {
                         "items": [
                             {
@@ -49,7 +49,7 @@ class WixInboxApis {
                     },
                     "title": title
                 },
-                "source_channel": "CHAT",
+                "source_channel": channel,
                 "visibility": "BUSINESS_AND_PARTICIPANT",
                 "direction": "BUSINESS_TO_PARTICIPANT"
             }

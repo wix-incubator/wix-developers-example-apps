@@ -4,22 +4,29 @@ const {validatePostParams, validateGetParams} = require('../middlewares/validate
 
 
 class ApiController {
-    constructor(instanceDecoder, installationsService, appApis) {
+    constructor(instanceDecoder, installationsService, appApis, wixInboxApis) {
         this._router = express.Router();
         this.instanceDecoder = instanceDecoder;
         this.installationsService = installationsService;
         this.appApis = appApis;
+        this.wixInboxApis = wixInboxApis;
         this.registerRoutes();
     }
 
     registerRoutes() {
         this._router.get('/dashboard', validateGetParams(schemas.dashboard), this.dashboardController);
         this._router.get('/test', this.testController)
+        this._router.post('/message', this.messageController)
         this._router.get('/installation', this.installationController);
     }
 
     get router() {
         return this._router;
+    }
+
+    messageController = async (req, res) => {
+        await this.wixInboxApis.sendMessage(req.body.instance, req.body.userId, req.body?.title, req.body?.text);
+        res.status(200).send('API is OK');
     }
 
     testController = async (req, res) => {

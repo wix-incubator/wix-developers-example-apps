@@ -57,7 +57,7 @@ const createControlers = (app, config) => {
 
     //App controllers
     const wixAuthController = new WixAuthController(APP_ID, wixOAuthFacade, refreshTokenDao, redirectUrl, wixBaseUrl);
-    const apiController = new ApiController(instanceDecoder,  installationsService, appApis);
+    const apiController = new ApiController(instanceDecoder,  installationsService, appApis, wixInboxApis);
     const webhooksController = new WebhooksController(installationsService, webhookDecoderVerifier)
 
     app.use('/auth', wixAuthController.router)
