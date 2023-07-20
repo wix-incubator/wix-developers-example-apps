@@ -3,6 +3,7 @@ const cors = require('cors');
 const { InstanceDecoder } = require("./utils/InstanceDecoder");
 const { WixOAuthFacade } = require("./tokens/WixOAuthFacade");
 const { AppApis } = require("./apis/AppApis");
+const { WixInboxApis } = require("./apis/WixInboxApis");
 const { WixAuthController } = require("./controllers/WixAuthController");
 const { ApiController } = require("./controllers/ApiController");
 const { WebhooksController } = require("./controllers/WebhooksController");
@@ -11,10 +12,6 @@ const { WebhookDecoderVerifier } = require("./utils/WebhookDecoderVerifier");
 const { AppInstallationsService } = require("./services/AppInstallationsService");
 const { NedbAppInstallationsDao } = require('./dao/NedbAppInstallationDao');
 const { NedbRefreshTokenDao } = require('./dao/NedbRefreshTokenDao');
-
-
-
-
 
 
 
@@ -50,6 +47,7 @@ const createControlers = (app, config) => {
 
     //Wix APIs
     const appApis = new AppApis(`${wixApiUrl}/apps/v1`, refreshTokenDao, wixOAuthFacade);
+    const wixInboxApis = new WixInboxApis(`${wixApiUrl}/inbox/v2`, refreshTokenDao, wixOAuthFacade, APP_ID);
     
     
 
@@ -59,7 +57,7 @@ const createControlers = (app, config) => {
 
     //App controllers
     const wixAuthController = new WixAuthController(APP_ID, wixOAuthFacade, refreshTokenDao, redirectUrl, wixBaseUrl);
-    const apiController = new ApiController(instanceDecoder,  installationsService, appApis);
+    const apiController = new ApiController(instanceDecoder,  installationsService, appApis, wixInboxApis);
     const webhooksController = new WebhooksController(installationsService, webhookDecoderVerifier)
 
     app.use('/auth', wixAuthController.router)
