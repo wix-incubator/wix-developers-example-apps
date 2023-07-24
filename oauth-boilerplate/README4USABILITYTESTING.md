@@ -129,9 +129,10 @@ Run the following command:
   -  click `Save`.
  It should look like this:
 
-    ![wix development site](images/dashboard-new.jpg?raw=true)
+     ![wix development site](images/dashboard-new.jpg?raw=true)
 
 ### Step 5 - Configure your app to fulfill your use case
+If you haven't already, review the expected [user flow](./USERFLOW4TESTING.md).  
 
 Here are some things you will likely need to get your app to work as expected:
 
