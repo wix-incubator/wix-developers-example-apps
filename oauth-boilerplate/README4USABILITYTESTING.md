@@ -117,13 +117,13 @@ Run the following command:
 1. Go to your app in the [Wix Developers Center][wix-dev-center]
 2. Look for the `Components` page on the left sidebar and click `Add Component`, choose `Dashboard Component`. It should look like:
 
-   ![wix development site](images/components-page.png?raw=true)
+   ![wix development site](images/add-component.jpg?raw=true)
    
-3. Click `Dashboard Page`, It should look like:
+4. Click `Dashboard Page`, It should look like:
 
    ![wix development site](images/dashboard-component-types.png?raw=true)
    
-4. If you already started your server:
+5. If you already started your server:
   - you will see in the terminal the `app dashboard link:`
   - copy it from ther terminal and paste it into the `Page URL` field of the `Dashboard Page` component in the Developers Center
   -  click `Save`.
