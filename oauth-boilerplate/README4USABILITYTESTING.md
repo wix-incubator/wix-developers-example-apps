@@ -222,7 +222,7 @@ Advanced:
 4. In the app installer you can see the app needed permission. These are the permissions a site owner sees when installing your app. Click `Add To Site`.  
   ![wix development site](images/installer.jpg?raw=true)
 5. After installation you will be redirected to the app dashboard to see the result of calling the API of app instance.
-6. 6. Trigger a purchase in the live site and check that your app behaves as expectected.
+6. Trigger a purchase in the live site and check that your app behaves as expectected.
 
 
 #### You can browse the code and try understand it:
