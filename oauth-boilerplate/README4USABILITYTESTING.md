@@ -213,7 +213,7 @@ Advanced:
   - [List Orders](https://dev.wix.com/api/rest/wix-pricing-plans/pricing-plans/orders/list-orders)  
 
 
-### Step 6 - Install the app on the test site 
+### Step 6 - Install the app and test it on the test site 
 
 1. Go to your app at [Wix Developer Center][wix-dev-center]  
 2. Click `Test Your App` and select the `App Market Website` option. You'll be redirected to select the site you want to install the app on.
@@ -222,6 +222,7 @@ Advanced:
 4. In the app installer you can see the app needed permission. These are the permissions a site owner sees when installing your app. Click `Add To Site`.  
   ![wix development site](images/installer.jpg?raw=true)
 5. After installation you will be redirected to the app dashboard to see the result of calling the API of app instance.
+6. 6. Trigger a purchase in the live site and check that your app behaves as expectected.
 
 
 #### You can browse the code and try understand it:
