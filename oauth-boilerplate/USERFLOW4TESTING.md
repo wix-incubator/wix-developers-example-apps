@@ -27,8 +27,6 @@ You can review the current user flow in Wix and where your app should trigger it
    Basic:
      - subject line
      - site name
-     - site logo
-     - site address
      - invoice number
      - transaction date
      - customer name
