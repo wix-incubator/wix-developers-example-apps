@@ -9,13 +9,13 @@ You'll learn about Wix APIs, components, OAUTH, and other best practices.
 
 Before you get started, let's make sure you have the following set up in your workspace:
 
-- Sign in to Wix at [https://www.wix.com] with a **non-wix** email account.
+- Sign in to [Wix](https://www.wix.com) with a **non-wix** email account.
   > **Important**: Do not use your wix email account to create your app for this usability session! If you do, if/when you get stuck, there will be no way to fix it :(
-- Have Node.js installed on your computer (version 16.14.0 or higher) [https://nodejs.org/en/download/].
-- IDE/text editor. (For example, Visual Studio Code) [https://code.visualstudio.com/].
+- Have [Node.js](https://nodejs.org/en/download/) installed on your computer (version 16.14.0 or higher).
+- IDE/text editor. (For example, [Visual Studio Code](https://code.visualstudio.com/) ).
 - Access to one our test sites.
 - Access to our [feedback form](https://docs.google.com/forms/d/e/1FAIpQLSc2ep6mxEMAdoTGmXxmN1I8ENGVbXlHVSMJFwXqe1JkJSHK_g/viewform?usp=sf_link) - please fill it out as you go through the process.
-- Please fill in the [feedback form](https://docs.google.com/forms/d/e/1FAIpQLSc2ep6mxEMAdoTGmXxmN1I8ENGVbXlHVSMJFwXqe1JkJSHK_g/viewform?usp=sf_link) before moving on to the next step.
+- Please fill in the feedback form before moving on to the next step.
   
 
 ## 🚀 Your goal
