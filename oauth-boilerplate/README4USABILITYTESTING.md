@@ -133,7 +133,7 @@ Run the following command:
   -  click `Save`.
   It should look like this:
 
-     ![wix development site](images/dashboard-page.png?raw=true)
+     ![wix development site](images/dashboard_page.png?raw=true)
 5. Please fill in the [feedback form](https://docs.google.com/forms/d/e/1FAIpQLSc2ep6mxEMAdoTGmXxmN1I8ENGVbXlHVSMJFwXqe1JkJSHK_g/viewform?usp=sf_link) before moving on to the next step.
 
 ### Step 5 - Configure your app to fulfill your use case
