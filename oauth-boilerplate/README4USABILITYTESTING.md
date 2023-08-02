@@ -129,11 +129,11 @@ Run the following command:
    
 4. If you already started your server:
   - you will see in the terminal the `app dashboard link:`
-  - copy it from ther terminal and paste it into the `Page URL` field of the `Dashboard Page` component in the Developers Center
+  - copy it from ther terminal and paste it into the `iFrame URL` field of the `Dashboard Page` component in the Developers Center
   -  click `Save`.
   It should look like this:
 
-     ![wix development site](images/dashboard-new.jpg?raw=true)
+     ![wix development site](images/dashboard-page.png?raw=true)
 5. Please fill in the [feedback form](https://docs.google.com/forms/d/e/1FAIpQLSc2ep6mxEMAdoTGmXxmN1I8ENGVbXlHVSMJFwXqe1JkJSHK_g/viewform?usp=sf_link) before moving on to the next step.
 
 ### Step 5 - Configure your app to fulfill your use case
