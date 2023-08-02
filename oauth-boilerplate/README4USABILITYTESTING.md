@@ -121,7 +121,7 @@ Run the following command:
 1. Go to your app in the [Wix Developers Center][wix-dev-center]
 2. Look for the `Components` page on the left sidebar and click `Add Component`, choose `Dashboard Component`. It should look like:
 
-   ![wix development site](images/add-component.jpg?raw=true)
+   ![wix development site](images/new-add-component.png?raw=true)
    
 3. Choose `Dashboard Page`, and click on `Add Component`. It should look like:
 
@@ -145,14 +145,16 @@ Please fill in the [feedback form](https://docs.google.com/forms/d/e/1FAIpQLSc2e
 ### Step 6 - Install the app and test it on the test site 
 
 1. Go to your app at [Wix Developer Center][wix-dev-center]  
-2. Click `Test Your App` and select the `App Market Website` option. You'll be redirected to select the site you want to install the app on.
-    ![wix development site](images/test-your-app.png?raw=true) 
-3. Select the test site you were added to, and you'll be redirected to the app installer.   
-4. In the app installer you can see the app needed permission. These are the permissions a site owner sees when installing your app. Click `Add To Site`.  
+2. Click `Test Your App` and select the `App Market Website` option.
+   ![wix development site](images/new-test-your-app.png?raw=true) 
+3. You'll get a message, click `Test App`. You'll be redirected to select the site you want to install the app on.
+    ![wix development site](images/no-dashboard-component.png?raw=true) 
+4. Select the test site you were added to, and you'll be redirected to the app installer.   
+5. In the app installer you can see the app needed permission. These are the permissions a site owner sees when installing your app. Click `Add To Site`.  
   ![wix development site](images/installer.jpg?raw=true)
-5. After installation you will be redirected to the app dashboard to see the result of calling the API of app instance.
-6. Trigger a purchase in the live site and check that your app behaves as expectected.
-7. Please fill in the [feedback form](https://docs.google.com/forms/d/e/1FAIpQLSc2ep6mxEMAdoTGmXxmN1I8ENGVbXlHVSMJFwXqe1JkJSHK_g/viewform?usp=sf_link) before moving on to the next step.
+6. After installation you will be redirected to the app dashboard to see the result of calling the API of app instance.
+7. Trigger a purchase in the live site and check that your app behaves as expectected.
+8. Please fill in the [feedback form](https://docs.google.com/forms/d/e/1FAIpQLSc2ep6mxEMAdoTGmXxmN1I8ENGVbXlHVSMJFwXqe1JkJSHK_g/viewform?usp=sf_link) before moving on to the next step.
 
 #### You can browse the code and try understand it:
   - Look for the `WixOAuthFacade` and `WixAuthController` classes For OAUTH.
