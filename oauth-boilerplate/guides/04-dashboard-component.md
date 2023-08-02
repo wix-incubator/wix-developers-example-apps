@@ -24,7 +24,7 @@
 -   Look for the `Components` page on the left sidebar and click `Add Component`, choose `Dashboard Component`. It should look like:
 
     ![wix development site](../images/add-component.jpg?raw=true)
--   If you already started your server you will see in the terminal the `app dashboard link:` copy it and set it to be the `Page URL` of the `Dashboard Page`
+-   If you already started your server you will see in the terminal the `app dashboard link:` copy it and set it to be the `iFrame URL` of the `Dashboard Page`
     And click `Save`, It should look like this:
 
     ![wix development site](../images/dashboard-new.jpg?raw=true)

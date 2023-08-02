@@ -117,11 +117,11 @@ Run the following command:
 ### Step 4 - Add a dashboard component to your app in the Wix Developers Center
 
 1. Go to your app in the [Wix Developers Center][wix-dev-center]
-2. Look for the `Components` page on the left sidebar and click `Add Component`, choose `Dashboard Component`. It should look like:
+2. Look for the `Components` page on the left sidebar and click `Add Component`, choose `Dashboard Component`. 
 
-   ![wix development site](images/new-add-component.png?raw=true)
+   ![wix development site](images/add-component.jpg?raw=true)
    
-3. Choose `Dashboard Page`, and click on `Add Component`. It should look like:
+3. Choose `Dashboard Page`, and click on `Add Component`.
 
    ![wix development site](images/dashboard-component-types.png?raw=true)
    
@@ -129,9 +129,8 @@ Run the following command:
   - you will see in the terminal the `app dashboard link:`
   - copy it from ther terminal and paste it into the `iFrame URL` field of the `Dashboard Page` component in the Developers Center
   -  click `Save`.
-  It should look like this:
 
-     ![wix development site](images/dashboard_page.png?raw=true)
+     ![wix development site](images/dashboard-new.jpg?raw=true)
      
 
 ### Step 5 - Configure your app to fulfill your use case
