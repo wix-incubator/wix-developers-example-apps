@@ -14,8 +14,7 @@ Before you get started, let's make sure you have the following set up in your wo
 - Have [Node.js](https://nodejs.org/en/download/) installed on your computer (version 16.14.0 or higher).
 - IDE/text editor. (For example, [Visual Studio Code](https://code.visualstudio.com/) ).
 - Access to one our test sites.
-- Access to our [feedback form](https://docs.google.com/forms/d/e/1FAIpQLSc2ep6mxEMAdoTGmXxmN1I8ENGVbXlHVSMJFwXqe1JkJSHK_g/viewform?usp=sf_link) - please fill it out as you go through the process.
-- Please fill in the feedback form before moving on to the next step.
+- Access to our [feedback form](https://docs.google.com/forms/d/e/1FAIpQLSc2ep6mxEMAdoTGmXxmN1I8ENGVbXlHVSMJFwXqe1JkJSHK_g/viewform?usp=sf_link) - please fill it out as you configure your app.
   
 
 ## 🚀 Your goal
@@ -52,7 +51,6 @@ If you do not use Git, you can download zip file of this repo, under `Code` clic
 
 ![Download zip](images/download-repo-zip.jpg?raw=true)
 
-3. Please fill in the [feedback form](https://docs.google.com/forms/d/e/1FAIpQLSc2ep6mxEMAdoTGmXxmN1I8ENGVbXlHVSMJFwXqe1JkJSHK_g/viewform?usp=sf_link) before moving on to the next step.
 
 ### Step 2 - Create an app in the Wix Developers Center
 
@@ -61,8 +59,8 @@ If you do not use Git, you can download zip file of this repo, under `Code` clic
 -   Click the `Start Now` button.
 
 -  If this is your first app, click `Start Building`. If you already have an app, you should see and click `Create New App` instead.
-
--  Please fill in the [feedback form](https://docs.google.com/forms/d/e/1FAIpQLSc2ep6mxEMAdoTGmXxmN1I8ENGVbXlHVSMJFwXqe1JkJSHK_g/viewform?usp=sf_link) before moving on to the next step.
+  
+-  Add your teammates to your app as **Team Collaborators** so all of you can work on it at once.
 
 ### Step 3 - Start Node.js and configure OAuth
  
@@ -114,7 +112,7 @@ Run the following command:
 -   Look for the `OAuth` page in the sidebar. Under the `URLs` section insert the `Redirect URL` and the `App URL` you copied from the terminal output you got in the previous step.
 -   Click `Save`. It should look like this:
     ![wix development site](images/oauth-appurl-redirect.jpg?raw=true)  
-3. Please fill in the [feedback form](https://docs.google.com/forms/d/e/1FAIpQLSc2ep6mxEMAdoTGmXxmN1I8ENGVbXlHVSMJFwXqe1JkJSHK_g/viewform?usp=sf_link) before moving on to the next step.
+
 
 ### Step 4 - Add a dashboard component to your app in the Wix Developers Center
 
@@ -134,13 +132,13 @@ Run the following command:
   It should look like this:
 
      ![wix development site](images/dashboard_page.png?raw=true)
-5. Please fill in the [feedback form](https://docs.google.com/forms/d/e/1FAIpQLSc2ep6mxEMAdoTGmXxmN1I8ENGVbXlHVSMJFwXqe1JkJSHK_g/viewform?usp=sf_link) before moving on to the next step.
+     
 
 ### Step 5 - Configure your app to fulfill your use case
 If you haven't already, review the expected [user flow](./USERFLOW4TESTING.md).  
 
 
-Please fill in the [feedback form](https://docs.google.com/forms/d/e/1FAIpQLSc2ep6mxEMAdoTGmXxmN1I8ENGVbXlHVSMJFwXqe1JkJSHK_g/viewform?usp=sf_link) before moving on to the next step.
+Please fill in the [feedback form](https://docs.google.com/forms/d/e/1FAIpQLSc2ep6mxEMAdoTGmXxmN1I8ENGVbXlHVSMJFwXqe1JkJSHK_g/viewform?usp=sf_link) as you complete this step.
 
 ### Step 6 - Install the app and test it on the test site 
 
