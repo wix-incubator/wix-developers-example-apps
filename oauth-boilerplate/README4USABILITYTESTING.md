@@ -123,7 +123,7 @@ Run the following command:
 
    ![wix development site](images/add-component.jpg?raw=true)
    
-3. Click `Dashboard Page`, It should look like:
+3. Choose `Dashboard Page`, and click on `Add Component`. It should look like:
 
    ![wix development site](images/dashboard-component-types.png?raw=true)
    
