@@ -9,7 +9,7 @@ You'll learn about Wix APIs, components, OAUTH, and other best practices.
 
 Before you get started, let's make sure you have the following set up in your workspace:
 
-- Sign in to [Wix](https://www.wix.com) with a **non-wix** email account.
+- Sign in to [Wix](https://www.wix.com) with the **non-wix** email account you submitted before the guild day.
   > **Important**: Do not use your wix email account to create your app for this usability session! If you do, if/when you get stuck, there will be no way to fix it :(
 - Have [Node.js](https://nodejs.org/en/download/) installed on your computer (version 16.14.0 or higher).
 - IDE/text editor. (For example, [Visual Studio Code](https://code.visualstudio.com/) ).
@@ -24,7 +24,7 @@ Every purchase triggers the creation of a transaction within Wix.
 You are an invoice company (e.g. Blue Invoice) developer and you want to create an app that will integrate with Wix sites and will generate **Blue Invoice** invoices.  
 Create an application that will:  
 - create an invoice (including list of the purchased items, amount paid per item, total amount paid, customer name and address, site name, etc.) for every transaction made through Wix on a Wix site. 
-- send the invoice to the customer’s email.
+- send the invoice to the customer in a chat message.
 For the full use case and flow, see the [User Flow for Usability Testing](./USERFLOW4TESTING.md) article.
 
 

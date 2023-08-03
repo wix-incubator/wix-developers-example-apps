@@ -28,7 +28,7 @@ You can review the current user flow in Wix and where your app should trigger it
      - subject line
      - site name
      - invoice number
-     - transaction date
+     - purchase date
      - customer name
      - shipping address
      - line item name  
@@ -45,7 +45,7 @@ You can review the current user flow in Wix and where your app should trigger it
      - Wix Stores subscription info
   
  ## Notes:
-  - You can use Wix Inbox functionality to send the invoice to the customer via email.
+  - You can use Wix Inbox functionality to send the invoice to the customer via chat.
   - On the test sites we've prepared for you, you can make test transactions with the following credit cards:
      - For SUCCESSFUL (APPROVED) Transactions
        - CC number: 4111 1111 1111 1111 
