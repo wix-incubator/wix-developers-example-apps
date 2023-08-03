@@ -24,7 +24,7 @@ Every purchase triggers the creation of a transaction within Wix.
 You are an invoice company (e.g. Blue Invoice) developer and you want to create an app that will integrate with Wix sites and will generate **Blue Invoice** invoices.  
 Create an application that will:  
 - create an invoice (including list of the purchased items, amount paid per item, total amount paid, customer name and address, site name, etc.) for every transaction made through Wix on a Wix site. 
-- send the invoice to the customer’s email.
+- send the invoice to the customer in a chat message.
 For the full use case and flow, see the [User Flow for Usability Testing](./USERFLOW4TESTING.md) article.
 
 
