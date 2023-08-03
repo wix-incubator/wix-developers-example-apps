@@ -2,7 +2,7 @@
 
 You'll build a new `Wix app` with the help of this step-by-step guide.
  
-You'll learn about Wix APIs, components, OAUTH, and other best practice.
+You'll learn about Wix APIs, components, OAUTH, and other best practices, and have a working app with the basic code you need to make calls and listen to webhooks.
 
 
 ## Prerequisites
@@ -20,7 +20,6 @@ To build an app that can be installed on wix sites and will call the app instanc
 Here's a look at the app dashboard with the result of the app instance API.
 
 ![wix dashboard](./images/basic-dashboard.jpg?raw=true)
-
 
 
 ## Steps:
