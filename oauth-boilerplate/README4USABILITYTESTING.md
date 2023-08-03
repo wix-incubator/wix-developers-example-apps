@@ -9,7 +9,7 @@ You'll learn about Wix APIs, components, OAUTH, and other best practices.
 
 Before you get started, let's make sure you have the following set up in your workspace:
 
-- Sign in to [Wix](https://www.wix.com) with a **non-wix** email account.
+- Sign in to [Wix](https://www.wix.com) with the **non-wix** email account you submitted before the guild da.
   > **Important**: Do not use your wix email account to create your app for this usability session! If you do, if/when you get stuck, there will be no way to fix it :(
 - Have [Node.js](https://nodejs.org/en/download/) installed on your computer (version 16.14.0 or higher).
 - IDE/text editor. (For example, [Visual Studio Code](https://code.visualstudio.com/) ).
