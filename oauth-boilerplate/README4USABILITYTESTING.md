@@ -2,7 +2,7 @@
 
 You'll build a new `Wix app` with the help of this step-by-step guide.
  
-You'll learn about Wix APIs, components, OAUTH, and other best practices.
+You'll learn about Wix APIs, components, OAUTH, and other best practices, and have a working app with the basic code you need to make calls and listen to webhooks.
 
 
 ## Prerequisites
