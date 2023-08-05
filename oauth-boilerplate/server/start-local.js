@@ -24,29 +24,29 @@ const startTunnel = async () => {
     
 
     conn.on("ready", () => {
-    // When the connection is ready
-    console.log("Connection ready");
-    // Start an interactive shell session
-    conn.shell((err, stream) => {
-      if (err) throw err;
-      // And display the shell output (Serveo link)
-      stream.on("data", data => {
-        if(!firstTimePrint){
-            const baseUrl = getBaseUrl(data.toString());
-            if(baseUrl != ""){
-                firstTimePrint = true;
-                printUrls(app, baseUrl);
-            }
-            
-        }
+      // When the connection is ready
+      console.log("Connection ready");
+      // Start an interactive shell session
+      conn.shell((err, stream) => {
+        if (err) throw err;
+        // And display the shell output (Serveo link)
+        stream.on("data", data => {
+          if(!firstTimePrint){
+              const baseUrl = getBaseUrl(data.toString());
+              if(baseUrl != ""){
+                  firstTimePrint = true;
+                  printUrls(app, baseUrl);
+              }
+              
+          }
+        });
       });
-    });
-    // Request port forwarding from the remote server
-    conn.forwardIn(configSSH.remoteHost, configSSH.remotePort, (err, port) => {
-      if (err) throw err;
-      conn.emit("forward-in", port);
-    });
-  }).on("tcp connection", (info, accept, reject) => {
+      // Request port forwarding from the remote server
+      conn.forwardIn(configSSH.remoteHost, configSSH.remotePort, (err, port) => {
+        if (err) throw err;
+        conn.emit("forward-in", port);
+      });
+    }).on("tcp connection", (info, accept, reject) => {
     //console.log("Incoming TCP connection", JSON.stringify(info));
     let remote;
     const srcSocket = new Socket();
@@ -70,9 +70,10 @@ const startTunnel = async () => {
   .connect({
     host: "serveo.net",
     username: process.env.APP_ID,
+    privateKey: "",
     tryKeyboard: true,
-    keepaliveInterval: 3600, //How often (in milliseconds) to send SSH-level keepalive packets to the server 
-    keepaliveCountMax: 60 //How many consecutive, unanswered SSH-level keepalive packets that can be sent to the server before disconnection
+    keepaliveInterval: 6000, //How often (in milliseconds) to send SSH-level keepalive packets to the server 
+    keepaliveCountMax: 120 //How many consecutive, unanswered SSH-level keepalive packets that can be sent to the server before disconnection
   });
 
     
