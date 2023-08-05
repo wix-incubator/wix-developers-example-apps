@@ -9,9 +9,9 @@ class WixInboxApis {
         this.appId = appId;
     }
 
-    async sendMessage(instanceId, memberId, title, text) {
+    async sendMessage(instanceId, contactId, title, text) {
         let participantId = { 
-            memberId : memberId
+            contactId : contactId
         }
         const conversationResult = await this.getConversation(instanceId, participantId)
         const conversationId = conversationResult?.conversation?.id
@@ -25,21 +25,18 @@ class WixInboxApis {
         const refreshToken = await this.refreshTokenDao.getBy(instanceId);
         const {accessToken} = await this.wixOAuthFacade.getFreshAccessToken(refreshToken);
         const data = {"participantId": participantId}
-        return await axios.post(`${this.baseUrl}/conversations`,data ,  {headers: {authorization: accessToken}}).then(r => r.data).catch(error => console.log("error"));
+        return await axios.post(`${this.baseUrl}/conversations`,data ,  {headers: {authorization: accessToken}}).then(r => r.data);
     }
 
     generateMessage(conversationId, title, text, channel) {
-        
         return {
             "conversation_id": conversationId,
             "typing_delay": 0,
-            "send_as": this.appId,
             "message": {
                 "target_channels": [
                     channel
                 ],
                 "content": {
-                    "preview_text": text,
                     "basic": {
                         "items": [
                             {
@@ -49,14 +46,14 @@ class WixInboxApis {
                     },
                     "title": title
                 },
-                "source_channel": channel,
                 "visibility": "BUSINESS_AND_PARTICIPANT",
-                "direction": "BUSINESS_TO_PARTICIPANT"
+                "direction": "BUSINESS_TO_PARTICIPANT",
+                "sender": {
+                    "app_id": this.appId
+                }
             }
         }
     }
-
-
 }
 
 module.exports = {
