@@ -1,6 +1,6 @@
 # User flow for usability testing
 
-You can review the current user flow in Wix and where your app should trigger its email.
+You can review the current user flow in Wix and where your app should trigger its message.
 
 1. Customer views a site's products:  
   ![view products](./images/view-products.png?raw=true)  
@@ -23,9 +23,9 @@ You can review the current user flow in Wix and where your app should trigger it
    ![place order](./images/place-order.png?raw=true)  
 1. Wix sends an email to the customer:  
    ![wix email sent](./images/wix-email-sent.png?raw=true)  
-1. Your app sends an email message to the customer with an invoice including:  
+1. Your app sends a message to the customer with an invoice including:  
    Basic:
-     - subject line
+     - message text
      - site name
      - invoice number
      - purchase date
