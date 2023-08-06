@@ -2,12 +2,12 @@
 
 ## Happy flow 
 
-1. listening to transactions  
+1. Listening to transactions  
   they might choose any of the following:
   - Wix eCommerce > Orders > order approved webhook - easy to work with, only covers basic flow. for advanced they'll need to add the Cashier Pay   webhook.
   - Wix Cashier > Cashier Pay > payment event webhook - harder to use, covers both advanced and basic flows.
   - Wix Payments - dead end. Stop them if they start writing code based on this API.
-2. getting site name
+2. Getting the site name
   they might choose either of the following:
   -  Business Info > Site Properties > Get Site Properties (`siteDisplayName` or `businessName`)
   -  App Management > Apps > Get App Instance
@@ -41,12 +41,13 @@
   
 ## Other likely issues  
 
-Testing webhooks:   
-Dev center test webhooks are dummy data, won't work well for things like app instance and site properties.
+- Testing webhooks: Dev center test webhooks are dummy data, won't work well for things like app instance and site properties.
 
-Everything they need to listen to webhooks and make calls is already built into the sample app, they shouldn't have to write any of that code from scratch (e.g., collecting the access and refresh tokens).
+-Docs Playgroung: They won't be able to make calls from the playground to the test site because they didn't create the site themselves (Wix Docs limitation).
 
-For advanced flows, they'll need to differentiate between different app IDs. There's a list in the docs [here](https://dev.wix.com/docs/rest/articles/getting-started/wix-business-solutions) - remember we want them to find it on their own, don't tell them where it is unless they get really stuck.
+- Everything they need to listen to webhooks and make calls is already built into the sample app, they shouldn't have to write any of that code from scratch (e.g., collecting the access and refresh tokens).
+
+- App IDs: For advanced flows, they'll need to differentiate between different app IDs. There's a list in the docs [here](https://dev.wix.com/docs/rest/articles/getting-started/wix-business-solutions) - remember we want them to find it on their own, don't tell them where it is unless they get really stuck.
 
 
 
