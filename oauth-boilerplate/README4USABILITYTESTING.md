@@ -110,7 +110,7 @@ Run the following command:
 > We're utilizing a free service called serveo.net, which allows us to expose local servers to the internet using SSH tunneling.  
 > Once your server is up and running, it will be accessible through a subdomain, like this: https://sequi.serveo.net/api/test.  
 > When you add new code and restart your local server, the SSH tunnel will also be restarted - and sometimes the subdomain associated with your server may change.  
-> Whenever the subdomain changes, you'll need to update the webhook links or OAuth links in your app's development center, as described in the next step). This ensures that your application continues to function seamlessly.    
+> Whenever the subdomain changes, you'll need to update the webhook links or OAuth links in your app's development center (as described in the next step). This ensures that your application continues to function seamlessly.    
 
 
 2. Configure the [OAuth] at the [Wix Developer Center][wix-dev-center]
