@@ -105,13 +105,20 @@ Run the following command:
     ![terminal](images/terminal-new.jpg?raw=true)
     
     In the next step we will need the `AppUrl` and `RedirectUrl` you got in the terminal.
+   
+> **Important:** The subdomains might change!  
+> We're utilizing a free service called serveo.net, which allows us to expose local servers to the internet using SSH tunneling.  
+> Once your server is up and running, it will be accessible through a subdomain, like this: https://sequi.serveo.net/api/test.  
+> When you add new code and restart your local server, the SSH tunnel will also be restarted - and sometimes the subdomain associated with your server may change.  
+> Whenever the subdomain changes, you'll need to update the webhook links or OAuth links in your app's development center, as described in the next step). This ensures that your application continues to function seamlessly.    
 
 
 2. Configure the [OAuth] at the [Wix Developer Center][wix-dev-center]
 -   Go to your app in [Wix Developer Center][wix-dev-center]
 -   Look for the `OAuth` page in the sidebar. Under the `URLs` section insert the `Redirect URL` and the `App URL` you copied from the terminal output you got in the previous step.
 -   Click `Save`. It should look like this:
-    ![wix development site](images/oauth-appurl-redirect.jpg?raw=true)  
+    ![wix development site](images/oauth-appurl-redirect.jpg?raw=true)
+
 
 
 ### Step 4 - Add a dashboard component to your app in the Wix Developers Center
