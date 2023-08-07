@@ -5,9 +5,10 @@
 - what they're doing/discussing
 - what issue they are having
 - comments
+- if you missed the time they began/finished something, add an estimate while its still fresh
 
-**Example (real notes from the POC):**  
-11:02 - begin task  
+**Example:**  
+11:02 - begin step 1  
 general discussion  
 opening all provided tools  
 
@@ -18,11 +19,21 @@ ended up assigning all DC work to David
 11:15 - dev center setup  
 David is very familiar with DC, is flying through the steps
 
-Try to note:
-- what confuses and/or frustrates them, even if they figure it out right afterward
-- how they approach each task
-- what they misunderstand, can't find, do incorrectly
-- what they do differently from the happy flow that works
+11:18 - I noticed that Eyal has been writing code offscreen, asked him to share his screen
+
+11:25 - opened documentation  
+debated which API to use  
+opened ecom docs   
+opened cashier docs  
+opened payments docs  
+
+11:28 - decided to use ecom api
+
+Try to note:  
+- what confuses and/or frustrates them, even if they figure it out right afterward  
+- how they approach each task  
+- what they misunderstand, can't find, do incorrectly  
+- what they do differently from the happy flow that works  
 
 ## Extra help for step 5
 
