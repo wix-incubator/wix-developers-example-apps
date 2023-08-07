@@ -11,11 +11,11 @@
 general discussion  
 opening all provided tools  
 
-11:08 - started step 2
+11:08 - started step 2  
 struggled to figure out if they could both work on one app in the dev center from different machines  
 ended up assigning all DC work to David
 
-11:15 - dev center setup
+11:15 - dev center setup  
 David is very familiar with DC, is flying through the steps
 
 
