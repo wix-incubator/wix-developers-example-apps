@@ -48,7 +48,7 @@ Try to note:
   they might choose either of the following:
   -  Business Info > Site Properties > Get Site Properties (`siteDisplayName` or `businessName`)
   -  App Management > Apps > Get App Instance
-3. (they should provide their own invoice number)  
+3. (they should provide their own message text and invoice number ;) )  
 4. When listening to either ecom's order approved webhook or cashier's payment event webhook they will receive all of the next basic requirements:
     - purchase date
     - customer name
