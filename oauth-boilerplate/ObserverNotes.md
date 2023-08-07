@@ -18,6 +18,11 @@ ended up assigning all DC work to David
 11:15 - dev center setup  
 David is very familiar with DC, is flying through the steps
 
+Try to note:
+- what confuses and/or frustrates them, even if they figure it out right afterward
+- how they approach each task
+- what they misunderstand, can't find, do incorrectly
+- what they do differently from the happy flow that works
 
 ## Extra help for step 5
 
