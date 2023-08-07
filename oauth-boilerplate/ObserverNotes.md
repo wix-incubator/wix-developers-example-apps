@@ -1,6 +1,27 @@
-# Extra help for step 5
+## Sample notes
 
-## Happy flow 
+**Recommended things to note:** 
+- current time
+- what they're doing/discussing
+- what issue they are having
+- comments
+
+**Example (real notes from the POC):**  
+11:02 - begin task  
+general discussion  
+opening all provided tools  
+
+11:08 - started step 2
+struggled to figure out if they could both work on one app in the dev center from different machines  
+ended up assigning all DC work to David
+
+11:15 - dev center setup
+David is very familiar with DC, is flying through the steps
+
+
+## Extra help for step 5
+
+### Happy flow 
 
 1. Listening to transactions  
   they might choose any of the following:
@@ -26,24 +47,24 @@
 6. Wix Bookings number of attendees
      - [Query Extended Bookings](https://dev.wix.com/api/rest/wix-bookings/bookings-reader-v2/query-extended-bookings)
 7. Wix Events guest details 
-  - [Get Order](https://dev.wix.com/api/rest/wix-events/wix-events/order/get-order)
-  - [List Orders](https://dev.wix.com/api/rest/wix-events/wix-events/order/list-order)  
+    - [Get Order](https://dev.wix.com/api/rest/wix-events/wix-events/order/get-order)
+    - [List Orders](https://dev.wix.com/api/rest/wix-events/wix-events/order/list-order)  
 8. Wix Pricing Plans free trial info
-  - [Get Order](https://dev.wix.com/api/rest/wix-pricing-plans/pricing-plans/orders/get-order)
-  - [List Orders](https://dev.wix.com/api/rest/wix-pricing-plans/pricing-plans/orders/list-orders)  
+    - [Get Order](https://dev.wix.com/api/rest/wix-pricing-plans/pricing-plans/orders/get-order)
+    - [List Orders](https://dev.wix.com/api/rest/wix-pricing-plans/pricing-plans/orders/list-orders)  
 9. Wix Restaurants order fulfillment type
-  - [Get Order](https://dev.wix.com/api/rest/wix-restaurants/orders/get-order)
-  - [List Orders](https://dev.wix.com/api/rest/wix-restaurants/orders/list-orders)
+    - [Get Order](https://dev.wix.com/api/rest/wix-restaurants/orders/get-order)
+    - [List Orders](https://dev.wix.com/api/rest/wix-restaurants/orders/list-orders)
 10. Wix Stores subscription info
-  - [Get Order](https://dev.wix.com/api/rest/wix-stores/orders/get-order)
-  - [Query Orders](https://dev.wix.com/api/rest/wix-stores/orders/query-orders)  
+    - [Get Order](https://dev.wix.com/api/rest/wix-stores/orders/get-order)
+    - [Query Orders](https://dev.wix.com/api/rest/wix-stores/orders/query-orders)  
 
   
-## Other likely issues  
+### Other likely issues  
 
 - Testing webhooks: Dev center test webhooks are dummy data, won't work well for things like app instance and site properties.
 
--Docs Playgroung: They won't be able to make calls from the playground to the test site because they didn't create the site themselves (Wix Docs limitation).
+- Docs Playground: They won't be able to make calls from the playground to the test site because they didn't create the site themselves (Wix Docs limitation).
 
 - Everything they need to listen to webhooks and make calls is already built into the sample app, they shouldn't have to write any of that code from scratch (e.g., collecting the access and refresh tokens).
 
@@ -51,7 +72,9 @@
 
 
 
-## Permissions  
+### Dev center setup help
+
+#### Permissions  
 The following permissions are relevant to most invoicing apps:   
 
 **Basic:**  
@@ -68,7 +91,7 @@ The following permissions are relevant to most invoicing apps:
 - Wix Pricing Plans > Read Orders
 - Media > Manage Media Manager
 
-## Webhooks   
+#### Webhooks   
 The following webhooks are relevant to most invoicing apps:   
 **Basic:**  
 - App Management: 
@@ -98,7 +121,7 @@ The following webhooks are relevant to most invoicing apps:
   - Order Purchased
   - Order Marked as Paid
 
-## API Calls
+#### API Calls
 
 **Basic:**
 - App Management   
