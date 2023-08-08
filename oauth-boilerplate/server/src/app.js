@@ -25,10 +25,10 @@ const startServer = () => {
 
 
 const createControlers = (app, config) => {
-  /*
-    APP_ID and APP_SECRET are secrets and you shouldn't share them with anyone!
-    Their values resides in .env file and you should NOT COMMIT THEM TO GITHUB!
-  */
+    /*
+      APP_ID and APP_SECRET are secrets and you shouldn't share them with anyone!
+      Their values resides in .env file and you should NOT COMMIT THEM TO GITHUB!
+    */
     const { APP_ID, APP_SECRET, redirectUrl, wixBaseUrl, WEBHOOK_PUBLIC_KEY, wixApiUrl } = config;
 
     //Helpers

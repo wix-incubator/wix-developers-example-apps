@@ -1,13 +1,20 @@
 {
   "name": "oauth-boilerplate",
   "version": "1.0.0",
-  "description": "wix app Oauth example",
+  "description": "Wix app OAuth example",
   "author": "wix app market team",
   "license": "MIT",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon start ./start-local.js",
+    "start-server": "nodemon start ./start-local.js",
+    "start-tunnel": "node ./start-tunnel.js",
+    "start": "concurrently \"node ./start-tunnel.js\" \"sleep 5 && nodemon ./start-local.js\"",
     "test": "jest --forceExit"
+  },
+  "nodemonConfig": {
+    "ignore": ["**/test/**", "**/docs/**"],
+    "watch": [".env", "*.js"],
+    "delay": 2500
   },
   "dependencies": {
     "axios": "^0.22.0",
@@ -24,7 +31,7 @@
     "ssh2": "^1.13.0"
   },
   "devDependencies": {
-    "concurrently": "^6.5.1",
+    "concurrently": "^8.2.0",
     "jest": "^27.4.5",
     "mockdate": "^3.0.5",
     "nock": "^13.2.1",
